@@ -75,6 +75,7 @@ def extra_real_mcp_links(all_links, cookie_str):
               "repo":"https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem", # 项目的仓库地址
               "command": "npx", # 项目的命令
               "baseArgs": ["-y", "@modelcontextprotocol/server-filesystem"], # 项目的基础参数
+              "env": {}, # 项目的环境变量
               "configurable": true, # 项目是否可配置
               "configSchema": {
                 "properties": {
