@@ -1,0 +1,53 @@
+{
+    "id": "mcp-client",
+    "name": "MCP Client",
+    "description": "A simple REST API and CLI client to interact with Model Context Protocol (MCP) servers.",
+    "tags": [
+        "mcp",
+        "api",
+        "cli"
+    ],
+    "repo": "https://github.com/rakesh-eltropy/mcp-client",
+    "command": "uv",
+    "baseArgs": [
+        "run",
+        "cli.py"
+    ],
+    "env": {
+        "OPENAI_API_KEY": "your-openai-api-key",
+        "BRAVE_API_KEY": "your-brave-api-key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "provider": {
+                "type": "string",
+                "description": "LLM Provider",
+                "required": false
+            },
+            "model": {
+                "type": "string",
+                "description": "Model version",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "OPENAI_API_KEY": {
+            "type": "env",
+            "key": "OPENAI_API_KEY"
+        },
+        "BRAVE_API_KEY": {
+            "type": "env",
+            "key": "BRAVE_API_KEY"
+        },
+        "provider": {
+            "type": "json",
+            "path": "mcp-server-config.json"
+        },
+        "model": {
+            "type": "json",
+            "path": "mcp-server-config.json"
+        }
+    }
+}

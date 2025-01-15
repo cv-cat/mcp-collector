@@ -45,17 +45,18 @@ def extra_mcp_links_from_mcpserversOrg():
     headers = get_mcpserverOrg_headers()
     url = "https://mcpservers.org/"
     response = requests.get(url, headers=headers)
-    res_text = response.text
-    soup = BeautifulSoup(res_text, 'html.parser')
-    a_tags = soup.find_all('a')
-    all_links = []
-    for a_tag in a_tags:
-        href = a_tag.attrs.get('href', '')
-        if href.startswith('https://mcpservers.org/'):
-            all_links.append(href)
-            logger.info(f"Found link: {href}")
-    logger.info(f"Found {len(all_links)} links")
-    return list(set(all_links))
+    all_links = re.findall(r'\\"url\\":\\"https://github\.com/(.*?)\\"', response.text)
+    all_links = list(set(all_links))
+    links = []
+    for link in all_links:
+        try:
+            new_link = '/'.join(link.split('/')[:2])
+            links.append(f'https://github.com/{new_link}')
+            logger.info(f"Found link: {new_link}")
+        except:
+            logger.warning(f"Invalid link: {link}")
+    logger.info(f"Found {len(links)} links")
+    return links
 
 # https://mcp.so
 def extra_mcp_links_from_mcpSo(mcpSo_cookie_str):
@@ -304,7 +305,7 @@ if __name__ == '__main__':
 
     # https://www.awesomemcp.com/
     awesomeMcp_cookie_str = r'NEXT_LOCALE=zh; __Host-next-auth.csrf-token=2becb30594d9ab565e5bda59a04c973759a504469347d56afe216efc50e634c9%7C875759a03df936c52e5b00169fddb0da65b341f591ef1be2f5e9cf71dff929cd; __Secure-next-auth.callback-url=https%3A%2F%2Fwww.awesomemcp.com'
-    awesomeMcp_mcp_links = extra_mcp_links_from_awesomemcp()
+    awesomeMcp_mcp_links = extra_mcp_links_from_awesomemcp(awesomeMcp_cookie_str)
     awesomeMcp_real_mcp_links = extra_real_mcp_links(awesomeMcp_mcp_links, awesomeMcp_cookie_str)
     download_json_data(awesomeMcp_real_mcp_links)
 

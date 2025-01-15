@@ -1,0 +1,16 @@
+{
+    "id": "wecombot",
+    "name": "MCP WeCom Bot Server",
+    "description": "An MCP server application that sends various types of messages to the WeCom group robot.",
+    "tags": [
+        "wecom",
+        "bot",
+        "server"
+    ],
+    "repo": "https://github.com/gotoolkits/mcp-wecombot-server.git",
+    "command": "mcp-wecombot-server",
+    "env": {
+        "WECOM_BOT_WEBHOOK_KEY": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx"
+    },
+    "configurable": true
+}

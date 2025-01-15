@@ -1,0 +1,30 @@
+{
+    "id": "mcp-chatbot",
+    "name": "MCP Chatbot",
+    "description": "This chatbot example demonstrates how to integrate the Model Context Protocol (MCP) into a simple CLI chatbot.",
+    "tags": [
+        "mcp",
+        "chatbot"
+    ],
+    "repo": "https://github.com/3choff/mcp-chatbot",
+    "command": "python",
+    "baseArgs": [
+        "main.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LLM_API_KEY": {
+                "type": "string",
+                "description": "Your API key for the LLM provider",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LLM_API_KEY": {
+            "type": "env",
+            "key": "LLM_API_KEY"
+        }
+    }
+}
