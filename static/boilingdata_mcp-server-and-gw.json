@@ -1,0 +1,21 @@
+{
+    "id": "mcp-server-and-gw",
+    "name": "MCP Server and GW",
+    "description": "A Model Context Protocol gateway and example MCP server and client.",
+    "tags": [
+        "mcp",
+        "gateway",
+        "server",
+        "client"
+    ],
+    "repo": "https://github.com/boilingdata/mcp-server-and-gw",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@boilingdata/mcp-server-and-gw"
+    ],
+    "env": {},
+    "configurable": false,
+    "configSchema": {},
+    "argsMapping": {}
+}

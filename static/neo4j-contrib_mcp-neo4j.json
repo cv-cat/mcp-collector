@@ -1,0 +1,19 @@
+{
+    "id": "mcp-neo4j",
+    "name": "MCP Neo4j",
+    "description": "Model Context Protocol (MCP) is a standardized protocol for managing context between large language models (LLMs) and external systems.",
+    "tags": [
+        "neo4j",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/neo4j-contrib/mcp-neo4j",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/mcp-neo4j"
+    ],
+    "configurable": false,
+    "configSchema": {},
+    "argsMapping": {}
+}

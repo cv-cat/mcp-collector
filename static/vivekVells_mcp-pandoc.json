@@ -1,0 +1,17 @@
+{
+    "id": "mcp-pandoc",
+    "name": "MCP Pandoc",
+    "description": "A Model Context Protocol server for document format conversion using pandoc.",
+    "tags": [
+        "mcp",
+        "pandoc",
+        "conversion",
+        "api"
+    ],
+    "repo": "https://github.com/vivekVells/mcp-pandoc",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-pandoc"
+    ],
+    "configurable": false
+}

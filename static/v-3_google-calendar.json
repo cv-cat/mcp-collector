@@ -1,0 +1,64 @@
+{
+    "id": "google-calendar",
+    "name": "Google Calendar",
+    "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
+    "tags": [
+        "google",
+        "calendar",
+        "api"
+    ],
+    "repo": "https://github.com/v-3/google-calendar",
+    "command": "node",
+    "baseArgs": [
+        "/ABSOLUTE/PATH/TO/YOUR/build/index.js"
+    ],
+    "env": {
+        "GOOGLE_CLIENT_ID": "your_client_id_here",
+        "GOOGLE_CLIENT_SECRET": "your_client_secret_here",
+        "GOOGLE_REDIRECT_URI": "http://localhost",
+        "GOOGLE_REFRESH_TOKEN": "your_refresh_token_here"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "clientId": {
+                "type": "string",
+                "description": "Google Client ID",
+                "required": true
+            },
+            "clientSecret": {
+                "type": "string",
+                "description": "Google Client Secret",
+                "required": true
+            },
+            "redirectUri": {
+                "type": "string",
+                "description": "OAuth redirect URI",
+                "required": true
+            },
+            "refreshToken": {
+                "type": "string",
+                "description": "OAuth refresh token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "clientId": {
+            "type": "env",
+            "key": "GOOGLE_CLIENT_ID"
+        },
+        "clientSecret": {
+            "type": "env",
+            "key": "GOOGLE_CLIENT_SECRET"
+        },
+        "redirectUri": {
+            "type": "env",
+            "key": "GOOGLE_REDIRECT_URI"
+        },
+        "refreshToken": {
+            "type": "env",
+            "key": "GOOGLE_REFRESH_TOKEN"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "id": "mcp-server",
+    "name": "E2B MCP Server",
+    "description": "This repository contains the source code for the E2B MCP server. The E2B MCP server allows you to add code interpreting capabilities to your Claude Desktop app via the E2B Sandbox.",
+    "tags": [
+        "mcp",
+        "server",
+        "e2b"
+    ],
+    "repo": "https://github.com/e2b-dev/mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "@smithery/cli",
+        "install",
+        "e2b",
+        "--client",
+        "claude"
+    ],
+    "env": {},
+    "configurable": false
+}

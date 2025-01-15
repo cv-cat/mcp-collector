@@ -1,0 +1,4534 @@
+[
+    {
+        "id": "kagi-server",
+        "name": "Kagi Server",
+        "description": "MCP server for Kagi API integration",
+        "tags": [
+            "kagi",
+            "api"
+        ],
+        "repo": "https://github.com/ac3xx/mcp-servers-kagi",
+        "command": "npx",
+        "baseArgs": [
+            "@smithery/cli",
+            "install",
+            "kagi-server",
+            "--client",
+            "claude"
+        ],
+        "env": {
+            "KAGI_API_KEY": "your_api_key_here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "KAGI_API_KEY": {
+                    "type": "string",
+                    "description": "Kagi API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "KAGI_API_KEY": {
+                "type": "env",
+                "key": "KAGI_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-git-ingest",
+        "name": "MCP Git Ingest",
+        "description": "A Model Context Protocol (MCP) server that helps read GitHub repository structure and important files. Inspired by gitingest.",
+        "tags": [
+            "mcp",
+            "github",
+            "ingest",
+            "api"
+        ],
+        "repo": "https://github.com/adhikasp/mcp-git-ingest",
+        "command": "uvx",
+        "baseArgs": [
+            "--from",
+            "git+https://github.com/adhikasp/mcp-git-ingest",
+            "mcp-git-ingest"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-twikit",
+        "name": "MCP-Twikit",
+        "description": "A Model Context Protocol (MCP) server for interacting with Twitter.",
+        "tags": [
+            "twitter",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/adhikasp/mcp-twikit",
+        "command": "uvx",
+        "baseArgs": [
+            "--from",
+            "git+https://github.com/adhikasp/mcp-twikit",
+            "mcp-twikit"
+        ],
+        "env": {
+            "TWITTER_USERNAME": "@example",
+            "TWITTER_EMAIL": "me@example.com",
+            "TWITTER_PASSWORD": "secret"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-server-home-assistant",
+        "name": "MCP Server Home Assistant",
+        "description": "A Model Context Protocol Server for Home Assistant. See Model Context Protocol for context.",
+        "tags": [
+            "home-assistant",
+            "model-context-protocol"
+        ],
+        "repo": "https://github.com/allenporter/mcp-server-home-assistant",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "/Users/allen/Development/mcp-server-home-assistant",
+            "run",
+            "mcp-server-home-assistant",
+            "-v",
+            "-v"
+        ],
+        "env": {
+            "HOME_ASSISTANT_WEB_SOCKET_URL": "http://localhost:8123/api/websocket",
+            "HOME_ASSISTANT_API_TOKEN": "byJhbVci0iJIUzI1ii1sInR5cCI6IkpXVCJ9....."
+        },
+        "configurable": false
+    },
+    {
+        "id": "unichat",
+        "name": "Unichat MCP Server",
+        "description": "Send requests to OpenAI, MistralAI, Anthropic, xAI, Google AI or DeepSeek using MCP protocol via tool or predefined prompts.",
+        "tags": [
+            "unichat",
+            "mcp",
+            "server",
+            "api"
+        ],
+        "repo": "https://github.com/amidabuddha/unichat-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@smithery/cli",
+            "install",
+            "unichat-mcp-server",
+            "--client",
+            "claude"
+        ],
+        "env": {
+            "UNICHAT_MODEL": "SELECTED_UNICHAT_MODEL",
+            "UNICHAT_API_KEY": "YOUR_UNICHAT_API_KEY"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "messages": {
+                    "type": "array",
+                    "description": "Messages to send",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "messages": {
+                "type": "spread",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "mcp-installer",
+        "name": "MCP Installer",
+        "description": "A MCP Server to install MCP Servers",
+        "tags": [],
+        "repo": "https://github.com/anaisbetts/mcp-installer",
+        "command": "npx",
+        "baseArgs": [
+            "@anaisbetts/mcp-installer"
+        ],
+        "env": {},
+        "configurable": false
+    },
+    {
+        "id": "youtube",
+        "name": "YouTube MCP Server",
+        "description": "Uses yt-dlp to download subtitles from YouTube and connects it to claude.ai via Model Context Protocol. Try it by asking Claude, \"Summarize the YouTube video <>.\" Requires yt-dlp to be installed locally e.g. via Homebrew.",
+        "tags": [
+            "youtube",
+            "subtitles",
+            "model-context-protocol"
+        ],
+        "repo": "https://github.com/anaisbetts/mcp-youtube",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@anaisbetts/mcp-youtube"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-simple-arxiv",
+        "name": "MCP Simple Arxiv",
+        "description": "An MCP server that provides access to arXiv papers through their API.",
+        "tags": [
+            "arxiv",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/andybrandt/mcp-simple-arxiv",
+        "command": "python",
+        "baseArgs": [
+            "-m",
+            "mcp_simple_arxiv"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-simple-openai-assistant",
+        "name": "MCP Simple OpenAI Assistant",
+        "description": "A simple MCP server for interacting with OpenAI assistants. This server allows other tools (like Claude Desktop) to create and interact with OpenAI assistants through the Model Context Protocol.",
+        "tags": [
+            "mcp",
+            "openai",
+            "assistant"
+        ],
+        "repo": "https://github.com/andybrandt/mcp-simple-openai-assistant",
+        "command": "python",
+        "baseArgs": [
+            "-m",
+            "mcp_simple_openai_assistant"
+        ],
+        "env": {
+            "OPENAI_API_KEY": "your-api-key-here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "OpenAI API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "apiKey": {
+                "type": "env",
+                "key": "OPENAI_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "simple-timeserver",
+        "name": "MCP Simple Timeserver",
+        "description": "A simple MCP server that provides the current local time and timezone information from the user's machine.",
+        "tags": [
+            "mcp",
+            "timeserver"
+        ],
+        "repo": "https://github.com/andybrandt/mcp-simple-timeserver",
+        "command": "python",
+        "baseArgs": [
+            "-m",
+            "mcp_simple_timeserver"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        }
+    },
+    {
+        "id": "nyt",
+        "name": "NYTimes Article Search MCP Server",
+        "description": "This is a TypeScript-based MCP server that allows searching for New York Times articles from the last 30 days based on a keyword. It demonstrates core MCP concepts by providing tools for searching articles and integration with the New York Times API.",
+        "tags": [
+            "api",
+            "search",
+            "news"
+        ],
+        "repo": "https://github.com/angheljf/nyt",
+        "command": "node",
+        "baseArgs": [
+            "path/to/your/build/index.js"
+        ],
+        "env": {
+            "NYTIMES_API_KEY": "your_api_key_here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "keyword": {
+                    "type": "string",
+                    "description": "Keyword to search for New York Times articles",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "keyword": {
+                "type": "env",
+                "key": "SEARCH_KEYWORD"
+            }
+        }
+    },
+    {
+        "id": "coinmarket-mcp-server",
+        "name": "Coinmarket MCP Server",
+        "description": "The server implements a few of the Coinmarket API endpoints",
+        "tags": [
+            "coinmarket",
+            "api",
+            "server"
+        ],
+        "repo": "https://github.com/anjor/coinmarket-mcp-server",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "/Users/anjor/repos/anjor/coinmarket_service",
+            "run",
+            "coinmarket_service"
+        ],
+        "env": {
+            "COINMARKET_API_KEY": ""
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "api_key": {
+                    "type": "string",
+                    "description": "Coinmarket API key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "api_key": {
+                "type": "env",
+                "key": "COINMARKET_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-server-rag-web-browser",
+        "name": "MCP Server for the RAG Web Browser",
+        "description": "Model Context Protocol (MCP) Server for the RAG Web Browser Actor \ud83c\udf10",
+        "tags": [
+            "mcp",
+            "server",
+            "web-browser"
+        ],
+        "repo": "https://github.com/apify/mcp-server-rag-web-browser",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/mcp-server-rag-web-browser"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "APIFY_API_TOKEN": {
+                    "type": "string",
+                    "description": "Apify API Token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "APIFY_API_TOKEN": {
+                "type": "env",
+                "key": "APIFY_API_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "piapi-mcp-server",
+        "name": "piapi-mcp-server",
+        "description": "A TypeScript implementation of a Model Context Protocol (MCP) server that integrates with PiAPI's API. PiAPI makes user able to generate media content with Midjourney/Flux/Kling/LumaLabs/Udio/Chrip/Trellis directly from Claude or any other MCP-compatible apps.",
+        "tags": [
+            "mcp",
+            "api",
+            "typescript"
+        ],
+        "repo": "https://github.com/apinetwork/piapi-mcp-server",
+        "command": "npm",
+        "baseArgs": [
+            "start"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "PIAPI_API_KEY": {
+                    "type": "string",
+                    "description": "A PiAPI API key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "PIAPI_API_KEY": {
+                "type": "env",
+                "key": "PIAPI_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-server-playwright",
+        "name": "MCP Server Playwright",
+        "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright.",
+        "tags": [
+            "automation",
+            "playwright",
+            "mcp"
+        ],
+        "repo": "https://github.com/Automata-Labs-team/MCP-Server-Playwright",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@automatalabs/mcp-server-playwright"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "mcpServers": {
+                    "type": "object",
+                    "description": "Configuration for MCP servers",
+                    "required": true,
+                    "properties": {
+                        "playwright": {
+                            "type": "object",
+                            "description": "Playwright server configuration",
+                            "properties": {
+                                "command": {
+                                    "type": "string",
+                                    "description": "Command to run the server",
+                                    "required": true
+                                },
+                                "args": {
+                                    "type": "array",
+                                    "description": "Arguments for the command",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "argsMapping": {
+            "mcpServers.playwright.command": {
+                "type": "static",
+                "value": "npx"
+            },
+            "mcpServers.playwright.args": {
+                "type": "static",
+                "value": [
+                    "-y",
+                    "@automatalabs/mcp-server-playwright"
+                ]
+            }
+        }
+    },
+    {
+        "id": "phabricator-mcp-server",
+        "name": "Phabricator MCP Server",
+        "description": "A Model Context Protocol (MCP) server implementation for interacting with Phabricator API. This server allows LLMs to interact with Phabricator through a standardized interface.",
+        "tags": [
+            "phabricator",
+            "mcp",
+            "server",
+            "api"
+        ],
+        "repo": "https://github.com/baba786/phabricator-mcp-server",
+        "command": "python",
+        "baseArgs": [
+            "server.py"
+        ],
+        "env": {
+            "PHABRICATOR_TOKEN": "your-token-here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Phabricator API token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "token": {
+                "type": "env",
+                "key": "PHABRICATOR_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "alpha-vantage-mcp",
+        "name": "Alpha Vantage MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free Alpha Vantage API. This server implements a standardized interface for retrieving stock quotes and company information.",
+        "tags": [
+            "finance",
+            "api",
+            "stock"
+        ],
+        "repo": "https://github.com/berlinbra/alpha-vantage-mcp",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "/Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp",
+            "run",
+            "alpha-vantage-mcp"
+        ],
+        "env": {
+            "ALPHA_VANTAGE_API_KEY": "<insert api key>"
+        },
+        "configurable": false
+    },
+    {
+        "id": "clojars-mcp-server",
+        "name": "Clojars MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides tools for fetching dependency information from Clojars, the Clojure community's artifact repository.",
+        "tags": [
+            "mcp",
+            "clojars",
+            "dependency"
+        ],
+        "repo": "https://github.com/Bigsy/Clojars-MCP-Server",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/clojars-deps-server/build/index.js"
+        ],
+        "configurable": false,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "playwright-server",
+        "name": "Playwright Server",
+        "description": "A MCP server with playwright tools",
+        "tags": [
+            "playwright",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/blackwhite084/playwright-plus-python-mcp",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "C:\\Users\\xxxxx\\Documents\\project\\python\\mcp\\playwright-server",
+            "run",
+            "playwright-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "arxiv-mcp-server",
+        "name": "ArXiv MCP Server",
+        "description": "Enable AI assistants to search and access arXiv papers through a simple MCP interface.",
+        "tags": [
+            "arxiv",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/blazickjp/arxiv-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/arxiv-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "ARXIV_STORAGE_PATH": {
+                    "type": "string",
+                    "description": "Paper storage location",
+                    "default": "~/.arxiv-mcp-server/papers"
+                }
+            }
+        },
+        "argsMapping": {
+            "ARXIV_STORAGE_PATH": {
+                "type": "env",
+                "key": "ARXIV_STORAGE_PATH"
+            }
+        }
+    },
+    {
+        "id": "mcp-server-and-gw",
+        "name": "MCP Server and GW",
+        "description": "A Model Context Protocol gateway and example MCP server and client.",
+        "tags": [
+            "mcp",
+            "gateway",
+            "server",
+            "client"
+        ],
+        "repo": "https://github.com/boilingdata/mcp-server-and-gw",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@boilingdata/mcp-server-and-gw"
+        ],
+        "env": {},
+        "configurable": false,
+        "configSchema": {},
+        "argsMapping": {}
+    },
+    {
+        "id": "video-editing-mcp",
+        "name": "Video Editing MCP",
+        "description": "Upload, edit, search, and generate videos from everyone's favorite LLM and Video Jungle.",
+        "tags": [
+            "video",
+            "editing",
+            "API"
+        ],
+        "repo": "https://github.com/burningion/video-editing-mcp",
+        "command": "uv",
+        "baseArgs": [
+            "video-editor-mcp",
+            "YOURAPIKEY"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "API key for Video Jungle",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "apiKey": {
+                "type": "arg",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "dnstwist",
+        "name": "DNStwist MCP Server",
+        "description": "A Model Context Protocol (MCP) server for dnstwist, a powerful DNS fuzzing tool that helps detect typosquatting, phishing, and corporate espionage.",
+        "tags": [
+            "dns",
+            "fuzzing",
+            "security"
+        ],
+        "repo": "https://github.com/BurtTheCoder/mcp-dnstwist",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "-g",
+            "mcp-dnstwist"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "domain": {
+                    "type": "string",
+                    "description": "Domain name to analyze",
+                    "required": true
+                },
+                "nameservers": {
+                    "type": "string",
+                    "description": "Comma-separated list of DNS servers",
+                    "required": false
+                },
+                "threads": {
+                    "type": "integer",
+                    "description": "Number of threads for parallel processing",
+                    "required": false
+                },
+                "format": {
+                    "type": "string",
+                    "description": "Output format (json, csv, list)",
+                    "required": false
+                },
+                "registered_only": {
+                    "type": "boolean",
+                    "description": "Show only registered domains",
+                    "required": false
+                },
+                "mxcheck": {
+                    "type": "boolean",
+                    "description": "Check for MX records",
+                    "required": false
+                },
+                "banners": {
+                    "type": "boolean",
+                    "description": "Capture HTTP banner information",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "domain": {
+                "type": "spread",
+                "position": 0
+            },
+            "nameservers": {
+                "type": "spread",
+                "position": 1
+            },
+            "threads": {
+                "type": "position",
+                "position": 2
+            },
+            "format": {
+                "type": "position",
+                "position": 3
+            },
+            "registered_only": {
+                "type": "position",
+                "position": 4
+            },
+            "mxcheck": {
+                "type": "position",
+                "position": 5
+            },
+            "banners": {
+                "type": "position",
+                "position": 6
+            }
+        }
+    },
+    {
+        "id": "mcp-maigret",
+        "name": "Maigret MCP Server",
+        "description": "A Model Context Protocol (MCP) server for maigret, a powerful OSINT tool that collects user account information from various public sources. This server provides tools for searching usernames across social networks and analyzing URLs.",
+        "tags": [
+            "osint",
+            "mcp"
+        ],
+        "repo": "https://github.com/BurtTheCoder/mcp-maigret",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "-g",
+            "mcp-maigret"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "MAIGRET_REPORTS_DIR": {
+                    "type": "string",
+                    "description": "Directory to save reports",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "MAIGRET_REPORTS_DIR": {
+                "type": "env",
+                "key": "MAIGRET_REPORTS_DIR"
+            }
+        }
+    },
+    {
+        "id": "shodan",
+        "name": "Shodan MCP Server",
+        "description": "A Model Context Protocol (MCP) server for querying the Shodan API and Shodan CVEDB. This server provides comprehensive access to Shodan's network intelligence and security services, including IP reconnaissance, DNS operations, vulnerability tracking, and device discovery.",
+        "tags": [
+            "shodan",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/BurtTheCoder/mcp-shodan",
+        "command": "mcp-shodan",
+        "baseArgs": [],
+        "env": {
+            "SHODAN_API_KEY": "your-shodan-api-key"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "SHODAN_API_KEY": {
+                    "type": "string",
+                    "description": "Shodan API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "virustotal",
+        "name": "VirusTotal MCP Server",
+        "description": "A Model Context Protocol (MCP) server for querying the VirusTotal API. This server provides comprehensive security analysis tools with automatic relationship data fetching.",
+        "tags": [
+            "virusotal",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/BurtTheCoder/mcp-virustotal",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "-g",
+            "@burtthecoder/mcp-virustotal"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "VIRUSTOTAL_API_KEY": {
+                    "type": "string",
+                    "description": "A valid VirusTotal API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "VIRUSTOTAL_API_KEY": {
+                "type": "env",
+                "key": "VIRUSTOTAL_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "google-news",
+        "name": "Google News",
+        "description": "A Model Context Protocol (MCP) server implementation that provides Google News search capabilities via SerpAPI integration. Automatically categorizes news results and supports multiple languages and regions.",
+        "tags": [
+            "google",
+            "news",
+            "api"
+        ],
+        "repo": "https://github.com/ChanMeng666/server-google-news",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@chanmeng666/google-news-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "SERP_API_KEY": {
+                    "type": "string",
+                    "description": "SERP API Key",
+                    "required": true
+                },
+                "q": {
+                    "type": "string",
+                    "description": "Search query string",
+                    "required": true
+                },
+                "gl": {
+                    "type": "string",
+                    "description": "Country code (e.g., 'us', 'uk')",
+                    "required": false
+                },
+                "hl": {
+                    "type": "string",
+                    "description": "Language code (e.g., 'en', 'es')",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "SERP_API_KEY": {
+                "type": "env",
+                "key": "SERP_API_KEY"
+            },
+            "q": {
+                "type": "spread",
+                "position": 2
+            },
+            "gl": {
+                "type": "spread",
+                "position": 3
+            },
+            "hl": {
+                "type": "spread",
+                "position": 4
+            }
+        }
+    },
+    {
+        "id": "memorymesh",
+        "name": "MemoryMesh",
+        "description": "MemoryMesh is a knowledge graph server designed for AI models, with a focus on text-based RPGs and interactive storytelling. It helps AI maintain consistent, structured memory across conversations, enabling richer and more dynamic interactions.",
+        "tags": [
+            "knowledge-graph",
+            "ai",
+            "interactive-storytelling",
+            "rpg"
+        ],
+        "repo": "https://github.com/CheMiguel23/MemoryMesh",
+        "command": "npx",
+        "baseArgs": [
+            "@smithery/cli",
+            "install",
+            "memorymesh",
+            "--client",
+            "claude"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-clickhouse",
+        "name": "ClickHouse MCP Server",
+        "description": "An MCP server for ClickHouse.",
+        "tags": [],
+        "repo": "https://github.com/ClickHouse/mcp-clickhouse",
+        "command": "uv sync",
+        "baseArgs": [],
+        "env": {
+            "CLICKHOUSE_HOST": "<CLICKHOUSE_HOST>",
+            "CLICKHOUSE_PORT": "<CLICKHOUSE_PORT>",
+            "CLICKHOUSE_USER": "<CLICKHOUSE_USER>",
+            "CLICKHOUSE_PASSWORD": "<CLICKHOUSE_PASSWORD>"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "CLICKHOUSE_HOST": {
+                    "type": "string",
+                    "description": "The hostname of the ClickHouse server",
+                    "required": true
+                },
+                "CLICKHOUSE_PORT": {
+                    "type": "number",
+                    "description": "The port number of the ClickHouse server",
+                    "required": true
+                },
+                "CLICKHOUSE_USER": {
+                    "type": "string",
+                    "description": "The username for ClickHouse authentication",
+                    "required": true
+                },
+                "CLICKHOUSE_PASSWORD": {
+                    "type": "string",
+                    "description": "The password for ClickHouse authentication",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "CLICKHOUSE_HOST": {
+                "type": "env",
+                "key": "CLICKHOUSE_HOST"
+            },
+            "CLICKHOUSE_PORT": {
+                "type": "env",
+                "key": "CLICKHOUSE_PORT"
+            },
+            "CLICKHOUSE_USER": {
+                "type": "env",
+                "key": "CLICKHOUSE_USER"
+            },
+            "CLICKHOUSE_PASSWORD": {
+                "type": "env",
+                "key": "CLICKHOUSE_PASSWORD"
+            }
+        }
+    },
+    {
+        "id": "mcp-server-cloudflare",
+        "name": "Cloudflare MCP Server",
+        "description": "Model Context Protocol (MCP) is a standardized protocol for managing context between large language models (LLMs) and external systems. In this repository, we provide an installer as well as an MCP Server for Cloudflare's API.",
+        "tags": [
+            "cloudflare",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/cloudflare/mcp-server-cloudflare",
+        "command": "npx",
+        "baseArgs": [
+            "@cloudflare/mcp-server-cloudflare"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "llm-context",
+        "name": "LLM Context",
+        "description": "LLM Context is a tool that helps developers quickly inject relevant content from code/text projects into Large Language Model chat interfaces. It leverages .gitignore patterns for smart file selection and provides both a streamlined clipboard workflow using the command line and direct LLM integration through the Model Context Protocol (MCP).",
+        "tags": [
+            "ai",
+            "development",
+            "mcp"
+        ],
+        "repo": "https://github.com/cyberchitta/llm-context.py",
+        "command": "uv",
+        "baseArgs": [
+            "tool",
+            "install",
+            "llm-context"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "projectPath": {
+                    "type": "string",
+                    "description": "Path to the project directory",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "projectPath": {
+                "type": "env",
+                "key": "PROJECT_PATH"
+            }
+        }
+    },
+    {
+        "id": "notion_mcp",
+        "name": "Notion MCP Integration",
+        "description": "A simple Model Context Protocol (MCP) server that integrates with Notion's API to manage my personal todo list through Claude. This is a basic implementation tailored specifically for my minimalist todo list setup in Notion.",
+        "tags": [
+            "notion",
+            "mcp",
+            "api",
+            "todo"
+        ],
+        "repo": "https://github.com/danhilse/notion_mcp",
+        "command": "python",
+        "baseArgs": [
+            "-m",
+            "notion_mcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "NOTION_API_KEY": {
+                    "type": "string",
+                    "description": "Notion API Key",
+                    "required": true
+                },
+                "NOTION_DATABASE_ID": {
+                    "type": "string",
+                    "description": "ID of the Notion Database",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "NOTION_API_KEY": {
+                "type": "env",
+                "key": "NOTION_API_KEY"
+            },
+            "NOTION_DATABASE_ID": {
+                "type": "env",
+                "key": "NOTION_DATABASE_ID"
+            }
+        }
+    },
+    {
+        "id": "postman",
+        "name": "Postman MCP Server",
+        "description": "An MCP server that provides access to the Postman API, functionality based on the official OpenAPI specification.",
+        "tags": [
+            "postman",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/delano/postman-mcp-server",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/postman-api-server/build/index.js"
+        ],
+        "env": {
+            "POSTMAN_API_KEY": "CHANGEME"
+        },
+        "configurable": true
+    },
+    {
+        "id": "mysql_mcp_server",
+        "name": "MySQL MCP Server",
+        "description": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
+        "tags": [
+            "mysql",
+            "mcp",
+            "database"
+        ],
+        "repo": "https://github.com/designcomputer/mysql_mcp_server",
+        "command": "pip",
+        "baseArgs": [
+            "install",
+            "mysql-mcp-server"
+        ],
+        "env": {
+            "MYSQL_HOST": "localhost",
+            "MYSQL_USER": "your_username",
+            "MYSQL_PASSWORD": "your_password",
+            "MYSQL_DATABASE": "your_database"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "MYSQL_HOST": {
+                    "type": "string",
+                    "description": "MySQL host address",
+                    "required": true
+                },
+                "MYSQL_USER": {
+                    "type": "string",
+                    "description": "MySQL username",
+                    "required": true
+                },
+                "MYSQL_PASSWORD": {
+                    "type": "string",
+                    "description": "MySQL password",
+                    "required": true
+                },
+                "MYSQL_DATABASE": {
+                    "type": "string",
+                    "description": "MySQL database name",
+                    "required": true
+                }
+            }
+        }
+    },
+    {
+        "id": "trieve",
+        "name": "Trieve",
+        "description": "All-in-one solution for search, recommendations, and RAG",
+        "tags": [
+            "search",
+            "recommendations",
+            "RAG"
+        ],
+        "repo": "https://github.com/devflowinc/trieve",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@smithery/cli install trieve-mcp-server --client claude"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "LLM_API_KEY": {
+                    "type": "string",
+                    "description": "Your OpenAI API key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "LLM_API_KEY": {
+                "type": "env",
+                "key": "LLM_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "airtable",
+        "name": "Airtable MCP Server",
+        "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
+        "tags": [
+            "airtable",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/domdomegg/airtable-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "airtable-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Airtable Personal Access Token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "token": {
+                "type": "env",
+                "key": "AIRTABLE_PERSONAL_ACCESS_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "bigquery",
+        "name": "BigQuery MCP Server",
+        "description": "A server that lets your LLMs (like Claude) talk directly to your BigQuery data. Think of it as a friendly translator that sits between your AI assistant and your database, making sure they can chat securely and efficiently.",
+        "tags": [
+            "bigquery",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/ergut/mcp-bigquery-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@ergut/mcp-bigquery-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "projectId": {
+                    "type": "string",
+                    "description": "Your Google Cloud project ID",
+                    "required": true
+                },
+                "location": {
+                    "type": "string",
+                    "description": "BigQuery location (defaults to 'us-central1')",
+                    "required": false
+                },
+                "keyFile": {
+                    "type": "string",
+                    "description": "Path to service account key JSON file",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "projectId": {
+                "type": "arg",
+                "position": 2
+            },
+            "location": {
+                "type": "arg",
+                "position": 4
+            },
+            "keyFile": {
+                "type": "arg",
+                "position": 6
+            }
+        }
+    },
+    {
+        "id": "mcp-hn",
+        "name": "Hacker News MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides tools for fetching information from Hacker News.",
+        "tags": [
+            "hacker-news",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/erithwik/mcp-hn",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-hn"
+        ],
+        "configurable": false,
+        "configSchema": null,
+        "argsMapping": null
+    },
+    {
+        "id": "mcp-connect",
+        "name": "MCP Connect",
+        "description": "A tiny tool to enable cloud-based AI services to interact with local Stdio based MCP servers.",
+        "tags": [
+            "mcp",
+            "cloud-integration",
+            "protocol-translation"
+        ],
+        "repo": "https://github.com/EvalsOne/MCP-Connect",
+        "command": "npm",
+        "baseArgs": [
+            "run",
+            "start"
+        ],
+        "env": {
+            "AUTH_TOKEN": "optional_token",
+            "NGROK_AUTH_TOKEN": "your_ngrok_auth_token"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "port": {
+                    "type": "number",
+                    "description": "HTTP server port",
+                    "required": true,
+                    "default": 3000
+                },
+                "log_level": {
+                    "type": "string",
+                    "description": "Logging level",
+                    "required": true,
+                    "default": "info"
+                }
+            }
+        },
+        "argsMapping": {
+            "port": {
+                "type": "env",
+                "key": "PORT"
+            },
+            "log_level": {
+                "type": "env",
+                "key": "LOG_LEVEL"
+            }
+        }
+    },
+    {
+        "id": "mcp-hfspace",
+        "name": "mcp-hfspace",
+        "description": "MCP Server for accessing and integrating Hugging Face Spaces capabilities.",
+        "tags": [
+            "mcp",
+            "server",
+            "huggingface",
+            "api"
+        ],
+        "repo": "https://github.com/evalstate/mcp-hfspace",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@llmindset/mcp-hfspace"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "workDir": {
+                    "type": "string",
+                    "description": "Specify the working directory for file handling.",
+                    "required": true
+                },
+                "token": {
+                    "type": "string",
+                    "description": "Hugging Face Token for accessing private spaces.",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "workDir": {
+                "type": "spread",
+                "position": 2
+            },
+            "token": {
+                "type": "env",
+                "key": "HF_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "mcp-miro",
+        "name": "MCP Miro",
+        "description": "A Model Context Protocol server to connect to the MIRO Whiteboard Application.",
+        "tags": [
+            "miro",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/evalstate/mcp-miro",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@llmindset/mcp-miro"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "MIRO OAuth Token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "token": {
+                "type": "env",
+                "key": "MIRO_OAUTH_KEY"
+            }
+        }
+    },
+    {
+        "id": "exa-mcp-server",
+        "name": "Exa MCP Server",
+        "description": "A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches.",
+        "tags": [
+            "mcp",
+            "ai",
+            "search"
+        ],
+        "repo": "https://github.com/exa-labs/exa-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@exa-labs/exa-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "EXA_API_KEY": {
+                    "type": "string",
+                    "description": "Exa API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "EXA_API_KEY": {
+                "type": "env",
+                "key": "EXA_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-playwright",
+        "name": "Playwright MCP Server",
+        "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright.",
+        "tags": [
+            "playwright",
+            "mcp",
+            "automation"
+        ],
+        "repo": "https://github.com/executeautomation/mcp-playwright",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@executeautomation/playwright-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mysql",
+        "name": "MCP MySQL Server",
+        "description": "A Model Context Protocol server that provides MySQL database operations. This server enables AI models to interact with MySQL databases through a standardized interface.",
+        "tags": [
+            "mysql",
+            "database",
+            "api"
+        ],
+        "repo": "https://github.com/f4ww4z/mcp-mysql-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@f4ww4z/mcp-mysql-server"
+        ],
+        "env": {
+            "MYSQL_HOST": "your_host",
+            "MYSQL_USER": "your_user",
+            "MYSQL_PASSWORD": "your_password",
+            "MYSQL_DATABASE": "your_database"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "host": {
+                    "type": "string",
+                    "description": "MySQL server host",
+                    "required": true
+                },
+                "user": {
+                    "type": "string",
+                    "description": "MySQL user",
+                    "required": true
+                },
+                "password": {
+                    "type": "string",
+                    "description": "MySQL user password",
+                    "required": true
+                },
+                "database": {
+                    "type": "string",
+                    "description": "Database name",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "host": {
+                "type": "env",
+                "key": "MYSQL_HOST"
+            },
+            "user": {
+                "type": "env",
+                "key": "MYSQL_USER"
+            },
+            "password": {
+                "type": "env",
+                "key": "MYSQL_PASSWORD"
+            },
+            "database": {
+                "type": "env",
+                "key": "MYSQL_DATABASE"
+            }
+        }
+    },
+    {
+        "id": "search1api",
+        "name": "Search1API MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
+        "tags": [
+            "search",
+            "web",
+            "crawl",
+            "API"
+        ],
+        "repo": "https://github.com/fatwang2/search1api-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "search1api-mcp"
+        ],
+        "env": {
+            "SEARCH1API_KEY": "YOUR_SEARCH1API_KEY"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "SEARCH1API_KEY": {
+                    "type": "string",
+                    "description": "Your API key for Search1API",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "genkit",
+        "name": "Genkit",
+        "description": "Genkit is a framework for building AI-powered applications. It provides open source libraries for Node.js and Go, along with tools to help you debug and iterate quickly.",
+        "tags": [
+            "ai",
+            "framework",
+            "nodejs",
+            "go"
+        ],
+        "repo": "https://github.com/firebase/genkit",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "-g",
+            "genkit"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-database-server",
+        "name": "MCP Database Server",
+        "description": "Model Context Protocol and Fireproof Demo: JSON Document Server",
+        "tags": [
+            "mcp",
+            "database",
+            "fireproof",
+            "json"
+        ],
+        "repo": "https://github.com/fireproof-storage/mcp-database-server",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "build"
+        ],
+        "env": {},
+        "configurable": false
+    },
+    {
+        "id": "kubernetes",
+        "name": "MCP Server Kubernetes",
+        "description": "MCP Server that can connect to a Kubernetes cluster and manage it.",
+        "tags": [
+            "kubernetes",
+            "mcp"
+        ],
+        "repo": "https://github.com/Flux159/mcp-server-kubernetes",
+        "command": "npx",
+        "baseArgs": [
+            "mcp-server-kubernetes"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-server-commands",
+        "name": "MCP Server Commands",
+        "description": "Server commands for MCP.",
+        "tags": [
+            "mcp",
+            "server",
+            "commands"
+        ],
+        "repo": "https://github.com/g0t4/mcp-server-commands",
+        "command": "npx",
+        "baseArgs": [
+            "mcp-server-commands"
+        ],
+        "env": {},
+        "configurable": false
+    },
+    {
+        "id": "mcp-difyworkflow-server",
+        "name": "MCP DifyWorkflow Server",
+        "description": "An MCP server Tools application that implements the query and invocation of Dify workflows, supporting the on-demand operation of multiple custom Dify workflows.",
+        "tags": [
+            "mcp",
+            "dify",
+            "workflow",
+            "server"
+        ],
+        "repo": "https://github.com/gotoolkits/mcp-difyworkflow-server",
+        "command": "mcp-difyworkflow-server",
+        "baseArgs": [
+            "-base-url",
+            "http://localhost/v1"
+        ],
+        "env": {
+            "DIFY_WORKFLOW_NAME": "workflow-translator,workflow-genImag",
+            "DIFY_API_KEYS": "appkey-xxxxxxxxxxxa,appkey-xxxxxxxxxxxb"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "base-url": {
+                    "type": "string",
+                    "description": "Base URL of the Dify platform API server",
+                    "required": true
+                },
+                "command": {
+                    "type": "string",
+                    "description": "Command to run the MCP Dify workflow server",
+                    "required": true
+                },
+                "DIFY_WORKFLOW_NAME": {
+                    "type": "string",
+                    "description": "Names of workflows to execute",
+                    "required": true
+                },
+                "DIFY_API_KEYS": {
+                    "type": "string",
+                    "description": "API keys for corresponding workflows",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "base-url": {
+                "type": "default",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "imessage-query",
+        "name": "iMessage Query MCP Server",
+        "description": "An MCP server that provides safe access to your iMessage database through Model Context Protocol (MCP). This server is built with the FastMCP framework and the imessagedb library, enabling LLMs to query and analyze iMessage conversations with proper phone number validation and attachment handling.",
+        "tags": [
+            "mcp",
+            "imessage",
+            "server"
+        ],
+        "repo": "https://github.com/hannesrudolph/imessage-query-fastmcp-mcp-server",
+        "command": "fastmcp",
+        "baseArgs": [
+            "install",
+            "imessage-query-server.py",
+            "--name",
+            "iMessage Query"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-ragdocs",
+        "name": "RAG Documentation MCP Server",
+        "description": "An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation context.",
+        "tags": [
+            "mcp",
+            "documentation",
+            "search",
+            "ai",
+            "vector"
+        ],
+        "repo": "https://github.com/hannesrudolph/mcp-ragdocs",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@hannesrudolph/mcp-ragdocs"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "OPENAI_API_KEY": {
+                    "type": "string",
+                    "description": "Your OpenAI API key for embeddings generation",
+                    "required": true
+                },
+                "QDRANT_URL": {
+                    "type": "string",
+                    "description": "URL of your Qdrant vector database instance",
+                    "required": true
+                },
+                "QDRANT_API_KEY": {
+                    "type": "string",
+                    "description": "API key for authenticating with Qdrant",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "OPENAI_API_KEY": {
+                "type": "env",
+                "key": "OPENAI_API_KEY"
+            },
+            "QDRANT_URL": {
+                "type": "env",
+                "key": "QDRANT_URL"
+            },
+            "QDRANT_API_KEY": {
+                "type": "env",
+                "key": "QDRANT_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "sqlite-explorer",
+        "name": "SQLite Explorer",
+        "description": "An MCP server that provides safe, read-only access to SQLite databases through Model Context Protocol (MCP). This server is built with the FastMCP framework, which enables LLMs to explore and query SQLite databases with built-in safety features and query validation.",
+        "tags": [
+            "sqlite",
+            "mcp",
+            "database"
+        ],
+        "repo": "https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server",
+        "command": "fastmcp",
+        "baseArgs": [
+            "install",
+            "sqlite_explorer.py",
+            "--name",
+            "SQLite Explorer",
+            "-e",
+            "SQLITE_DB_PATH=/path/to/db"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "SQLITE_DB_PATH": {
+                    "type": "string",
+                    "description": "Full path to the SQLite database file",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "SQLITE_DB_PATH": {
+                "type": "env",
+                "key": "SQLITE_DB_PATH"
+            }
+        }
+    },
+    {
+        "id": "box",
+        "name": "Box MCP Server",
+        "description": "A model context protocol server for Box integration.",
+        "tags": [
+            "box",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/hmk/box-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "box-mcp-server"
+        ],
+        "env": {
+            "BOX_DEV_TOKEN": "YOUR_DEV_TOKEN_GOES_HERE",
+            "BOX_JWT_CONFIG_PATH": "/path/to/your/box-jwt-config.json",
+            "BOX_USER_ID": "123456"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "BOX_DEV_TOKEN": {
+                    "type": "string",
+                    "description": "Box Developer Token for quick access",
+                    "required": true
+                },
+                "BOX_JWT_CONFIG_PATH": {
+                    "type": "string",
+                    "description": "Path to your JWT config JSON",
+                    "required": true
+                },
+                "BOX_USER_ID": {
+                    "type": "string",
+                    "description": "User ID for accessing files",
+                    "required": true
+                }
+            }
+        }
+    },
+    {
+        "id": "searxng",
+        "name": "SearxNG MCP Server",
+        "description": "An MCP server implementation that integrates the SearxNG API, providing web search capabilities.",
+        "tags": [
+            "search",
+            "API",
+            "mcp"
+        ],
+        "repo": "https://github.com/ihor-sokoliuk/mcp-searxng",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "<full path to mcp-searxng repo>/"
+        ],
+        "env": {
+            "SEARXNG_URL": "YOUR_SEARXNG_INSTANCE_URL"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "SEARXNG_URL": {
+                    "type": "string",
+                    "description": "URL of the SearxNG instance",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "url": {
+                "type": "env",
+                "key": "SEARXNG_URL"
+            }
+        }
+    },
+    {
+        "id": "mcp-langchain-ts-client",
+        "name": "MCP LangChain TS Client",
+        "description": "A LangChain.js client for Model Context Protocol. This is a port of rectalogic/langchain-mcp to the JS/TS LangChain and MCP APIs.",
+        "tags": [
+            "langchain",
+            "mcp",
+            "client"
+        ],
+        "repo": "https://github.com/isaacwasserman/mcp-langchain-ts-client",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "mcp-langchain-ts-client"
+        ],
+        "env": {},
+        "configurable": false
+    },
+    {
+        "id": "mcp-snowflake-server",
+        "name": "Snowflake MCP Server",
+        "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake. This server enables running SQL queries with tools and interacting with a memo of data insights presented as a resource.",
+        "tags": [
+            "mcp",
+            "snowflake",
+            "server"
+        ],
+        "repo": "https://github.com/isaacwasserman/mcp-snowflake-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@smithery/cli install mcp_snowflake_server --client claude"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "account": {
+                    "type": "string",
+                    "description": "The Snowflake account identifier",
+                    "required": true
+                },
+                "warehouse": {
+                    "type": "string",
+                    "description": "The Snowflake warehouse to use",
+                    "required": true
+                },
+                "user": {
+                    "type": "string",
+                    "description": "The Snowflake user account",
+                    "required": true
+                },
+                "password": {
+                    "type": "string",
+                    "description": "The password for the Snowflake user",
+                    "required": true
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The role to assume in Snowflake",
+                    "required": true
+                },
+                "database": {
+                    "type": "string",
+                    "description": "The Snowflake database to connect to",
+                    "required": true
+                },
+                "schema": {
+                    "type": "string",
+                    "description": "The Snowflake schema to use",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "account": {
+                "type": "env",
+                "key": "SNOWFLAKE_ACCOUNT"
+            },
+            "warehouse": {
+                "type": "env",
+                "key": "SNOWFLAKE_WAREHOUSE"
+            },
+            "user": {
+                "type": "env",
+                "key": "SNOWFLAKE_USER"
+            },
+            "password": {
+                "type": "env",
+                "key": "SNOWFLAKE_PASSWORD"
+            },
+            "role": {
+                "type": "env",
+                "key": "SNOWFLAKE_ROLE"
+            },
+            "database": {
+                "type": "env",
+                "key": "SNOWFLAKE_DATABASE"
+            },
+            "schema": {
+                "type": "env",
+                "key": "SNOWFLAKE_SCHEMA"
+            }
+        }
+    },
+    {
+        "id": "mcp-vegalite-server",
+        "name": "MCP VegaLite Server",
+        "description": "A Model Context Protocol (MCP) server implementation that provides the LLM an interface for visualizing data using Vega-Lite syntax.",
+        "tags": [
+            "data-visualization",
+            "vega-lite",
+            "mcp"
+        ],
+        "repo": "https://github.com/isaacwasserman/mcp-vegalite-server",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "/absolute/path/to/mcp-datavis-server",
+            "run",
+            "mcp_server_datavis",
+            "--output_type",
+            "png"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "contentful",
+        "name": "Contentful MCP Server",
+        "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
+        "tags": [
+            "contentful",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/ivo-toby/contentful-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@ivotoby/contentful-management-mcp-server"
+        ],
+        "env": {
+            "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN": "<Your CMA token>"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Contentful Management API Token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "token": {
+                "type": "env",
+                "key": "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "jetbrains",
+        "name": "JetBrains MCP Proxy Server",
+        "description": "The server proxies requests from client to JetBrains IDE.",
+        "tags": [
+            "jetbrains",
+            "mcp",
+            "proxy"
+        ],
+        "repo": "https://github.com/JetBrains/mcp-jetbrains",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@jetbrains/mcp-proxy"
+        ],
+        "env": {
+            "IDE_PORT": "<port of IDE's built-in webserver>",
+            "HOST": "<host/address of IDE's built-in webserver>",
+            "LOG_ENABLED": "true"
+        },
+        "configurable": true
+    },
+    {
+        "id": "fastmcp",
+        "name": "FastMCP",
+        "description": "The fast, Pythonic way to build MCP servers.",
+        "tags": [
+            "mcp",
+            "server",
+            "python"
+        ],
+        "repo": "https://github.com/jlowin/fastmcp",
+        "command": "fastmcp",
+        "baseArgs": [
+            "install",
+            "server.py"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "dependencies": {
+                    "type": "array",
+                    "description": "List of dependencies required for the server",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "dependencies": {
+                "type": "spread",
+                "position": 3
+            }
+        }
+    },
+    {
+        "id": "app-store-connect",
+        "name": "App Store Connect MCP Server",
+        "description": "A Model Context Protocol (MCP) server for interacting with the App Store Connect API. This server provides tools for managing apps, beta testers, bundle IDs, devices, and capabilities in App Store Connect.",
+        "tags": [
+            "app-store-connect",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/JoshuaRileyDev/app-store-connect-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@your-org/app-store-connect-mcp-server"
+        ],
+        "env": {
+            "APP_STORE_CONNECT_KEY_ID": "YOUR_KEY_ID",
+            "APP_STORE_CONNECT_ISSUER_ID": "YOUR_ISSUER_ID",
+            "APP_STORE_CONNECT_P8_PATH": "/path/to/your/auth-key.p8"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "keyId": {
+                    "type": "string",
+                    "description": "App Store Connect Key ID",
+                    "required": true
+                },
+                "issuerId": {
+                    "type": "string",
+                    "description": "App Store Connect Issuer ID",
+                    "required": true
+                },
+                "p8Path": {
+                    "type": "string",
+                    "description": "Path to the private key file",
+                    "required": true
+                }
+            }
+        }
+    },
+    {
+        "id": "mac-apps-launcher",
+        "name": "Mac Apps Launcher MCP Server",
+        "description": "A Model Context Protocol (MCP) server for launching and managing macOS applications.",
+        "tags": [
+            "macos",
+            "launcher",
+            "mcp"
+        ],
+        "repo": "https://github.com/JoshuaRileyDev/mac-apps-launcher",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@joshuarileydev/mac-apps-launcher-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "simulator",
+        "name": "iOS Simulator MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides programmatic control over iOS simulators. This server implements the MCP specification to expose simulator functionality through a standardized interface.",
+        "tags": [
+            "mcp",
+            "ios",
+            "simulator"
+        ],
+        "repo": "https://github.com/JoshuaRileyDev/simulator-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "y",
+            "@joshuarileydev/simulator-mcp-server"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "supabase",
+        "name": "Supabase MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides programmatic access to the Supabase Management API. This server allows AI models and other clients to manage Supabase projects and organizations through a standardized interface.",
+        "tags": [
+            "supabase",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/joshuaRileyDev/supabase-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "y",
+            "@joshuarileydev/supabase-mcp-server"
+        ],
+        "env": {
+            "SUPABASE_API_KEY": "API_KEY_HERE"
+        },
+        "configurable": true
+    },
+    {
+        "id": "mcp-zotero",
+        "name": "MCP Zotero",
+        "description": "A Model Context Protocol server for Zotero integration that allows Claude to interact with your Zotero library.",
+        "tags": [
+            "zotero",
+            "mcp",
+            "integration"
+        ],
+        "repo": "https://github.com/kaliaboi/mcp-zotero",
+        "command": "npx",
+        "baseArgs": [
+            "-g",
+            "mcp-zotero"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "ZOTERO_API_KEY": {
+                    "type": "string",
+                    "description": "Zotero API Key",
+                    "required": true
+                },
+                "ZOTERO_USER_ID": {
+                    "type": "string",
+                    "description": "Zotero User ID",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "ZOTERO_API_KEY": {
+                "type": "env",
+                "key": "ZOTERO_API_KEY"
+            },
+            "ZOTERO_USER_ID": {
+                "type": "env",
+                "key": "ZOTERO_USER_ID"
+            }
+        }
+    },
+    {
+        "id": "vikingdb",
+        "name": "VikingDB MCP server",
+        "description": "An MCP server for VikingDB store and search.",
+        "tags": [
+            "vikingdb",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/KashiwaByte/vikingdb-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "@smithery/cli",
+            "install",
+            "mcp-server-vikingdb",
+            "--client",
+            "claude"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "vikingdb_host": {
+                    "type": "string",
+                    "description": "The host to use for the VikingDB server.",
+                    "required": true
+                },
+                "vikingdb_region": {
+                    "type": "string",
+                    "description": "The region to use for the VikingDB server.",
+                    "required": true
+                },
+                "vikingdb_ak": {
+                    "type": "string",
+                    "description": "The Access Key to use for the VikingDB server.",
+                    "required": true
+                },
+                "vikingdb_sk": {
+                    "type": "string",
+                    "description": "The Secret Key to use for the VikingDB server.",
+                    "required": true
+                },
+                "collection_name": {
+                    "type": "string",
+                    "description": "The name of the collection to use.",
+                    "required": true
+                },
+                "index_name": {
+                    "type": "string",
+                    "description": "The name of the index to use.",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "vikingdb_host": {
+                "type": "env",
+                "key": "VIKINGDB_HOST"
+            },
+            "vikingdb_region": {
+                "type": "env",
+                "key": "VIKINGDB_REGION"
+            },
+            "vikingdb_ak": {
+                "type": "env",
+                "key": "VIKINGDB_AK"
+            },
+            "vikingdb_sk": {
+                "type": "env",
+                "key": "VIKINGDB_SK"
+            },
+            "collection_name": {
+                "type": "env",
+                "key": "COLLECTION_NAME"
+            },
+            "index_name": {
+                "type": "env",
+                "key": "INDEX_NAME"
+            }
+        }
+    },
+    {
+        "id": "bluesky",
+        "name": "Bluesky Context Server",
+        "description": "A simple MCP server that can enable MCP clients to query Bluesky instances.",
+        "tags": [],
+        "repo": "https://github.com/keturiosakys/bluesky-context-server",
+        "command": "/Users/laurynas-fp/.bun/bin/bun",
+        "baseArgs": [
+            "<path_to_this_directory>/bluesky-context-server/index.ts"
+        ],
+        "env": {
+            "BLUESKY_APP_KEY": "",
+            "BLUESKY_IDENTIFIER": ""
+        },
+        "configurable": false
+    },
+    {
+        "id": "mongodb",
+        "name": "MCP MongoDB Server",
+        "description": "A Model Context Protocol server that provides access to MongoDB databases. This server enables LLMs to inspect collection schemas and execute read-only queries.",
+        "tags": [
+            "mongodb",
+            "api",
+            "server"
+        ],
+        "repo": "https://github.com/kiliczsh/mcp-mongo-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "mcp-mongo-server",
+            "mongodb://muhammed:kilic@mongodb.localhost/sample_namespace"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "youtube-transcript",
+        "name": "YouTube Transcript Server",
+        "description": "A Model Context Protocol server that enables retrieval of transcripts from YouTube videos. This server provides direct access to video captions and subtitles through a simple interface.",
+        "tags": [
+            "youtube",
+            "transcript",
+            "api"
+        ],
+        "repo": "https://github.com/kimtaeyoon83/mcp-server-youtube-transcript",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@kimtaeyoon83/mcp-server-youtube-transcript"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "YouTube video URL or video ID",
+                    "required": true
+                },
+                "lang": {
+                    "type": "string",
+                    "description": "Language code for transcript",
+                    "default": "en",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "url": {
+                "type": "spread",
+                "position": 0
+            },
+            "lang": {
+                "type": "spread",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "mcp-aoai-web-browsing",
+        "name": "MCP AOAI Web Browsing",
+        "description": "MCP Server & Client implementation for using Azure OpenAI",
+        "tags": [
+            "mcp",
+            "azure",
+            "openai",
+            "web-browsing"
+        ],
+        "repo": "https://github.com/kimtth/mcp-aoai-web-browsing",
+        "command": "uv",
+        "baseArgs": [],
+        "configurable": false
+    },
+    {
+        "id": "duckdb",
+        "name": "MCP Server DuckDB",
+        "description": "A Model Context Protocol (MCP) server implementation for DuckDB, providing database interaction capabilities through MCP tools.",
+        "tags": [
+            "duckdb",
+            "mcp",
+            "database"
+        ],
+        "repo": "https://github.com/ktanaka101/mcp-server-duckdb",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-server-duckdb",
+            "--db-path",
+            "~/mcp-server-duckdb/data/data.db"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "db-path": {
+                    "type": "string",
+                    "description": "Path to the DuckDB database file",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "db-path": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "mcp-rs-template",
+        "name": "MCP Rust CLI server template",
+        "description": "mcp-rs-template is a simple application template that demonstrates how to implement MCP CLI server in Rust.",
+        "tags": [
+            "mcp",
+            "rust",
+            "cli",
+            "server",
+            "template"
+        ],
+        "repo": "https://github.com/linux-china/mcp-rs-template",
+        "command": "git",
+        "baseArgs": [
+            "clone",
+            "https://github.com/linux-china/mcp-rs-template.git"
+        ],
+        "env": {},
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "API_KEY": {
+                    "type": "string",
+                    "description": "API key for authentication",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "API_KEY": {
+                "type": "env",
+                "key": "API_KEY"
+            }
+        }
+    },
+    {
+        "id": "bigquery",
+        "name": "BigQuery MCP Server",
+        "description": "A Model Context Protocol server that provides access to BigQuery. This server enables LLMs to inspect database schemas and execute queries.",
+        "tags": [
+            "bigquery",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/LucasHild/mcp-server-bigquery",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "{{PATH_TO_REPO}}",
+            "run",
+            "mcp-server-bigquery",
+            "--project",
+            "{{GCP_PROJECT_ID}}",
+            "--location",
+            "{{GCP_LOCATION}}"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "project": {
+                    "type": "string",
+                    "description": "The GCP project ID.",
+                    "required": true
+                },
+                "location": {
+                    "type": "string",
+                    "description": "The GCP location (e.g. europe-west9).",
+                    "required": true
+                },
+                "dataset": {
+                    "type": "array",
+                    "description": "Only take specific BigQuery datasets into consideration.",
+                    "required": false,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "project": {
+                "type": "env",
+                "key": "GCP_PROJECT_ID"
+            },
+            "location": {
+                "type": "env",
+                "key": "GCP_LOCATION"
+            },
+            "dataset": {
+                "type": "spread",
+                "position": 6
+            }
+        }
+    },
+    {
+        "id": "everything-search",
+        "name": "Everything Search MCP Server",
+        "description": "An MCP server that provides fast file searching capabilities across Windows, macOS, and Linux. On Windows, it uses the Everything SDK. On macOS, it uses the built-in mdfind command. On Linux, it uses the locate/plocate command.",
+        "tags": [
+            "search",
+            "mcp"
+        ],
+        "repo": "https://github.com/mamertofabian/mcp-everything-search",
+        "command": "uv",
+        "baseArgs": [
+            "mcp-server-everything-search"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "EVERYTHING_SDK_PATH": {
+                    "type": "string",
+                    "description": "Path to the Everything SDK DLL",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "EVERYTHING_SDK_PATH": {
+                "type": "env",
+                "key": "EVERYTHING_SDK_PATH"
+            }
+        }
+    },
+    {
+        "id": "codemirror-mcp",
+        "name": "codemirror-mcp",
+        "description": "A CodeMirror extension that implements the Model Context Protocol (MCP) for resource mentions and prompt commands.",
+        "tags": [
+            "codemirror",
+            "mcp",
+            "protocol"
+        ],
+        "repo": "https://github.com/marimo-team/codemirror-mcp",
+        "command": "npm",
+        "baseArgs": [
+            "install",
+            "@marimo-team/codemirror-mcp",
+            "@modelcontextprotocol/sdk"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "filesystem",
+        "name": "Filesystem MCP Server",
+        "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
+        "tags": [
+            "filesystem",
+            "mcp"
+        ],
+        "repo": "https://github.com/mark3labs/mcp-filesystem-server",
+        "command": "go",
+        "baseArgs": [
+            "install",
+            "github.com/mark3labs/mcp-filesystem-server"
+        ],
+        "env": {},
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "args": {
+                    "type": "array",
+                    "description": "Allowed file system paths",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "args": {
+                "type": "spread",
+                "position": 0
+            }
+        }
+    },
+    {
+        "id": "mcp-go",
+        "name": "MCP Go",
+        "description": "A Go implementation of the Model Context Protocol (MCP), enabling seamless integration between LLM applications and external data sources and tools.",
+        "tags": [
+            "mcp",
+            "go",
+            "llm"
+        ],
+        "repo": "https://github.com/mark3labs/mcp-go",
+        "command": "go",
+        "baseArgs": [
+            "get",
+            "github.com/mark3labs/mcp-go"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcphost",
+        "name": "MCPHost",
+        "description": "A CLI host application that enables Large Language Models (LLMs) to interact with external tools through the Model Context Protocol (MCP). Currently supports both Claude 3.5 Sonnet and Ollama models.",
+        "tags": [
+            "cli",
+            "mcp",
+            "ai"
+        ],
+        "repo": "https://github.com/mark3labs/mcphost",
+        "command": "go",
+        "baseArgs": [
+            "install",
+            "github.com/mark3labs/mcphost@latest"
+        ],
+        "env": {
+            "ANTHROPIC_API_KEY": "your-api-key",
+            "OPENAI_API_KEY": "your-api-key"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "mcpServers": {
+                    "type": "object",
+                    "description": "Configuration for MCP servers",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "servers": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "mcp-gsuite",
+        "name": "MCP GSuite",
+        "description": "MCP server to interact with Google products.",
+        "tags": [
+            "google",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/MarkusPfundstein/mcp-gsuite",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "<dir_to>/mcp-gsuite",
+            "run",
+            "mcp-gsuite"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "gauth_file": {
+                    "type": "string",
+                    "description": "Path to the .gauth.json file containing OAuth2 client configuration",
+                    "required": false
+                },
+                "accounts_file": {
+                    "type": "string",
+                    "description": "Path to the .accounts.json file containing account information",
+                    "required": false
+                },
+                "credentials_dir": {
+                    "type": "string",
+                    "description": "Directory where OAuth credentials are stored",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "gauth_file": {
+                "type": "arg",
+                "position": 1
+            },
+            "accounts_file": {
+                "type": "arg",
+                "position": 2
+            },
+            "credentials_dir": {
+                "type": "arg",
+                "position": 3
+            }
+        }
+    },
+    {
+        "id": "mcp-obsidian",
+        "name": "MCP Obsidian",
+        "description": "MCP server to interact with Obsidian via the Local REST API community plugin.",
+        "tags": [
+            "obsidian",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/MarkusPfundstein/mcp-obsidian",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "<dir_to>/mcp-obsidian",
+            "run",
+            "mcp-obsidian"
+        ],
+        "env": {
+            "OBSIDIAN_API_KEY": "<YOUR_OBSIDIAN_API_KEY>"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "OBSIDIAN_API_KEY": {
+                    "type": "string",
+                    "description": "Obsidian REST API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "OBSIDIAN_API_KEY": {
+                "type": "env",
+                "key": "OBSIDIAN_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "screenpipe",
+        "name": "Screenpipe",
+        "description": "Library & platform to build, distribute, monetize AI apps that have the full context.",
+        "tags": [
+            "ai",
+            "platform",
+            "development"
+        ],
+        "repo": "https://github.com/mediar-ai/screenpipe",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@mediar-ai/screenpipe"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-golang",
+        "name": "MCP Golang",
+        "description": "mcp-golang is an unofficial implementation of the Model Context Protocol in Go. Write MCP servers in golang with a few lines of code.",
+        "tags": [
+            "golang",
+            "protocol"
+        ],
+        "repo": "https://github.com/metoro-io/mcp-golang",
+        "command": "go",
+        "baseArgs": [
+            "get",
+            "github.com/metoro-io/mcp-golang"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "metoro-mcp-server",
+        "name": "Metoro MCP Server",
+        "description": "This repository contains the Metoro MCP (Model Context Protocol) Server. This MCP Server allows you to interact with your Kubernetes cluster via the Claude Desktop App!",
+        "tags": [
+            "mcp",
+            "kubernetes",
+            "observability"
+        ],
+        "repo": "https://github.com/metoro-io/metoro-mcp-server",
+        "command": "go",
+        "baseArgs": [
+            "build",
+            "-o",
+            "metoro-mcp-server"
+        ],
+        "env": {
+            "METORO_AUTH_TOKEN": "<your auth token>",
+            "METORO_API_URL": "https://us-east.metoro.io"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "authToken": {
+                    "type": "string",
+                    "description": "Metoro Authentication Token",
+                    "required": true
+                },
+                "apiUrl": {
+                    "type": "string",
+                    "description": "API URL for Metoro",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "authToken": {
+                "type": "env",
+                "key": "METORO_AUTH_TOKEN"
+            },
+            "apiUrl": {
+                "type": "env",
+                "key": "METORO_API_URL"
+            }
+        }
+    },
+    {
+        "id": "raygun",
+        "name": "Raygun MCP Server",
+        "description": "MCP Server for Raygun's API V3 endpoints for interacting with your Crash Reporting and Real User Monitoring applications. This server provides comprehensive access to Raygun's API features through the Model Context Protocol.",
+        "tags": [
+            "raygun",
+            "api",
+            "monitoring"
+        ],
+        "repo": "https://github.com/MindscapeHQ/mcp-server-raygun",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@raygun.io/mcp-server-raygun"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "RAYGUN_PAT_TOKEN": {
+                    "type": "string",
+                    "description": "Your Raygun PAT token",
+                    "required": true
+                },
+                "SOURCEMAP_ALLOWED_DIRS": {
+                    "type": "string",
+                    "description": "Comma-separated list of directories allowed for source map operations",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "RAYGUN_PAT_TOKEN": {
+                "type": "env",
+                "key": "RAYGUN_PAT_TOKEN"
+            },
+            "SOURCEMAP_ALLOWED_DIRS": {
+                "type": "env",
+                "key": "SOURCEMAP_ALLOWED_DIRS"
+            }
+        }
+    },
+    {
+        "id": "cli-mcp-server",
+        "name": "CLI MCP Server",
+        "description": "A secure Model Context Protocol (MCP) server implementation for executing controlled command-line operations with comprehensive security features.",
+        "tags": [
+            "mcp",
+            "server",
+            "cli"
+        ],
+        "repo": "https://github.com/MladenSU/cli-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "@modelcontextprotocol/cli-mcp-server"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "ALLOWED_DIR": {
+                    "type": "string",
+                    "description": "Base directory for command execution (Required)",
+                    "required": true
+                },
+                "ALLOWED_COMMANDS": {
+                    "type": "string",
+                    "description": "Comma-separated list of allowed commands or 'all'",
+                    "default": "ls,cat,pwd"
+                },
+                "ALLOWED_FLAGS": {
+                    "type": "string",
+                    "description": "Comma-separated list of allowed flags or 'all'",
+                    "default": "-l,-a,--help"
+                },
+                "MAX_COMMAND_LENGTH": {
+                    "type": "integer",
+                    "description": "Maximum command string length",
+                    "default": 1024
+                },
+                "COMMAND_TIMEOUT": {
+                    "type": "integer",
+                    "description": "Command execution timeout (seconds)",
+                    "default": 30
+                }
+            }
+        },
+        "argsMapping": {
+            "ALLOWED_DIR": {
+                "type": "env",
+                "key": "ALLOWED_DIR"
+            },
+            "ALLOWED_COMMANDS": {
+                "type": "env",
+                "key": "ALLOWED_COMMANDS"
+            },
+            "ALLOWED_FLAGS": {
+                "type": "env",
+                "key": "ALLOWED_FLAGS"
+            },
+            "MAX_COMMAND_LENGTH": {
+                "type": "env",
+                "key": "MAX_COMMAND_LENGTH"
+            },
+            "COMMAND_TIMEOUT": {
+                "type": "env",
+                "key": "COMMAND_TIMEOUT"
+            }
+        }
+    },
+    {
+        "id": "godoc",
+        "name": "Godoc MCP",
+        "description": "A Model Context Protocol (MCP) server that provides efficient access to Go documentation.",
+        "tags": [
+            "go",
+            "documentation",
+            "mcp"
+        ],
+        "repo": "https://github.com/mrjoshuak/godoc-mcp",
+        "command": "go install",
+        "baseArgs": [
+            "github.com/mrjoshuak/godoc-mcp@latest"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "GOPATH": {
+                    "type": "string",
+                    "description": "Path to Go workspace",
+                    "required": true
+                },
+                "GOMODCACHE": {
+                    "type": "string",
+                    "description": "Path to Go module cache",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "GOPATH": {
+                "type": "env",
+                "key": "GOPATH"
+            },
+            "GOMODCACHE": {
+                "type": "env",
+                "key": "GOMODCACHE"
+            }
+        }
+    },
+    {
+        "id": "mcp-openai",
+        "name": "MCP OpenAI Server",
+        "description": "A Model Context Protocol (MCP) server that lets you seamlessly use OpenAI's models right from Claude.",
+        "tags": [
+            "openai",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/mzxrai/mcp-openai",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@mzxrai/mcp-openai@latest"
+        ],
+        "env": {
+            "OPENAI_API_KEY": "your-api-key-here (get one from https://platform.openai.com/api-keys)"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-webresearch",
+        "name": "MCP Web Research Server",
+        "description": "A Model Context Protocol (MCP) server for web research.",
+        "tags": [
+            "web-research",
+            "MCP",
+            "API"
+        ],
+        "repo": "https://github.com/mzxrai/mcp-webresearch",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@mzxrai/mcp-webresearch@latest"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "opendatamcp",
+        "name": "Open Data Model Context Protocol",
+        "description": "Connect Open Data to LLMs in minutes!",
+        "tags": [
+            "open-data",
+            "llm",
+            "api"
+        ],
+        "repo": "https://github.com/OpenDataMCP/OpenDataMCP",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/server-opendatamcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "dataSource": {
+                    "type": "string",
+                    "description": "The data source to connect to",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "dataSource": {
+                "type": "env",
+                "key": "OPEN_DATA_SOURCE"
+            }
+        }
+    },
+    {
+        "id": "openai-server",
+        "name": "OpenAI MCP Server",
+        "description": "Query OpenAI models directly from Claude using MCP protocol.",
+        "tags": [
+            "openai",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/pierrebrunelle/mcp-server-openai",
+        "command": "python",
+        "baseArgs": [
+            "-m",
+            "src.mcp_server_openai.server"
+        ],
+        "env": {
+            "PYTHONPATH": "C:/path/to/your/mcp-server-openai",
+            "OPENAI_API_KEY": "your-key-here"
+        },
+        "configurable": true
+    },
+    {
+        "id": "hn-server",
+        "name": "Hacker News MCP Server",
+        "description": "A Model Context Protocol (MCP) server that provides tools for fetching stories from Hacker News. This server parses the HTML content from news.ycombinator.com and provides structured data for different types of stories (top, new, ask, show, jobs).",
+        "tags": [
+            "hacker-news",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/pskill9/hn-server",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/hn-server/build/index.js"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Type of stories to fetch",
+                    "required": true,
+                    "enum": [
+                        "top",
+                        "new",
+                        "ask",
+                        "show",
+                        "jobs"
+                    ]
+                },
+                "limit": {
+                    "type": "number",
+                    "description": "Number of stories to return",
+                    "required": false,
+                    "minimum": 1,
+                    "maximum": 30,
+                    "default": 10
+                }
+            }
+        },
+        "argsMapping": {
+            "type": {
+                "type": "spread",
+                "position": 1
+            },
+            "limit": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "web-search",
+        "name": "Web Search MCP Server",
+        "description": "A Model Context Protocol (MCP) server that enables free web searching using Google search results, with no API keys required.",
+        "tags": [
+            "web",
+            "search",
+            "MCP"
+        ],
+        "repo": "https://github.com/pskill9/web-search",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/web-search/build/index.js"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query",
+                    "required": true
+                },
+                "limit": {
+                    "type": "number",
+                    "description": "Number of results to return (default: 5, max: 10)",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "query": {
+                "type": "literal",
+                "position": 0
+            },
+            "limit": {
+                "type": "literal",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "website-downloader",
+        "name": "Website Downloader MCP Server",
+        "description": "This MCP server provides a tool to download entire websites using wget. It preserves the website structure and converts links to work locally.",
+        "tags": [
+            "downloader",
+            "wget",
+            "webscraping"
+        ],
+        "repo": "https://github.com/pskill9/website-downloader",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/website-downloader/build/index.js"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the website to download",
+                    "required": true
+                },
+                "outputPath": {
+                    "type": "string",
+                    "description": "The directory where the website should be downloaded. Defaults to the current directory.",
+                    "required": false
+                },
+                "depth": {
+                    "type": "integer",
+                    "description": "Maximum depth level for recursive downloading. Defaults to infinite.",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "url": {
+                "type": "spread",
+                "position": 1
+            },
+            "outputPath": {
+                "type": "spread",
+                "position": 2
+            },
+            "depth": {
+                "type": "spread",
+                "position": 3
+            }
+        }
+    },
+    {
+        "id": "fastmcp",
+        "name": "FastMCP",
+        "description": "A TypeScript framework for building MCP servers capable of handling client sessions.",
+        "tags": [
+            "typescript",
+            "framework",
+            "mcp"
+        ],
+        "repo": "https://github.com/punkpeye/fastmcp",
+        "command": "npx",
+        "baseArgs": [
+            "fastmcp"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-proxy",
+        "name": "MCP Proxy",
+        "description": "A TypeScript SSE proxy for MCP servers that use stdio transport.",
+        "tags": [
+            "proxy",
+            "sse",
+            "typescript"
+        ],
+        "repo": "https://github.com/punkpeye/mcp-proxy",
+        "command": "npx",
+        "baseArgs": [
+            "mcp-proxy",
+            "--port",
+            "8080",
+            "--endpoint",
+            "/sse",
+            "tsx",
+            "server.js"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "any-chat-completions-mcp",
+        "name": "Any Chat Completions MCP",
+        "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API - OpenAI, Perplexity, Groq, xAI, PyroPrompts and more.",
+        "tags": [
+            "MCP",
+            "AI",
+            "OpenAI"
+        ],
+        "repo": "https://github.com/pyroprompts/any-chat-completions-mcp",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/any-chat-completions-mcp/build/index.js"
+        ],
+        "env": {
+            "AI_CHAT_KEY": "OPENAI_KEY",
+            "AI_CHAT_NAME": "OpenAI",
+            "AI_CHAT_MODEL": "gpt-4o",
+            "AI_CHAT_BASE_URL": "https://api.openai.com/v1"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "coincap-mcp",
+        "name": "Coincap MCP",
+        "description": "Allows you to query crypto information from coincap's public API - no API keys or registration required",
+        "tags": [
+            "crypto",
+            "api"
+        ],
+        "repo": "https://github.com/QuantGeekDev/coincap-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "coincap-mcp"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "docker-mcp",
+        "name": "Docker MCP",
+        "description": "A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.",
+        "tags": [
+            "docker",
+            "mcp",
+            "ai"
+        ],
+        "repo": "https://github.com/QuantGeekDev/docker-mcp",
+        "command": "uvx",
+        "baseArgs": [
+            "docker-mcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "project_name": {
+                    "type": "string",
+                    "description": "Name of the Docker project",
+                    "required": true
+                },
+                "compose_yaml": {
+                    "type": "string",
+                    "description": "Docker Compose YAML definition",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "project_name": {
+                "type": "key",
+                "key": "project_name"
+            },
+            "compose_yaml": {
+                "type": "key",
+                "key": "compose_yaml"
+            }
+        }
+    },
+    {
+        "id": "mcp-framework",
+        "name": "MCP Framework",
+        "description": "MCP is a framework for building Model Context Protocol (MCP) servers elegantly in TypeScript. MCP-Framework gives you architecture out of the box, with automatic directory-based discovery for tools, resources, and prompts. Use our powerful MCP abstractions to define tools, resources, or prompts in an elegant way. Our cli makes getting started with your own MCP server a breeze.",
+        "tags": [
+            "mcp",
+            "framework",
+            "typescript"
+        ],
+        "repo": "https://github.com/QuantGeekDev/mcp-framework",
+        "command": "npx",
+        "baseArgs": [
+            "mcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        }
+    },
+    {
+        "id": "mongodb",
+        "name": "MongoDB MCP Server for LLMS",
+        "description": "A Model Context Protocol (MCP) server that enables LLMs to interact directly with MongoDB databases. Query collections, inspect schemas, and manage data seamlessly through natural language.",
+        "tags": [
+            "mongodb",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/QuantGeekDev/mongo-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "mongo-mcp",
+            "mongodb://<username>:<password>@<host>:<port>/<database>?authSource=admin"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "connectionString": {
+                    "type": "string",
+                    "description": "MongoDB connection string",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "connectionString": {
+                "type": "args",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "ns-mcp-server",
+        "name": "NS Travel Information MCP Server",
+        "description": "An MCP server that provides access to NS (Dutch Railways) travel information.",
+        "tags": [
+            "ns",
+            "mcp",
+            "travel",
+            "information",
+            "api"
+        ],
+        "repo": "https://github.com/r-huijts/ns-mcp-server",
+        "command": "node",
+        "baseArgs": [
+            "/path/to/ns-server/build/index.js"
+        ],
+        "env": {
+            "NS_API_KEY": "your_api_key_here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "NS_API_KEY": {
+                    "type": "string",
+                    "description": "Your NS API key (required)",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "NS_API_KEY": {
+                "type": "env",
+                "key": "NS_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "rijksmuseum",
+        "name": "Rijksmuseum Amsterdam MCP Server",
+        "description": "This project implements a Model Context Protocol (MCP) server that interfaces with the Rijksmuseum API. It allows you to search for artworks, retrieve detailed information about specific artworks, access image tiles for artworks, and explore user-created collections from Amsterdam's famous Rijksmuseum.",
+        "tags": [
+            "rijksmuseum",
+            "mcp",
+            "api",
+            "artwork"
+        ],
+        "repo": "https://github.com/r-huijts/rijksmuseum-mcp",
+        "command": "node",
+        "baseArgs": [
+            "/absolute/path/to/build/index.js"
+        ],
+        "env": {
+            "RIJKSMUSEUM_API_KEY": "your-api-key-here"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "RIJKSMUSEUM_API_KEY": {
+                    "type": "string",
+                    "description": "Rijksmuseum API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "RIJKSMUSEUM_API_KEY": {
+                "type": "env",
+                "key": "RIJKSMUSEUM_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-server-data-exploration",
+        "name": "MCP Server for Data Exploration",
+        "description": "MCP Server is a versatile tool designed for interactive data exploration. Your personal Data Scientist assistant, turning complex datasets into clear, actionable insights.",
+        "tags": [
+            "data-exploration",
+            "mcp"
+        ],
+        "repo": "https://github.com/reading-plus-ai/mcp-server-data-exploration",
+        "command": "uv",
+        "baseArgs": [],
+        "configurable": false
+    },
+    {
+        "id": "langchain-mcp",
+        "name": "LangChain MCP",
+        "description": "Model Context Protocol tool calling support in LangChain.",
+        "tags": [
+            "model-context-protocol",
+            "langchain"
+        ],
+        "repo": "https://github.com/rectalogic/langchain-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "apple-shortcuts",
+        "name": "Apple Shortcuts MCP Server",
+        "description": "A Model Context Protocol (MCP) server that lets AI assistants like Claude control Apple Shortcuts automations.",
+        "tags": [
+            "apple",
+            "shortcuts",
+            "mcp"
+        ],
+        "repo": "https://github.com/recursechat/mcp-server-apple-shortcuts",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "mcp-server-apple-shortcuts"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "ancestry-mcp",
+        "name": "Ancestry MCP Server",
+        "description": "Python server implementing Model Context Protocol (MCP) for interactibility with .ged files (GEDCOM files, commonly seen on Ancestry.com)",
+        "tags": [
+            "ancestry",
+            "gedcom",
+            "mcp"
+        ],
+        "repo": "https://github.com/reeeeemo/ancestry-mcp",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@smithery/cli install mcp-server-ancestry --client claude"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-alchemy",
+        "name": "MCP Alchemy",
+        "description": "MCP Alchemy connects Claude Desktop directly to your databases, allowing it to help you explore and understand your database structure, assist in writing and validating SQL queries, display relationships between tables, analyze large datasets and create reports.",
+        "tags": [
+            "database",
+            "SQL",
+            "API",
+            "analysis"
+        ],
+        "repo": "https://github.com/runekaagaard/mcp-alchemy",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "/path/to/mcp-alchemy",
+            "run",
+            "server.py"
+        ],
+        "env": {
+            "DB_URL": "mysql+pymysql://root:secret@localhost/databasename"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "DB_URL": {
+                    "type": "string",
+                    "description": "SQLAlchemy database URL (required)",
+                    "required": true
+                },
+                "CLAUDE_LOCAL_FILES_PATH": {
+                    "type": "string",
+                    "description": "Directory for full result sets (optional)"
+                },
+                "EXECUTE_QUERY_MAX_CHARS": {
+                    "type": "integer",
+                    "description": "Maximum output length (optional, default 4000)"
+                }
+            }
+        },
+        "argsMapping": {
+            "DB_URL": {
+                "type": "env",
+                "key": "DB_URL"
+            }
+        }
+    },
+    {
+        "id": "wcgw",
+        "name": "WCGB",
+        "description": "Shell and Coding agent for Claude and Chatgpt",
+        "tags": [
+            "shell",
+            "coding",
+            "claude",
+            "chatgpt"
+        ],
+        "repo": "https://github.com/rusiaaman/wcgw",
+        "command": "uv",
+        "baseArgs": [
+            "tool",
+            "run",
+            "--from",
+            "wcgw@latest",
+            "--python",
+            "3.12",
+            "wcgw_mcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "modelcontextprotocol.net",
+        "name": "ModelContextProtocol.NET",
+        "description": "A C# SDK implementation of the Model Context Protocol (MCP), enabling seamless integration between AI models and development environments.",
+        "tags": [
+            "mcp",
+            "dotnet",
+            "sdk"
+        ],
+        "repo": "https://github.com/salty-flower/ModelContextProtocol.NET",
+        "command": "dotnet add package",
+        "baseArgs": [
+            "ModelContextProtocol.NET.Server"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "package-version",
+        "name": "Package Version MCP Server",
+        "description": "An MCP server that provides tools for checking latest stable package versions from multiple package registries.",
+        "tags": [
+            "package",
+            "version",
+            "mcp"
+        ],
+        "repo": "https://github.com/sammcj/mcp-package-version",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "mcp-package-version"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-bridge",
+        "name": "MCP-Bridge",
+        "description": "MCP-Bridge acts as a bridge between the OpenAI API and MCP tools, allowing developers to leverage MCP tools through the OpenAI API interface.",
+        "tags": [
+            "mcp",
+            "bridge",
+            "openai",
+            "api"
+        ],
+        "repo": "https://github.com/SecretiveShell/MCP-Bridge",
+        "command": "uv",
+        "baseArgs": [
+            "run",
+            "mcp_bridge/main.py"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "inference_server": {
+                    "type": "object",
+                    "properties": {
+                        "base_url": {
+                            "type": "string",
+                            "description": "The base URL for the inference server",
+                            "required": true
+                        },
+                        "api_key": {
+                            "type": "string",
+                            "description": "API key for the inference server",
+                            "required": false
+                        }
+                    }
+                },
+                "mcp_servers": {
+                    "type": "object",
+                    "description": "Configuration for MCP servers",
+                    "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                            "command": {
+                                "type": "string",
+                                "description": "Command to run the MCP server",
+                                "required": true
+                            },
+                            "args": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Arguments for the MCP server command",
+                                "required": true,
+                                "minItems": 1
+                            }
+                        }
+                    }
+                },
+                "network": {
+                    "type": "object",
+                    "properties": {
+                        "host": {
+                            "type": "string",
+                            "description": "Network host",
+                            "required": true
+                        },
+                        "port": {
+                            "type": "integer",
+                            "description": "Network port",
+                            "required": true
+                        }
+                    }
+                },
+                "logging": {
+                    "type": "object",
+                    "properties": {
+                        "log_level": {
+                            "type": "string",
+                            "description": "Logging level",
+                            "required": true
+                        }
+                    }
+                }
+            }
+        },
+        "argsMapping": {
+            "base_url": {
+                "type": "env",
+                "key": "INFERENCE_SERVER_BASE_URL"
+            },
+            "api_key": {
+                "type": "env",
+                "key": "INFERENCE_SERVER_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "mcp-searxng",
+        "name": "MCP-searxng",
+        "description": "An MCP server for connecting agentic systems to search systems via searXNG.",
+        "tags": [],
+        "repo": "https://github.com/SecretiveShell/MCP-searxng",
+        "command": "uv",
+        "baseArgs": [
+            "--project",
+            "/absoloute/path/to/MCP-searxng/",
+            "run",
+            "/absoloute/path/to/MCP-searxng/mcp-searxng/main.py"
+        ],
+        "configurable": true,
+        "configSchema": {},
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-timeserver",
+        "name": "MCP-timeserver",
+        "description": "A simple MCP server that exposes datetime information to agentic systems and chat REPLs",
+        "tags": [
+            "datetime",
+            "MCP",
+            "server"
+        ],
+        "repo": "https://github.com/SecretiveShell/MCP-timeserver",
+        "command": "uvx",
+        "baseArgs": [
+            "MCP-timeserver"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-wolfram-alpha",
+        "name": "MCP Wolfram Alpha",
+        "description": "A MCP server to connect to Wolfram Alpha API.",
+        "tags": [
+            "api",
+            "wolfram",
+            "mcp"
+        ],
+        "repo": "https://github.com/SecretiveShell/MCP-wolfram-alpha",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "C:\\Users\\root\\Documents\\MCP-wolfram-alpha",
+            "run",
+            "MCP-wolfram-alpha"
+        ],
+        "env": {
+            "WOLFRAM_API_KEY": "your-app-id"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "Wolfram Alpha API Key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "apiKey": {
+                "type": "env",
+                "key": "WOLFRAM_API_KEY"
+            }
+        }
+    },
+    {
+        "id": "unomi-server",
+        "name": "Inoyu Apache Unomi MCP Server",
+        "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
+        "tags": [
+            "unomi",
+            "mcp",
+            "apache",
+            "server"
+        ],
+        "repo": "https://github.com/sergehuber/inoyu-mcp-unomi-server",
+        "command": "npx",
+        "baseArgs": [
+            "@inoyu/mcp-unomi-server"
+        ],
+        "env": {
+            "UNOMI_BASE_URL": "http://your-unomi-server:8181",
+            "UNOMI_USERNAME": "your-username",
+            "UNOMI_PASSWORD": "your-password",
+            "UNOMI_PROFILE_ID": "your-profile-id",
+            "UNOMI_KEY": "your-unomi-key",
+            "UNOMI_EMAIL": "your-email@example.com",
+            "UNOMI_SOURCE_ID": "claude-desktop"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "UNOMI_BASE_URL": {
+                    "type": "string",
+                    "description": "Base URL for the Unomi server",
+                    "required": true
+                },
+                "UNOMI_USERNAME": {
+                    "type": "string",
+                    "description": "Username for Unomi",
+                    "required": true
+                },
+                "UNOMI_PASSWORD": {
+                    "type": "string",
+                    "description": "Password for Unomi",
+                    "required": true
+                },
+                "UNOMI_PROFILE_ID": {
+                    "type": "string",
+                    "description": "Profile ID for Unomi",
+                    "required": true
+                },
+                "UNOMI_KEY": {
+                    "type": "string",
+                    "description": "Key for Unomi authorized events",
+                    "required": true
+                },
+                "UNOMI_EMAIL": {
+                    "type": "string",
+                    "description": "Email associated with the profile",
+                    "required": true
+                },
+                "UNOMI_SOURCE_ID": {
+                    "type": "string",
+                    "description": "Source identifier for Unomi events",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "UNOMI_BASE_URL": {
+                "type": "env",
+                "key": "UNOMI_BASE_URL"
+            },
+            "UNOMI_USERNAME": {
+                "type": "env",
+                "key": "UNOMI_USERNAME"
+            },
+            "UNOMI_PASSWORD": {
+                "type": "env",
+                "key": "UNOMI_PASSWORD"
+            },
+            "UNOMI_PROFILE_ID": {
+                "type": "env",
+                "key": "UNOMI_PROFILE_ID"
+            },
+            "UNOMI_KEY": {
+                "type": "env",
+                "key": "UNOMI_KEY"
+            },
+            "UNOMI_EMAIL": {
+                "type": "env",
+                "key": "UNOMI_EMAIL"
+            },
+            "UNOMI_SOURCE_ID": {
+                "type": "env",
+                "key": "UNOMI_SOURCE_ID"
+            }
+        }
+    },
+    {
+        "id": "apple-notes-mcp",
+        "name": "Apple Notes Model Context Protocol Server for Claude Desktop",
+        "description": "Read your local Apple Notes database and provide it to Claude Desktop.",
+        "tags": [
+            "apple",
+            "notes",
+            "claude",
+            "mcp"
+        ],
+        "repo": "https://github.com/sirmews/apple-notes-mcp",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "{project_dir}",
+            "run",
+            "apple-notes-mcp"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-pinecone",
+        "name": "Pinecone Model Context Protocol Server for Claude Desktop",
+        "description": "Read and write to a Pinecone index.",
+        "tags": [
+            "pinecone",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/sirmews/mcp-pinecone",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "{project_dir}",
+            "run",
+            "mcp-pinecone"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "index_name": {
+                    "type": "string",
+                    "description": "Your index name for Pinecone",
+                    "required": true
+                },
+                "api_key": {
+                    "type": "string",
+                    "description": "Your secret API key for Pinecone",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "index_name": {
+                "type": "arg",
+                "position": 2
+            },
+            "api_key": {
+                "type": "arg",
+                "position": 4
+            }
+        }
+    },
+    {
+        "id": "mcp-obsidian",
+        "name": "Obsidian Model Context Protocol",
+        "description": "This is a connector to allow Claude Desktop (or any MCP client) to read and search any directory containing Markdown notes (such as an Obsidian vault).",
+        "tags": [
+            "markdown",
+            "mcp",
+            "obsidian",
+            "connector"
+        ],
+        "repo": "https://github.com/smithery-ai/mcp-obsidian",
+        "command": "npx",
+        "baseArgs": [
+            "@smithery/cli",
+            "install",
+            "mcp-obsidian",
+            "--client",
+            "claude"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "openapi-mcp-server",
+        "name": "OpenAPI MCP Server",
+        "description": "Talk to any OpenAPI (v3.1) compliant API through Claude Desktop!",
+        "tags": [
+            "openapi",
+            "mcp",
+            "api",
+            "server"
+        ],
+        "repo": "https://github.com/snaggle-ai/openapi-mcp-server",
+        "command": "npx",
+        "baseArgs": [
+            "openapi-mcp-server",
+            "/abs/path/to/petstore-openapi.json"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "openApiSpec": {
+                    "type": "string",
+                    "description": "Path to OpenAPI specification file",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "openApiSpec": {
+                "type": "string",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "mcp-atlassian",
+        "name": "MCP Atlassian",
+        "description": "Model Context Protocol (MCP) server for Atlassian Cloud products (Confluence and Jira). This integration is designed specifically for Atlassian Cloud instances and does not support Atlassian Server or Data Center deployments.",
+        "tags": [
+            "atlassian",
+            "mcp",
+            "integration",
+            "cloud"
+        ],
+        "repo": "https://github.com/sooperset/mcp-atlassian",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-atlassian"
+        ],
+        "env": {
+            "CONFLUENCE_URL": "https://your-domain.atlassian.net/wiki",
+            "CONFLUENCE_USERNAME": "your.email@domain.com",
+            "CONFLUENCE_API_TOKEN": "your_api_token",
+            "JIRA_URL": "https://your-domain.atlassian.net",
+            "JIRA_USERNAME": "your.email@domain.com",
+            "JIRA_API_TOKEN": "your_api_token"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "CONFLUENCE_URL": {
+                    "type": "string",
+                    "description": "The URL for the Confluence instance",
+                    "required": true
+                },
+                "CONFLUENCE_USERNAME": {
+                    "type": "string",
+                    "description": "The username for the Confluence instance",
+                    "required": true
+                },
+                "CONFLUENCE_API_TOKEN": {
+                    "type": "string",
+                    "description": "The API token for Confluence authentication",
+                    "required": true
+                },
+                "JIRA_URL": {
+                    "type": "string",
+                    "description": "The URL for the Jira instance",
+                    "required": true
+                },
+                "JIRA_USERNAME": {
+                    "type": "string",
+                    "description": "The username for Jira",
+                    "required": true
+                },
+                "JIRA_API_TOKEN": {
+                    "type": "string",
+                    "description": "The API token for Jira authentication",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "CONFLUENCE_URL": {
+                "type": "env",
+                "key": "CONFLUENCE_URL"
+            },
+            "CONFLUENCE_USERNAME": {
+                "type": "env",
+                "key": "CONFLUENCE_USERNAME"
+            },
+            "CONFLUENCE_API_TOKEN": {
+                "type": "env",
+                "key": "CONFLUENCE_API_TOKEN"
+            },
+            "JIRA_URL": {
+                "type": "env",
+                "key": "JIRA_URL"
+            },
+            "JIRA_USERNAME": {
+                "type": "env",
+                "key": "JIRA_USERNAME"
+            },
+            "JIRA_API_TOKEN": {
+                "type": "env",
+                "key": "JIRA_API_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "foxy-contexts",
+        "name": "Foxy Contexts",
+        "description": "Foxy contexts is a Golang library for building context servers supporting Model Context Protocol.",
+        "tags": [
+            "golang",
+            "mcp",
+            "library"
+        ],
+        "repo": "https://github.com/strowk/foxy-contexts",
+        "command": "npx",
+        "baseArgs": [
+            "@modelcontextprotocol/inspector"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-k8s",
+        "name": "MCP K8S Go",
+        "description": "Golang-based MCP server connecting to Kubernetes",
+        "tags": [
+            "kubernetes",
+            "golang",
+            "mcp"
+        ],
+        "repo": "https://github.com/strowk/mcp-k8s-go",
+        "command": "npx",
+        "baseArgs": [
+            "@strowk/mcp-k8s"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "kubeconfig": {
+                    "type": "string",
+                    "description": "Path to your Kubernetes configuration file",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "kubeconfig": {
+                "type": "env",
+                "key": "KUBECONFIG"
+            }
+        }
+    },
+    {
+        "id": "notion",
+        "name": "Notion MCP Server",
+        "description": "MCP Server for the Notion API, enabling Claude to interact with Notion workspaces.",
+        "tags": [
+            "notion",
+            "api",
+            "mcp"
+        ],
+        "repo": "https://github.com/suekou/mcp-notion-server",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@suekou/mcp-notion-server"
+        ],
+        "env": {
+            "NOTION_API_TOKEN": "your-integration-token"
+        },
+        "configurable": true
+    },
+    {
+        "id": "perplexity",
+        "name": "Perplexity MCP Server",
+        "description": "MCP Server for the Perplexity API.",
+        "tags": [
+            "perplexity",
+            "API"
+        ],
+        "repo": "https://github.com/tanigami/mcp-server-perplexity",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-server-perplexity"
+        ],
+        "env": {
+            "PERPLEXITY_API_KEY": "your-perplexity-api-key"
+        },
+        "configurable": true
+    },
+    {
+        "id": "homeassistant",
+        "name": "Home Assistant MCP",
+        "description": "A Model Context Protocol Server for Home Assistant",
+        "tags": [
+            "home-assistant",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/tevonsb/homeassistant-mcp",
+        "command": "node",
+        "baseArgs": [
+            "/Users/tevonsb/Desktop/mcp/dist/index.js"
+        ],
+        "env": {
+            "TOKEN": "<home_assistant_token>",
+            "BASE_URL": "<base_url_for_home_assistant>"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Home Assistant access token",
+                    "required": true
+                },
+                "baseUrl": {
+                    "type": "string",
+                    "description": "Base URL for Home Assistant",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "token": {
+                "type": "env",
+                "key": "HOME_ASSISTANT_TOKEN"
+            },
+            "baseUrl": {
+                "type": "env",
+                "key": "HOME_ASSISTANT_BASE_URL"
+            }
+        }
+    },
+    {
+        "id": "mcp-tinybird",
+        "name": "MCP Tinybird",
+        "description": "An MCP server to interact with a Tinybird Workspace from any MCP client.",
+        "tags": [
+            "tinybird",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/tinybirdco/mcp-tinybird",
+        "command": "uv",
+        "baseArgs": [
+            "mcp-tinybird"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "TB_API_URL": {
+                    "type": "string",
+                    "description": "Tinybird API URL",
+                    "required": true
+                },
+                "TB_ADMIN_TOKEN": {
+                    "type": "string",
+                    "description": "Tinybird Admin Token",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "TB_API_URL": {
+                "type": "env",
+                "key": "TB_API_URL"
+            },
+            "TB_ADMIN_TOKEN": {
+                "type": "env",
+                "key": "TB_ADMIN_TOKEN"
+            }
+        }
+    },
+    {
+        "id": "tavily-search",
+        "name": "Tavily Search MCP Server",
+        "description": "A MCP server project using the Tavily API to perform searches based on specified queries.",
+        "tags": [
+            "search",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/Tomatio13/mcp-server-tavily",
+        "command": "uv",
+        "baseArgs": [
+            "--directory",
+            "C:\\your_path\\mcp-server-tavily",
+            "run",
+            "tavily-search"
+        ],
+        "env": {
+            "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY",
+            "PYTHONIOENCODING": "utf-8"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Search query",
+                    "required": true
+                },
+                "search_depth": {
+                    "type": "string",
+                    "description": "Search depth (basic or advanced)",
+                    "enum": [
+                        "basic",
+                        "advanced"
+                    ]
+                }
+            }
+        },
+        "argsMapping": {
+            "query": {
+                "type": "mandatory"
+            },
+            "search_depth": {
+                "type": "optional"
+            }
+        }
+    },
+    {
+        "id": "mcp-shell-server",
+        "name": "MCP Shell Server",
+        "description": "A secure shell command execution server implementing the Model Context Protocol (MCP). This server allows remote execution of whitelisted shell commands with support for stdin input.",
+        "tags": [
+            "shell",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/tumf/mcp-shell-server",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-shell-server"
+        ],
+        "env": {
+            "ALLOW_COMMANDS": "ls,cat,pwd,grep,wc,touch,find"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "commands": {
+                    "type": "array",
+                    "description": "Allowed commands",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "commands": {
+                "type": "spread",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "gpt-computer-assistant",
+        "name": "GPT Computer Assistant",
+        "description": "An AI agent framework designed to make computer use across Windows, macOS, and Ubuntu.",
+        "tags": [
+            "ai",
+            "agent",
+            "gpt"
+        ],
+        "repo": "https://github.com/Upsonic/gpt-computer-assistant",
+        "command": "pip",
+        "baseArgs": [
+            "install",
+            "gpt-computer-assistant"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-pandoc",
+        "name": "MCP Pandoc",
+        "description": "A Model Context Protocol server for document format conversion using pandoc.",
+        "tags": [
+            "mcp",
+            "pandoc",
+            "conversion",
+            "api"
+        ],
+        "repo": "https://github.com/vivekVells/mcp-pandoc",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-pandoc"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-geo",
+        "name": "MCP Geo",
+        "description": "Geocoding MCP server with GeoPY!",
+        "tags": [
+            "geocoding",
+            "API",
+            "python"
+        ],
+        "repo": "https://github.com/webcoderz/MCP-Geo",
+        "command": "uv",
+        "baseArgs": [
+            "run",
+            "--with",
+            "fastmcp",
+            "fastmcp",
+            "run",
+            "MCP-Geo/geo.py"
+        ],
+        "env": {
+            "NOMINATIM_URL": "nominatim.openstreetmap.org"
+        },
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "GEOCODER_PROVIDER": {
+                    "type": "string",
+                    "description": "Geocoding service to use",
+                    "default": "nominatim"
+                },
+                "NOMINATIM_URL": {
+                    "type": "string",
+                    "description": "Domain for Nominatim",
+                    "default": "nominatim.openstreetmap.org"
+                },
+                "SCHEME": {
+                    "type": "string",
+                    "description": "HTTP scheme to use",
+                    "default": "http"
+                },
+                "ARC_USERNAME": {
+                    "type": "string",
+                    "description": "ArcGIS username",
+                    "required": false
+                },
+                "ARC_PASSWORD": {
+                    "type": "string",
+                    "description": "ArcGIS password",
+                    "required": false
+                },
+                "BING_API_KEY": {
+                    "type": "string",
+                    "description": "Bing Maps key",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "NOMINATIM_URL": {
+                "type": "env",
+                "key": "NOMINATIM_URL"
+            }
+        }
+    },
+    {
+        "id": "litemcp",
+        "name": "LiteMCP",
+        "description": "A TypeScript framework for building MCP (Model Context Protocol) servers elegantly",
+        "tags": [
+            "typescript",
+            "mcp",
+            "server"
+        ],
+        "repo": "https://github.com/wong2/litemcp",
+        "command": "npx",
+        "baseArgs": [
+            "litemcp",
+            "dev",
+            "server.js"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-cli",
+        "name": "MCP CLI",
+        "description": "A CLI inspector for the Model Context Protocol",
+        "tags": [
+            "cli",
+            "mcp",
+            "protocol"
+        ],
+        "repo": "https://github.com/wong2/mcp-cli",
+        "command": "npx",
+        "baseArgs": [
+            "@wong2/mcp-cli"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {}
+        },
+        "argsMapping": {}
+    },
+    {
+        "id": "mcp-datetime",
+        "name": "MCP Datetime",
+        "description": "A datetime formatting service implemented as an MCP server for the Claude Desktop Application. Supports generation of datetime strings in various formats.",
+        "tags": [
+            "datetime",
+            "mcp",
+            "api"
+        ],
+        "repo": "https://github.com/ZeparHyfar/mcp-datetime",
+        "command": "uvx",
+        "baseArgs": [
+            "mcp-datetime"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "format": {
+                    "type": "string",
+                    "description": "Datetime format to use",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "format": {
+                "type": "args",
+                "position": 1
+            }
+        }
+    },
+    {
+        "id": "mcp-manager",
+        "name": "MCP Manager for Claude Desktop",
+        "description": "A desktop application to manage Model Context Protocol (MCP) servers for the Claude Desktop app on MacOS. Just follow the instructions and paste a few commands to give your Claude app instant superpowers.",
+        "tags": [
+            "mcp",
+            "desktop",
+            "management"
+        ],
+        "repo": "https://github.com/zueai/mcp-manager",
+        "command": "bun",
+        "baseArgs": [
+            "install"
+        ],
+        "env": {},
+        "configurable": false,
+        "configSchema": null,
+        "argsMapping": null
+    },
+    {
+        "id": "amazon-bedrock",
+        "name": "Amazon Bedrock MCP Server",
+        "description": "A Model Control Protocol (MCP) server that integrates with Amazon Bedrock's Nova Canvas model for AI image generation.",
+        "tags": [
+            "amazon",
+            "mcp",
+            "ai",
+            "image-generation"
+        ],
+        "repo": "https://github.com/zxkane/mcp-server-amazon-bedrock",
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@zxkane/mcp-server-amazon-bedrock"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "AWS_PROFILE": {
+                    "type": "string",
+                    "description": "Optional: The AWS profile to use.",
+                    "required": false
+                },
+                "AWS_ACCESS_KEY_ID": {
+                    "type": "string",
+                    "description": "Optional: Your AWS access key ID.",
+                    "required": false
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "type": "string",
+                    "description": "Optional: Your AWS secret access key.",
+                    "required": false
+                },
+                "AWS_REGION": {
+                    "type": "string",
+                    "description": "Optional: The default AWS region to use (default: 'us-east-1').",
+                    "required": false
+                }
+            }
+        },
+        "argsMapping": {
+            "AWS_PROFILE": {
+                "type": "env",
+                "key": "AWS_PROFILE"
+            },
+            "AWS_ACCESS_KEY_ID": {
+                "type": "env",
+                "key": "AWS_ACCESS_KEY_ID"
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "type": "env",
+                "key": "AWS_SECRET_ACCESS_KEY"
+            },
+            "AWS_REGION": {
+                "type": "env",
+                "key": "AWS_REGION"
+            }
+        }
+    }
+]

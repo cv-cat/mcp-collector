@@ -1,0 +1,18 @@
+{
+    "id": "mcp-langchain-ts-client",
+    "name": "MCP LangChain TS Client",
+    "description": "A LangChain.js client for Model Context Protocol. This is a port of rectalogic/langchain-mcp to the JS/TS LangChain and MCP APIs.",
+    "tags": [
+        "langchain",
+        "mcp",
+        "client"
+    ],
+    "repo": "https://github.com/isaacwasserman/mcp-langchain-ts-client",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "mcp-langchain-ts-client"
+    ],
+    "env": {},
+    "configurable": false
+}

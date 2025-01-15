@@ -1,0 +1,15 @@
+{
+    "id": "python-sdk",
+    "name": "MCP Python SDK",
+    "description": "Python implementation of the Model Context Protocol (MCP)",
+    "tags": [
+        "mcp",
+        "python",
+        "sdk"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/python-sdk",
+    "command": "python",
+    "baseArgs": [],
+    "configurable": false,
+    "argsMapping": {}
+}

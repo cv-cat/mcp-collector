@@ -1,0 +1,19 @@
+{
+    "id": "genkit",
+    "name": "Genkit",
+    "description": "Genkit is a framework for building AI-powered applications. It provides open source libraries for Node.js and Go, along with tools to help you debug and iterate quickly.",
+    "tags": [
+        "ai",
+        "framework",
+        "nodejs",
+        "go"
+    ],
+    "repo": "https://github.com/firebase/genkit",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "-g",
+        "genkit"
+    ],
+    "configurable": false
+}

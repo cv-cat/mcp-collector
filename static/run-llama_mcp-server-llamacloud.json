@@ -1,0 +1,20 @@
+{
+    "id": "llamacloud",
+    "name": "LlamaCloud MCP Server",
+    "description": "A MCP server connecting to a managed index on LlamaCloud. This is a TypeScript-based MCP server that implements a connection to a managed index on LlamaCloud.",
+    "tags": [
+        "mcp",
+        "llamacloud"
+    ],
+    "repo": "https://github.com/run-llama/mcp-server-llamacloud",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/llamacloud/build/index.js"
+    ],
+    "env": {
+        "LLAMA_CLOUD_INDEX_NAME": "<YOUR_INDEX_NAME>",
+        "LLAMA_CLOUD_PROJECT_NAME": "<YOUR_PROJECT_NAME>",
+        "LLAMA_CLOUD_API_KEY": "<YOUR_API_KEY>"
+    },
+    "configurable": true
+}

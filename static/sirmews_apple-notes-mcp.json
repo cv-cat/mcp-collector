@@ -1,0 +1,20 @@
+{
+    "id": "apple-notes-mcp",
+    "name": "Apple Notes Model Context Protocol Server for Claude Desktop",
+    "description": "Read your local Apple Notes database and provide it to Claude Desktop.",
+    "tags": [
+        "apple",
+        "notes",
+        "claude",
+        "mcp"
+    ],
+    "repo": "https://github.com/sirmews/apple-notes-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "{project_dir}",
+        "run",
+        "apple-notes-mcp"
+    ],
+    "configurable": false
+}

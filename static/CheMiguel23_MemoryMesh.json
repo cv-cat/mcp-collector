@@ -1,0 +1,21 @@
+{
+    "id": "memorymesh",
+    "name": "MemoryMesh",
+    "description": "MemoryMesh is a knowledge graph server designed for AI models, with a focus on text-based RPGs and interactive storytelling. It helps AI maintain consistent, structured memory across conversations, enabling richer and more dynamic interactions.",
+    "tags": [
+        "knowledge-graph",
+        "ai",
+        "interactive-storytelling",
+        "rpg"
+    ],
+    "repo": "https://github.com/CheMiguel23/MemoryMesh",
+    "command": "npx",
+    "baseArgs": [
+        "@smithery/cli",
+        "install",
+        "memorymesh",
+        "--client",
+        "claude"
+    ],
+    "configurable": false
+}

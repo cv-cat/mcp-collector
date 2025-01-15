@@ -1,0 +1,59 @@
+{
+    "id": "mcp-postman",
+    "name": "Postman MCP Server",
+    "description": "An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.",
+    "tags": [
+        "postman",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/shannonlal/mcp-postman",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli install mcp-postman --client claude"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "collection": {
+                "type": "string",
+                "description": "Path or URL to the Postman collection",
+                "required": true
+            },
+            "environment": {
+                "type": "string",
+                "description": "Path or URL to environment file",
+                "required": false
+            },
+            "globals": {
+                "type": "string",
+                "description": "Path or URL to globals file",
+                "required": false
+            },
+            "iterationCount": {
+                "type": "integer",
+                "description": "Number of iterations to run",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "collection": {
+            "type": "spread",
+            "position": 1
+        },
+        "environment": {
+            "type": "spread",
+            "position": 2
+        },
+        "globals": {
+            "type": "spread",
+            "position": 3
+        },
+        "iterationCount": {
+            "type": "spread",
+            "position": 4
+        }
+    }
+}

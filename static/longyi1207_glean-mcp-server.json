@@ -1,0 +1,51 @@
+{
+    "id": "glean-server",
+    "name": "Glean MCP Server",
+    "description": "An MCP server implementation that integrates the Glean API, providing the Search and Chat functions.",
+    "tags": [
+        "mcp",
+        "api",
+        "server"
+    ],
+    "repo": "https://github.com/longyi1207/glean-mcp-server",
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GLEAN_API_KEY",
+        "-e",
+        "GLEAN_DOMAIN",
+        "glean-server"
+    ],
+    "env": {
+        "GLEAN_API_KEY": "YOUR_API_KEY_HERE",
+        "GLEAN_DOMAIN": "YOUR_DOMAIN_HERE"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GLEAN_API_KEY": {
+                "type": "string",
+                "description": "Your Glean API key",
+                "required": true
+            },
+            "GLEAN_DOMAIN": {
+                "type": "string",
+                "description": "Your Glean domain",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GLEAN_API_KEY": {
+            "type": "env",
+            "key": "GLEAN_API_KEY"
+        },
+        "GLEAN_DOMAIN": {
+            "type": "env",
+            "key": "GLEAN_DOMAIN"
+        }
+    }
+}

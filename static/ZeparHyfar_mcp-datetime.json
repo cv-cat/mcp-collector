@@ -1,0 +1,31 @@
+{
+    "id": "mcp-datetime",
+    "name": "MCP Datetime",
+    "description": "A datetime formatting service implemented as an MCP server for the Claude Desktop Application. Supports generation of datetime strings in various formats.",
+    "tags": [
+        "datetime",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/ZeparHyfar/mcp-datetime",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-datetime"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "format": {
+                "type": "string",
+                "description": "Datetime format to use",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "format": {
+            "type": "args",
+            "position": 1
+        }
+    }
+}

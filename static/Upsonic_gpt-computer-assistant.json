@@ -1,0 +1,17 @@
+{
+    "id": "gpt-computer-assistant",
+    "name": "GPT Computer Assistant",
+    "description": "An AI agent framework designed to make computer use across Windows, macOS, and Ubuntu.",
+    "tags": [
+        "ai",
+        "agent",
+        "gpt"
+    ],
+    "repo": "https://github.com/Upsonic/gpt-computer-assistant",
+    "command": "pip",
+    "baseArgs": [
+        "install",
+        "gpt-computer-assistant"
+    ],
+    "configurable": false
+}

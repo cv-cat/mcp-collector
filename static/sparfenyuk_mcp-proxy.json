@@ -1,0 +1,58 @@
+{
+    "id": "mcp-proxy",
+    "name": "MCP Proxy",
+    "description": "A tool that lets you switch between server transports.",
+    "tags": [
+        "proxy",
+        "server",
+        "transport",
+        "SSE",
+        "stdio"
+    ],
+    "repo": "https://github.com/sparfenyuk/mcp-proxy",
+    "command": "mcp-proxy",
+    "baseArgs": [],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "command_or_url": {
+                "type": "string",
+                "description": "The MCP server SSE endpoint or command to spawn the server",
+                "required": true
+            },
+            "--api-access-token": {
+                "type": "string",
+                "description": "Access token for API Authorization header",
+                "required": false
+            },
+            "--sse-port": {
+                "type": "number",
+                "description": "The SSE server port to listen on",
+                "required": false
+            },
+            "--sse-host": {
+                "type": "string",
+                "description": "The host IP address that the SSE server will listen on",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "command_or_url": {
+            "type": "positional",
+            "position": 0
+        },
+        "--api-access-token": {
+            "type": "env",
+            "key": "API_ACCESS_TOKEN"
+        },
+        "--sse-port": {
+            "type": "spread",
+            "position": 1
+        },
+        "--sse-host": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

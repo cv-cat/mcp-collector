@@ -1,0 +1,58 @@
+{
+    "id": "needle-mcp",
+    "name": "Needle MCP",
+    "description": "MCP (Model Context Protocol) server to manage documents and perform searches using Needle through Claude\u2019s Desktop Application.",
+    "tags": [
+        "mcp",
+        "needle",
+        "server",
+        "document-management"
+    ],
+    "repo": "https://github.com/JANHMS/needle-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/needle-mcp",
+        "run",
+        "needle-mcp"
+    ],
+    "env": {
+        "NEEDLE_API_KEY": "your_needle_api_key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "mcpServers": {
+                "type": "object",
+                "properties": {
+                    "needle_mcp": {
+                        "type": "object",
+                        "properties": {
+                            "command": {
+                                "type": "string",
+                                "description": "Command to run the MCP server",
+                                "required": true
+                            },
+                            "args": {
+                                "type": "array",
+                                "description": "Arguments to pass to the command",
+                                "required": true,
+                                "minItems": 1
+                            },
+                            "env": {
+                                "type": "object",
+                                "description": "Environment variables for the command"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "argsMapping": {
+        "NEEDLE_API_KEY": {
+            "type": "env",
+            "key": "NEEDLE_API_KEY"
+        }
+    }
+}

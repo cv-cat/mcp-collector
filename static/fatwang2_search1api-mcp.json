@@ -1,0 +1,31 @@
+{
+    "id": "search1api",
+    "name": "Search1API MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
+    "tags": [
+        "search",
+        "web",
+        "crawl",
+        "API"
+    ],
+    "repo": "https://github.com/fatwang2/search1api-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "search1api-mcp"
+    ],
+    "env": {
+        "SEARCH1API_KEY": "YOUR_SEARCH1API_KEY"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "SEARCH1API_KEY": {
+                "type": "string",
+                "description": "Your API key for Search1API",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {}
+}

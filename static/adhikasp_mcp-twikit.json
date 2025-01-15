@@ -1,0 +1,27 @@
+{
+    "id": "mcp-twikit",
+    "name": "MCP-Twikit",
+    "description": "A Model Context Protocol (MCP) server for interacting with Twitter.",
+    "tags": [
+        "twitter",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/adhikasp/mcp-twikit",
+    "command": "uvx",
+    "baseArgs": [
+        "--from",
+        "git+https://github.com/adhikasp/mcp-twikit",
+        "mcp-twikit"
+    ],
+    "env": {
+        "TWITTER_USERNAME": "@example",
+        "TWITTER_EMAIL": "me@example.com",
+        "TWITTER_PASSWORD": "secret"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

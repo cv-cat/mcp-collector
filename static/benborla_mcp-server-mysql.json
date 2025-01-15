@@ -1,0 +1,75 @@
+{
+    "id": "mcp-server-mysql",
+    "name": "MCP Server for MySQL",
+    "description": "A Model Context Protocol server that provides read-only access to MySQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.",
+    "tags": [
+        "mysql",
+        "server",
+        "api"
+    ],
+    "repo": "https://github.com/benborla/mcp-server-mysql",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@benborla29/mcp-server-mysql"
+    ],
+    "env": {
+        "MYSQL_HOST": "127.0.0.1",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "root",
+        "MYSQL_PASS": "",
+        "MYSQL_DB": "db_name"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "MYSQL_HOST": {
+                "type": "string",
+                "description": "MySQL host address",
+                "required": true
+            },
+            "MYSQL_PORT": {
+                "type": "string",
+                "description": "MySQL port number",
+                "required": true
+            },
+            "MYSQL_USER": {
+                "type": "string",
+                "description": "MySQL username",
+                "required": true
+            },
+            "MYSQL_PASS": {
+                "type": "string",
+                "description": "MySQL user password",
+                "required": false
+            },
+            "MYSQL_DB": {
+                "type": "string",
+                "description": "MySQL database name",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "MYSQL_HOST": {
+            "type": "env",
+            "key": "MYSQL_HOST"
+        },
+        "MYSQL_PORT": {
+            "type": "env",
+            "key": "MYSQL_PORT"
+        },
+        "MYSQL_USER": {
+            "type": "env",
+            "key": "MYSQL_USER"
+        },
+        "MYSQL_PASS": {
+            "type": "env",
+            "key": "MYSQL_PASS"
+        },
+        "MYSQL_DB": {
+            "type": "env",
+            "key": "MYSQL_DB"
+        }
+    }
+}

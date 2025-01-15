@@ -1,0 +1,17 @@
+{
+    "id": "awesome-crypto-mcp-servers",
+    "name": "Awesome Crypto MCP Servers",
+    "description": "A curated list of awesome Model Context Protocol (MCP) servers - Crypto Edition \ud83d\udd12",
+    "tags": [
+        "crypto",
+        "mcp",
+        "servers"
+    ],
+    "repo": "https://github.com/badkk/awesome-crypto-mcp-servers",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-awesome-crypto-mcp-servers"
+    ],
+    "configurable": false
+}

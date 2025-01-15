@@ -1,0 +1,27 @@
+{
+    "id": "wcgw",
+    "name": "WCGB",
+    "description": "Shell and Coding agent for Claude and Chatgpt",
+    "tags": [
+        "shell",
+        "coding",
+        "claude",
+        "chatgpt"
+    ],
+    "repo": "https://github.com/rusiaaman/wcgw",
+    "command": "uv",
+    "baseArgs": [
+        "tool",
+        "run",
+        "--from",
+        "wcgw@latest",
+        "--python",
+        "3.12",
+        "wcgw_mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

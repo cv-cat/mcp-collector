@@ -1,0 +1,30 @@
+{
+    "id": "chroma",
+    "name": "Chroma MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation that provides vector database capabilities through Chroma. This server enables semantic document search, metadata filtering, and document management with persistent storage.",
+    "tags": [
+        "mcp",
+        "vector-database",
+        "document-management"
+    ],
+    "repo": "https://github.com/privetin/chroma",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "C:/MCP/server/community/chroma",
+        "run",
+        "chroma"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "requirements": {
+                "type": "array",
+                "description": "Requirements for running the server",
+                "required": true,
+                "minItems": 3
+            }
+        }
+    },
+    "argsMapping": {}
+}

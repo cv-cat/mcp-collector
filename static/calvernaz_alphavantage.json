@@ -1,0 +1,36 @@
+{
+    "id": "alphavantage",
+    "name": "Alphavantage MCP Server",
+    "description": "A MCP server for the stock market data API, Alphavantage API.",
+    "tags": [
+        "api",
+        "financial"
+    ],
+    "repo": "https://github.com/calvernaz/alphavantage",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "<DIRECTORY>/alphavantage",
+        "run",
+        "alphavantage"
+    ],
+    "env": {
+        "ALPHAVANTAGE_API_KEY": "YOUR_API_KEY_HERE"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Alphavantage API key for authentication.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "ALPHAVANTAGE_API_KEY"
+        }
+    }
+}

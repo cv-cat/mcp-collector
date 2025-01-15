@@ -1,0 +1,36 @@
+{
+    "id": "mcphost",
+    "name": "MCPHost",
+    "description": "A CLI host application that enables Large Language Models (LLMs) to interact with external tools through the Model Context Protocol (MCP). Currently supports both Claude 3.5 Sonnet and Ollama models.",
+    "tags": [
+        "cli",
+        "mcp",
+        "ai"
+    ],
+    "repo": "https://github.com/mark3labs/mcphost",
+    "command": "go",
+    "baseArgs": [
+        "install",
+        "github.com/mark3labs/mcphost@latest"
+    ],
+    "env": {
+        "ANTHROPIC_API_KEY": "your-api-key",
+        "OPENAI_API_KEY": "your-api-key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "mcpServers": {
+                "type": "object",
+                "description": "Configuration for MCP servers",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "servers": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "id": "mcp-database-server",
+    "name": "MCP Database Server",
+    "description": "Model Context Protocol and Fireproof Demo: JSON Document Server",
+    "tags": [
+        "mcp",
+        "database",
+        "fireproof",
+        "json"
+    ],
+    "repo": "https://github.com/fireproof-storage/mcp-database-server",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "build"
+    ],
+    "env": {},
+    "configurable": false
+}

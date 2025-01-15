@@ -1,0 +1,31 @@
+{
+    "id": "mcp-k8s",
+    "name": "MCP K8S Go",
+    "description": "Golang-based MCP server connecting to Kubernetes",
+    "tags": [
+        "kubernetes",
+        "golang",
+        "mcp"
+    ],
+    "repo": "https://github.com/strowk/mcp-k8s-go",
+    "command": "npx",
+    "baseArgs": [
+        "@strowk/mcp-k8s"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "kubeconfig": {
+                "type": "string",
+                "description": "Path to your Kubernetes configuration file",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "kubeconfig": {
+            "type": "env",
+            "key": "KUBECONFIG"
+        }
+    }
+}

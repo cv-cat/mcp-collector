@@ -1,0 +1,15 @@
+{
+    "id": "mcp-aoai-web-browsing",
+    "name": "MCP AOAI Web Browsing",
+    "description": "MCP Server & Client implementation for using Azure OpenAI",
+    "tags": [
+        "mcp",
+        "azure",
+        "openai",
+        "web-browsing"
+    ],
+    "repo": "https://github.com/kimtth/mcp-aoai-web-browsing",
+    "command": "uv",
+    "baseArgs": [],
+    "configurable": false
+}

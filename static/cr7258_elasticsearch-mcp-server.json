@@ -1,0 +1,24 @@
+{
+    "id": "elasticsearch",
+    "name": "Elasticsearch MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation that provides Elasticsearch interaction. This server enables searching documents, analyzing indices, and managing cluster through a set of tools.",
+    "tags": [
+        "elasticsearch",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/cr7258/elasticsearch-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "path/to/elasticsearch_mcp_server/src",
+        "run",
+        "server.py"
+    ],
+    "env": {
+        "ELASTIC_HOST": "<your_elastic_url>",
+        "ELASTIC_USERNAME": "<your_elastic_username>",
+        "ELASTIC_PASSWORD": "<your_elastic_password>"
+    },
+    "configurable": true
+}

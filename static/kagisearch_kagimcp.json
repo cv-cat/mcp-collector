@@ -1,0 +1,31 @@
+{
+    "id": "kagimcp",
+    "name": "Kagi MCP",
+    "description": "Kagi MCP server",
+    "tags": [
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/kagisearch/kagimcp",
+    "command": "uv",
+    "baseArgs": [],
+    "env": {
+        "KAGI_API_KEY": "YOUR_API_KEY_HERE"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "directory": {
+                "type": "string",
+                "description": "Absolute path to parent folder",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "position",
+            "position": 1
+        }
+    }
+}

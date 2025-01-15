@@ -1,0 +1,19 @@
+{
+    "id": "mcp-manager",
+    "name": "MCP Manager for Claude Desktop",
+    "description": "A desktop application to manage Model Context Protocol (MCP) servers for the Claude Desktop app on MacOS. Just follow the instructions and paste a few commands to give your Claude app instant superpowers.",
+    "tags": [
+        "mcp",
+        "desktop",
+        "management"
+    ],
+    "repo": "https://github.com/zueai/mcp-manager",
+    "command": "bun",
+    "baseArgs": [
+        "install"
+    ],
+    "env": {},
+    "configurable": false,
+    "configSchema": null,
+    "argsMapping": null
+}

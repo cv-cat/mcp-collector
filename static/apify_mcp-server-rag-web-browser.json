@@ -1,0 +1,32 @@
+{
+    "id": "mcp-server-rag-web-browser",
+    "name": "MCP Server for the RAG Web Browser",
+    "description": "Model Context Protocol (MCP) Server for the RAG Web Browser Actor \ud83c\udf10",
+    "tags": [
+        "mcp",
+        "server",
+        "web-browser"
+    ],
+    "repo": "https://github.com/apify/mcp-server-rag-web-browser",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/mcp-server-rag-web-browser"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "APIFY_API_TOKEN": {
+                "type": "string",
+                "description": "Apify API Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "APIFY_API_TOKEN": {
+            "type": "env",
+            "key": "APIFY_API_TOKEN"
+        }
+    }
+}

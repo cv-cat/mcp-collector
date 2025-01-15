@@ -1,0 +1,85 @@
+{
+    "id": "mcp-atlassian",
+    "name": "MCP Atlassian",
+    "description": "Model Context Protocol (MCP) server for Atlassian Cloud products (Confluence and Jira). This integration is designed specifically for Atlassian Cloud instances and does not support Atlassian Server or Data Center deployments.",
+    "tags": [
+        "atlassian",
+        "mcp",
+        "integration",
+        "cloud"
+    ],
+    "repo": "https://github.com/sooperset/mcp-atlassian",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-atlassian"
+    ],
+    "env": {
+        "CONFLUENCE_URL": "https://your-domain.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your.email@domain.com",
+        "CONFLUENCE_API_TOKEN": "your_api_token",
+        "JIRA_URL": "https://your-domain.atlassian.net",
+        "JIRA_USERNAME": "your.email@domain.com",
+        "JIRA_API_TOKEN": "your_api_token"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "CONFLUENCE_URL": {
+                "type": "string",
+                "description": "The URL for the Confluence instance",
+                "required": true
+            },
+            "CONFLUENCE_USERNAME": {
+                "type": "string",
+                "description": "The username for the Confluence instance",
+                "required": true
+            },
+            "CONFLUENCE_API_TOKEN": {
+                "type": "string",
+                "description": "The API token for Confluence authentication",
+                "required": true
+            },
+            "JIRA_URL": {
+                "type": "string",
+                "description": "The URL for the Jira instance",
+                "required": true
+            },
+            "JIRA_USERNAME": {
+                "type": "string",
+                "description": "The username for Jira",
+                "required": true
+            },
+            "JIRA_API_TOKEN": {
+                "type": "string",
+                "description": "The API token for Jira authentication",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "CONFLUENCE_URL": {
+            "type": "env",
+            "key": "CONFLUENCE_URL"
+        },
+        "CONFLUENCE_USERNAME": {
+            "type": "env",
+            "key": "CONFLUENCE_USERNAME"
+        },
+        "CONFLUENCE_API_TOKEN": {
+            "type": "env",
+            "key": "CONFLUENCE_API_TOKEN"
+        },
+        "JIRA_URL": {
+            "type": "env",
+            "key": "JIRA_URL"
+        },
+        "JIRA_USERNAME": {
+            "type": "env",
+            "key": "JIRA_USERNAME"
+        },
+        "JIRA_API_TOKEN": {
+            "type": "env",
+            "key": "JIRA_API_TOKEN"
+        }
+    }
+}

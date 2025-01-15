@@ -1,0 +1,15 @@
+{
+    "id": "coincap-mcp",
+    "name": "Coincap MCP",
+    "description": "Allows you to query crypto information from coincap's public API - no API keys or registration required",
+    "tags": [
+        "crypto",
+        "api"
+    ],
+    "repo": "https://github.com/QuantGeekDev/coincap-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "coincap-mcp"
+    ],
+    "configurable": false
+}

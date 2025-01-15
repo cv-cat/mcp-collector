@@ -1,0 +1,22 @@
+{
+    "id": "alpha-vantage-mcp",
+    "name": "Alpha Vantage MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free Alpha Vantage API. This server implements a standardized interface for retrieving stock quotes and company information.",
+    "tags": [
+        "finance",
+        "api",
+        "stock"
+    ],
+    "repo": "https://github.com/berlinbra/alpha-vantage-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp",
+        "run",
+        "alpha-vantage-mcp"
+    ],
+    "env": {
+        "ALPHA_VANTAGE_API_KEY": "<insert api key>"
+    },
+    "configurable": false
+}

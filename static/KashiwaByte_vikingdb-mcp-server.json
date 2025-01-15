@@ -1,0 +1,80 @@
+{
+    "id": "vikingdb",
+    "name": "VikingDB MCP server",
+    "description": "An MCP server for VikingDB store and search.",
+    "tags": [
+        "vikingdb",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/KashiwaByte/vikingdb-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "@smithery/cli",
+        "install",
+        "mcp-server-vikingdb",
+        "--client",
+        "claude"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "vikingdb_host": {
+                "type": "string",
+                "description": "The host to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_region": {
+                "type": "string",
+                "description": "The region to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_ak": {
+                "type": "string",
+                "description": "The Access Key to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_sk": {
+                "type": "string",
+                "description": "The Secret Key to use for the VikingDB server.",
+                "required": true
+            },
+            "collection_name": {
+                "type": "string",
+                "description": "The name of the collection to use.",
+                "required": true
+            },
+            "index_name": {
+                "type": "string",
+                "description": "The name of the index to use.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "vikingdb_host": {
+            "type": "env",
+            "key": "VIKINGDB_HOST"
+        },
+        "vikingdb_region": {
+            "type": "env",
+            "key": "VIKINGDB_REGION"
+        },
+        "vikingdb_ak": {
+            "type": "env",
+            "key": "VIKINGDB_AK"
+        },
+        "vikingdb_sk": {
+            "type": "env",
+            "key": "VIKINGDB_SK"
+        },
+        "collection_name": {
+            "type": "env",
+            "key": "COLLECTION_NAME"
+        },
+        "index_name": {
+            "type": "env",
+            "key": "INDEX_NAME"
+        }
+    }
+}

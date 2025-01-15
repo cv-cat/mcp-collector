@@ -1,0 +1,26 @@
+{
+    "id": "any-chat-completions-mcp",
+    "name": "Any Chat Completions MCP",
+    "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API - OpenAI, Perplexity, Groq, xAI, PyroPrompts and more.",
+    "tags": [
+        "MCP",
+        "AI",
+        "OpenAI"
+    ],
+    "repo": "https://github.com/pyroprompts/any-chat-completions-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/any-chat-completions-mcp/build/index.js"
+    ],
+    "env": {
+        "AI_CHAT_KEY": "OPENAI_KEY",
+        "AI_CHAT_NAME": "OpenAI",
+        "AI_CHAT_MODEL": "gpt-4o",
+        "AI_CHAT_BASE_URL": "https://api.openai.com/v1"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

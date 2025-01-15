@@ -1,0 +1,22 @@
+{
+    "id": "mcp-server-docker",
+    "name": "MCP Server Docker",
+    "description": "An MCP server for managing Docker with natural language!",
+    "tags": [
+        "docker",
+        "mcp"
+    ],
+    "repo": "https://github.com/ckreiling/mcp-server-docker",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/repo",
+        "run",
+        "mcp-server-docker"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

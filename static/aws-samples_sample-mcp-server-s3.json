@@ -1,0 +1,52 @@
+{
+    "id": "s3-mcp-server",
+    "name": "Sample S3 Model Context Protocol Server",
+    "description": "An MCP server implementation for retrieving data such as PDF's from S3.",
+    "tags": [
+        "s3",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/aws-samples/sample-mcp-server-s3",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/user/generative_ai/model_context_protocol/s3-mcp-server",
+        "run",
+        "s3-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "awsAccessKeyId": {
+                "type": "string",
+                "description": "AWS Access Key ID",
+                "required": true
+            },
+            "awsSecretAccessKey": {
+                "type": "string",
+                "description": "AWS Secret Access Key",
+                "required": true
+            },
+            "region": {
+                "type": "string",
+                "description": "AWS Region",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "awsAccessKeyId": {
+            "type": "env",
+            "key": "AWS_ACCESS_KEY_ID"
+        },
+        "awsSecretAccessKey": {
+            "type": "env",
+            "key": "AWS_SECRET_ACCESS_KEY"
+        },
+        "region": {
+            "type": "env",
+            "key": "AWS_REGION"
+        }
+    }
+}

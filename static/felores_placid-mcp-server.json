@@ -1,0 +1,34 @@
+{
+    "id": "placid",
+    "name": "Placid.app MCP Server",
+    "description": "An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating creatives through the Model Context Protocol.",
+    "tags": [
+        "api",
+        "mcp",
+        "placid"
+    ],
+    "repo": "https://github.com/felores/placid-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "@felores/placid-mcp-server"
+    ],
+    "env": {
+        "PLACID_API_TOKEN": "your-api-token"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "PLACID_API_TOKEN": {
+                "type": "string",
+                "description": "Placid API Token to access the Placid service.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "PLACID_API_TOKEN": {
+            "type": "env",
+            "key": "PLACID_API_TOKEN"
+        }
+    }
+}

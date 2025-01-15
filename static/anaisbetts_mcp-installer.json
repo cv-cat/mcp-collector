@@ -1,0 +1,13 @@
+{
+    "id": "mcp-installer",
+    "name": "MCP Installer",
+    "description": "A MCP Server to install MCP Servers",
+    "tags": [],
+    "repo": "https://github.com/anaisbetts/mcp-installer",
+    "command": "npx",
+    "baseArgs": [
+        "@anaisbetts/mcp-installer"
+    ],
+    "env": {},
+    "configurable": false
+}

@@ -1,0 +1,17 @@
+{
+    "id": "package-version",
+    "name": "Package Version MCP Server",
+    "description": "An MCP server that provides tools for checking latest stable package versions from multiple package registries.",
+    "tags": [
+        "package",
+        "version",
+        "mcp"
+    ],
+    "repo": "https://github.com/sammcj/mcp-package-version",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "mcp-package-version"
+    ],
+    "configurable": false
+}

@@ -1,0 +1,32 @@
+{
+    "id": "trieve",
+    "name": "Trieve",
+    "description": "All-in-one solution for search, recommendations, and RAG",
+    "tags": [
+        "search",
+        "recommendations",
+        "RAG"
+    ],
+    "repo": "https://github.com/devflowinc/trieve",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli install trieve-mcp-server --client claude"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LLM_API_KEY": {
+                "type": "string",
+                "description": "Your OpenAI API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LLM_API_KEY": {
+            "type": "env",
+            "key": "LLM_API_KEY"
+        }
+    }
+}

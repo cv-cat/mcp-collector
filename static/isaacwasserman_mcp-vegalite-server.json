@@ -1,0 +1,21 @@
+{
+    "id": "mcp-vegalite-server",
+    "name": "MCP VegaLite Server",
+    "description": "A Model Context Protocol (MCP) server implementation that provides the LLM an interface for visualizing data using Vega-Lite syntax.",
+    "tags": [
+        "data-visualization",
+        "vega-lite",
+        "mcp"
+    ],
+    "repo": "https://github.com/isaacwasserman/mcp-vegalite-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/absolute/path/to/mcp-datavis-server",
+        "run",
+        "mcp_server_datavis",
+        "--output_type",
+        "png"
+    ],
+    "configurable": false
+}

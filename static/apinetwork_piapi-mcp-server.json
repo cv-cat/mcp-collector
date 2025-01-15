@@ -1,0 +1,31 @@
+{
+    "id": "piapi-mcp-server",
+    "name": "piapi-mcp-server",
+    "description": "A TypeScript implementation of a Model Context Protocol (MCP) server that integrates with PiAPI's API. PiAPI makes user able to generate media content with Midjourney/Flux/Kling/LumaLabs/Udio/Chrip/Trellis directly from Claude or any other MCP-compatible apps.",
+    "tags": [
+        "mcp",
+        "api",
+        "typescript"
+    ],
+    "repo": "https://github.com/apinetwork/piapi-mcp-server",
+    "command": "npm",
+    "baseArgs": [
+        "start"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "PIAPI_API_KEY": {
+                "type": "string",
+                "description": "A PiAPI API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "PIAPI_API_KEY": {
+            "type": "env",
+            "key": "PIAPI_API_KEY"
+        }
+    }
+}

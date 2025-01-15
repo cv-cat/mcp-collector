@@ -1,0 +1,33 @@
+{
+    "id": "mcp-xmind",
+    "name": "MCP XMind Server",
+    "description": "A Model Context Protocol server for analyzing and querying XMind mind maps. This tool provides powerful capabilities for searching, extracting, and analyzing content from XMind files.",
+    "tags": [
+        "xmind",
+        "analysis",
+        "extraction"
+    ],
+    "repo": "https://github.com/apeyroux/mcp-xmind",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@41px/mcp-xmind"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "allowedDirectories": {
+                "type": "array",
+                "description": "Allowed directories for access",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "allowedDirectories": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

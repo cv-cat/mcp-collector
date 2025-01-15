@@ -1,0 +1,101 @@
+{
+    "id": "minima",
+    "name": "Minima",
+    "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. Minima can also be used as a fully local RAG.",
+    "tags": [
+        "rag",
+        "containers",
+        "chatgpt",
+        "mcp"
+    ],
+    "repo": "https://github.com/dmayboroda/minima",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli",
+        "install",
+        "minima",
+        "--client",
+        "claude"
+    ],
+    "env": {},
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LOCAL_FILES_PATH": {
+                "type": "string",
+                "description": "Specify the root folder for indexing (on your cloud or local pc).",
+                "required": true
+            },
+            "EMBEDDING_MODEL_ID": {
+                "type": "string",
+                "description": "Specify the embedding model to use.",
+                "required": true
+            },
+            "EMBEDDING_SIZE": {
+                "type": "string",
+                "description": "Define the embedding dimension provided by the model.",
+                "required": true
+            },
+            "START_INDEXING": {
+                "type": "boolean",
+                "description": "Set true on initial startup to begin indexing.",
+                "required": true
+            },
+            "OLLAMA_MODEL": {
+                "type": "string",
+                "description": "Set up the Ollama model.",
+                "required": true
+            },
+            "RERANKER_MODEL": {
+                "type": "string",
+                "description": "Specify the reranker model.",
+                "required": true
+            },
+            "USER_ID": {
+                "type": "string",
+                "description": "Use your email here, needed for ChatGPT integration.",
+                "required": true
+            },
+            "PASSWORD": {
+                "type": "string",
+                "description": "Put any password here for account creation.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LOCAL_FILES_PATH": {
+            "type": "env",
+            "key": "LOCAL_FILES_PATH"
+        },
+        "EMBEDDING_MODEL_ID": {
+            "type": "env",
+            "key": "EMBEDDING_MODEL_ID"
+        },
+        "EMBEDDING_SIZE": {
+            "type": "env",
+            "key": "EMBEDDING_SIZE"
+        },
+        "START_INDEXING": {
+            "type": "env",
+            "key": "START_INDEXING"
+        },
+        "OLLAMA_MODEL": {
+            "type": "env",
+            "key": "OLLAMA_MODEL"
+        },
+        "RERANKER_MODEL": {
+            "type": "env",
+            "key": "RERANKER_MODEL"
+        },
+        "USER_ID": {
+            "type": "env",
+            "key": "USER_ID"
+        },
+        "PASSWORD": {
+            "type": "env",
+            "key": "PASSWORD"
+        }
+    }
+}

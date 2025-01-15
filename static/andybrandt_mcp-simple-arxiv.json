@@ -1,0 +1,17 @@
+{
+    "id": "mcp-simple-arxiv",
+    "name": "MCP Simple Arxiv",
+    "description": "An MCP server that provides access to arXiv papers through their API.",
+    "tags": [
+        "arxiv",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/andybrandt/mcp-simple-arxiv",
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "mcp_simple_arxiv"
+    ],
+    "configurable": false
+}

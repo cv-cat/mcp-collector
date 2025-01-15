@@ -1,0 +1,23 @@
+{
+    "id": "playwright-server",
+    "name": "Playwright Server",
+    "description": "A MCP server with playwright tools",
+    "tags": [
+        "playwright",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/blackwhite084/playwright-plus-python-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "C:\\Users\\xxxxx\\Documents\\project\\python\\mcp\\playwright-server",
+        "run",
+        "playwright-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

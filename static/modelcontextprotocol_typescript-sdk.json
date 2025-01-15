@@ -1,0 +1,18 @@
+{
+    "id": "typescript-sdk",
+    "name": "MCP TypeScript SDK",
+    "description": "TypeScript implementation of the Model Context Protocol (MCP), providing both client and server capabilities for integrating with LLM surfaces.",
+    "tags": [
+        "typescript",
+        "sdk",
+        "mcp"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/typescript-sdk",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "@modelcontextprotocol/sdk"
+    ],
+    "env": {},
+    "configurable": false
+}

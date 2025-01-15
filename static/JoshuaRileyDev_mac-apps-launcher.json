@@ -1,0 +1,21 @@
+{
+    "id": "mac-apps-launcher",
+    "name": "Mac Apps Launcher MCP Server",
+    "description": "A Model Context Protocol (MCP) server for launching and managing macOS applications.",
+    "tags": [
+        "macos",
+        "launcher",
+        "mcp"
+    ],
+    "repo": "https://github.com/JoshuaRileyDev/mac-apps-launcher",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@joshuarileydev/mac-apps-launcher-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

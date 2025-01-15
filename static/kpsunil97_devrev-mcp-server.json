@@ -1,0 +1,37 @@
+{
+    "id": "devrev",
+    "name": "DevRev MCP Server",
+    "description": "A Model Context Protocol server for DevRev. It is used to search and retrieve information using the DevRev APIs.",
+    "tags": [
+        "devrev",
+        "api",
+        "search"
+    ],
+    "repo": "https://github.com/kpsunil97/devrev-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "Path to src/devrev_mcp directory",
+        "run",
+        "devrev-mcp"
+    ],
+    "env": {
+        "DEVREV_API_KEY": "YOUR_DEVREV_API_KEY"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "DEVREV_API_KEY": {
+                "type": "string",
+                "description": "DevRev API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "DEVREV_API_KEY": {
+            "type": "env",
+            "key": "DEVREV_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "id": "rememberizer",
+    "name": "MCP Server Rememberizer",
+    "description": "A Model Context Protocol server for interacting with Rememberizer's document and knowledge management API.",
+    "tags": [
+        "mcp",
+        "rememberizer",
+        "api"
+    ],
+    "repo": "https://github.com/skydeckai/mcp-server-rememberizer",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli install mcp-server-rememberizer --client claude"
+    ],
+    "env": {
+        "REMEMBERIZER_API_TOKEN": "your_rememberizer_api_token"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "REMEMBERIZER_API_TOKEN": {
+                "type": "string",
+                "description": "Your Rememberizer API token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "REMEMBERIZER_API_TOKEN": {
+            "type": "env",
+            "key": "REMEMBERIZER_API_TOKEN"
+        }
+    }
+}

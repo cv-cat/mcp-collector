@@ -1,0 +1,51 @@
+{
+    "id": "all-in-one-model-context-protocol",
+    "name": "MyMCP Server",
+    "description": "A powerful Model Context Protocol (MCP) server implementation with integrations for GitLab, Jira, Confluence, YouTube, and more. This server provides AI-powered search capabilities and various utility tools for development workflows.",
+    "tags": [
+        "mcp",
+        "server",
+        "ai",
+        "integration"
+    ],
+    "repo": "https://github.com/nguyenvanduocit/all-in-one-model-context-protocol",
+    "command": "go",
+    "baseArgs": [
+        "install",
+        "github.com/nguyenvanduocit/all-in-one-model-context-protocol@latest"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "QDRANT_HOST": {
+                "type": "string",
+                "description": "QDRANT host URL",
+                "required": true
+            },
+            "GITLAB_HOST": {
+                "type": "string",
+                "description": "GitLab host URL",
+                "required": true
+            },
+            "OPENAI_API_KEY": {
+                "type": "string",
+                "description": "OpenAI API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "QDRANT_HOST": {
+            "type": "env",
+            "key": "QDRANT_HOST"
+        },
+        "GITLAB_HOST": {
+            "type": "env",
+            "key": "GITLAB_HOST"
+        },
+        "OPENAI_API_KEY": {
+            "type": "env",
+            "key": "OPENAI_API_KEY"
+        }
+    }
+}

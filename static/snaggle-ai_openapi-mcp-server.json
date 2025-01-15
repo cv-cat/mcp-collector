@@ -1,0 +1,33 @@
+{
+    "id": "openapi-mcp-server",
+    "name": "OpenAPI MCP Server",
+    "description": "Talk to any OpenAPI (v3.1) compliant API through Claude Desktop!",
+    "tags": [
+        "openapi",
+        "mcp",
+        "api",
+        "server"
+    ],
+    "repo": "https://github.com/snaggle-ai/openapi-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "openapi-mcp-server",
+        "/abs/path/to/petstore-openapi.json"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "openApiSpec": {
+                "type": "string",
+                "description": "Path to OpenAPI specification file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "openApiSpec": {
+            "type": "string",
+            "position": 1
+        }
+    }
+}

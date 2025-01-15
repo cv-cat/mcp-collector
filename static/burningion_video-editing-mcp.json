@@ -1,0 +1,32 @@
+{
+    "id": "video-editing-mcp",
+    "name": "Video Editing MCP",
+    "description": "Upload, edit, search, and generate videos from everyone's favorite LLM and Video Jungle.",
+    "tags": [
+        "video",
+        "editing",
+        "API"
+    ],
+    "repo": "https://github.com/burningion/video-editing-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "video-editor-mcp",
+        "YOURAPIKEY"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "API key for Video Jungle",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "arg",
+            "position": 1
+        }
+    }
+}

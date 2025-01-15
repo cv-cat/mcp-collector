@@ -1,0 +1,41 @@
+{
+    "id": "app-store-connect",
+    "name": "App Store Connect MCP Server",
+    "description": "A Model Context Protocol (MCP) server for interacting with the App Store Connect API. This server provides tools for managing apps, beta testers, bundle IDs, devices, and capabilities in App Store Connect.",
+    "tags": [
+        "app-store-connect",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/JoshuaRileyDev/app-store-connect-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@your-org/app-store-connect-mcp-server"
+    ],
+    "env": {
+        "APP_STORE_CONNECT_KEY_ID": "YOUR_KEY_ID",
+        "APP_STORE_CONNECT_ISSUER_ID": "YOUR_ISSUER_ID",
+        "APP_STORE_CONNECT_P8_PATH": "/path/to/your/auth-key.p8"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "keyId": {
+                "type": "string",
+                "description": "App Store Connect Key ID",
+                "required": true
+            },
+            "issuerId": {
+                "type": "string",
+                "description": "App Store Connect Issuer ID",
+                "required": true
+            },
+            "p8Path": {
+                "type": "string",
+                "description": "Path to the private key file",
+                "required": true
+            }
+        }
+    }
+}

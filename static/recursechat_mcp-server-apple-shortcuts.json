@@ -1,0 +1,21 @@
+{
+    "id": "apple-shortcuts",
+    "name": "Apple Shortcuts MCP Server",
+    "description": "A Model Context Protocol (MCP) server that lets AI assistants like Claude control Apple Shortcuts automations.",
+    "tags": [
+        "apple",
+        "shortcuts",
+        "mcp"
+    ],
+    "repo": "https://github.com/recursechat/mcp-server-apple-shortcuts",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "mcp-server-apple-shortcuts"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

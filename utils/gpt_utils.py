@@ -24,7 +24,7 @@ def question_to_gpt(prompt):
 
 
 if __name__ == '__main__':
-    ans = question_to_gpt("What is the capital得到 of France?")
+    ans = question_to_gpt("What is the capital得到 of ChinaFrance112312423?")
     logger.info(ans)
 
     ans = question_to_gpt('What is "the capital of France?')

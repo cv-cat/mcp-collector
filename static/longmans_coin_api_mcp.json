@@ -1,0 +1,34 @@
+{
+    "id": "coin_api_mcp",
+    "name": "Coin MCP Server",
+    "description": "A Model Context Protocol server that provides access to CoinMarketCap's cryptocurrency data. This server enables AI-powered applications to retrieve cryptocurrency listings, quotes, and detailed information about various coins.",
+    "tags": [
+        "cryptocurrency",
+        "api"
+    ],
+    "repo": "https://github.com/longmans/coin_api_mcp",
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "coin_api_mcp"
+    ],
+    "env": {
+        "COINMARKETCAP_API_KEY": "your_api_key_here"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "COINMARKETCAP_API_KEY": {
+                "type": "string",
+                "description": "CoinMarketCap API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "api-key": {
+            "type": "arg",
+            "position": 0
+        }
+    }
+}

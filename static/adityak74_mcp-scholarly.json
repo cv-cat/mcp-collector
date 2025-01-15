@@ -1,0 +1,34 @@
+{
+    "id": "mcp-scholarly",
+    "name": "mcp-scholarly",
+    "description": "A MCP server to search for accurate academic articles. More scholarly vendors will be added soon.",
+    "tags": [
+        "mcp",
+        "academic",
+        "search"
+    ],
+    "repo": "https://github.com/adityak74/mcp-scholarly",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/adityakarnam/PycharmProjects/mcp-scholarly/mcp-scholarly",
+        "run",
+        "mcp-scholarly"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "keyword": {
+                "type": "string",
+                "description": "The keyword to search for articles",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "keyword": {
+            "type": "arg",
+            "position": 1
+        }
+    }
+}

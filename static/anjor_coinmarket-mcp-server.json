@@ -1,0 +1,37 @@
+{
+    "id": "coinmarket-mcp-server",
+    "name": "Coinmarket MCP Server",
+    "description": "The server implements a few of the Coinmarket API endpoints",
+    "tags": [
+        "coinmarket",
+        "api",
+        "server"
+    ],
+    "repo": "https://github.com/anjor/coinmarket-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/anjor/repos/anjor/coinmarket_service",
+        "run",
+        "coinmarket_service"
+    ],
+    "env": {
+        "COINMARKET_API_KEY": ""
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "api_key": {
+                "type": "string",
+                "description": "Coinmarket API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "api_key": {
+            "type": "env",
+            "key": "COINMARKET_API_KEY"
+        }
+    }
+}

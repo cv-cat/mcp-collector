@@ -1,0 +1,43 @@
+{
+    "id": "mcp-pinecone",
+    "name": "Pinecone Model Context Protocol Server for Claude Desktop",
+    "description": "Read and write to a Pinecone index.",
+    "tags": [
+        "pinecone",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/sirmews/mcp-pinecone",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "{project_dir}",
+        "run",
+        "mcp-pinecone"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "index_name": {
+                "type": "string",
+                "description": "Your index name for Pinecone",
+                "required": true
+            },
+            "api_key": {
+                "type": "string",
+                "description": "Your secret API key for Pinecone",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "index_name": {
+            "type": "arg",
+            "position": 2
+        },
+        "api_key": {
+            "type": "arg",
+            "position": 4
+        }
+    }
+}

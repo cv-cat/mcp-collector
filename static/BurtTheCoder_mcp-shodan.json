@@ -1,0 +1,27 @@
+{
+    "id": "shodan",
+    "name": "Shodan MCP Server",
+    "description": "A Model Context Protocol (MCP) server for querying the Shodan API and Shodan CVEDB. This server provides comprehensive access to Shodan's network intelligence and security services, including IP reconnaissance, DNS operations, vulnerability tracking, and device discovery.",
+    "tags": [
+        "shodan",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/BurtTheCoder/mcp-shodan",
+    "command": "mcp-shodan",
+    "baseArgs": [],
+    "env": {
+        "SHODAN_API_KEY": "your-shodan-api-key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "SHODAN_API_KEY": {
+                "type": "string",
+                "description": "Shodan API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {}
+}

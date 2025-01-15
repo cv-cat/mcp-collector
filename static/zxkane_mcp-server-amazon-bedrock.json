@@ -1,0 +1,60 @@
+{
+    "id": "amazon-bedrock",
+    "name": "Amazon Bedrock MCP Server",
+    "description": "A Model Control Protocol (MCP) server that integrates with Amazon Bedrock's Nova Canvas model for AI image generation.",
+    "tags": [
+        "amazon",
+        "mcp",
+        "ai",
+        "image-generation"
+    ],
+    "repo": "https://github.com/zxkane/mcp-server-amazon-bedrock",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@zxkane/mcp-server-amazon-bedrock"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AWS_PROFILE": {
+                "type": "string",
+                "description": "Optional: The AWS profile to use.",
+                "required": false
+            },
+            "AWS_ACCESS_KEY_ID": {
+                "type": "string",
+                "description": "Optional: Your AWS access key ID.",
+                "required": false
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "type": "string",
+                "description": "Optional: Your AWS secret access key.",
+                "required": false
+            },
+            "AWS_REGION": {
+                "type": "string",
+                "description": "Optional: The default AWS region to use (default: 'us-east-1').",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "AWS_PROFILE": {
+            "type": "env",
+            "key": "AWS_PROFILE"
+        },
+        "AWS_ACCESS_KEY_ID": {
+            "type": "env",
+            "key": "AWS_ACCESS_KEY_ID"
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "type": "env",
+            "key": "AWS_SECRET_ACCESS_KEY"
+        },
+        "AWS_REGION": {
+            "type": "env",
+            "key": "AWS_REGION"
+        }
+    }
+}

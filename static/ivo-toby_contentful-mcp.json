@@ -1,0 +1,35 @@
+{
+    "id": "contentful",
+    "name": "Contentful MCP Server",
+    "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
+    "tags": [
+        "contentful",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/ivo-toby/contentful-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@ivotoby/contentful-management-mcp-server"
+    ],
+    "env": {
+        "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN": "<Your CMA token>"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "Contentful Management API Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "env",
+            "key": "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"
+        }
+    }
+}

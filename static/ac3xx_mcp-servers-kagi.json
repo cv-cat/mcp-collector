@@ -1,0 +1,37 @@
+{
+    "id": "kagi-server",
+    "name": "Kagi Server",
+    "description": "MCP server for Kagi API integration",
+    "tags": [
+        "kagi",
+        "api"
+    ],
+    "repo": "https://github.com/ac3xx/mcp-servers-kagi",
+    "command": "npx",
+    "baseArgs": [
+        "@smithery/cli",
+        "install",
+        "kagi-server",
+        "--client",
+        "claude"
+    ],
+    "env": {
+        "KAGI_API_KEY": "your_api_key_here"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "KAGI_API_KEY": {
+                "type": "string",
+                "description": "Kagi API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "KAGI_API_KEY": {
+            "type": "env",
+            "key": "KAGI_API_KEY"
+        }
+    }
+}
