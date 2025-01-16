@@ -1,0 +1,75 @@
+{
+    "id": "puppeteer",
+    "name": "Puppeteer",
+    "description": "A Model Context Protocol server that provides browser automation capabilities using Puppeteer. This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a real browser environment.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+    "tags": [
+        "automation",
+        "puppeteer",
+        "browser"
+    ],
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-i",
+        "--rm",
+        "--init",
+        "-e",
+        "DOCKER_CONTAINER=true",
+        "mcp/puppeteer"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "The URL to navigate to",
+                "required": true
+            },
+            "name": {
+                "type": "string",
+                "description": "Name for the screenshot",
+                "required": false
+            },
+            "selector": {
+                "type": "string",
+                "description": "CSS selector for element to screenshot",
+                "required": false
+            },
+            "width": {
+                "type": "number",
+                "description": "Screenshot width",
+                "required": false,
+                "default": 800
+            },
+            "height": {
+                "type": "number",
+                "description": "Screenshot height",
+                "required": false,
+                "default": 600
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 2
+        },
+        "name": {
+            "type": "single",
+            "position": 3
+        },
+        "selector": {
+            "type": "single",
+            "position": 4
+        },
+        "width": {
+            "type": "single",
+            "position": 5
+        },
+        "height": {
+            "type": "single",
+            "position": 6
+        }
+    }
+}

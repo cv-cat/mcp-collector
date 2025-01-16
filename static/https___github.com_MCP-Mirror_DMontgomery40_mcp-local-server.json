@@ -1,0 +1,37 @@
+{
+    "id": "birdnet",
+    "name": "BirdNet-Pi MCP Server",
+    "description": "A Python-based Model Context Protocol (MCP) server for BirdNet-Pi integration.",
+    "tags": [
+        "birdnet",
+        "mcp",
+        "server",
+        "python"
+    ],
+    "repo": "https://github.com/MCP-Mirror/DMontgomery40_mcp-local-server",
+    "command": "python",
+    "baseArgs": [
+        "server.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "BIRDNET_DETECTIONS_FILE": {
+                "type": "string",
+                "description": "Path to detections JSON file",
+                "required": false
+            },
+            "BIRDNET_AUDIO_DIR": {
+                "type": "string",
+                "description": "Path to audio files directory",
+                "required": false
+            },
+            "BIRDNET_REPORT_DIR": {
+                "type": "string",
+                "description": "Path to reports directory",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {}
+}

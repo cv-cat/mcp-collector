@@ -1,0 +1,42 @@
+{
+    "id": "huntress",
+    "name": "Huntress API MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides tools for interacting with the Huntress API.",
+    "tags": [
+        "huntress",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/MCP-Mirror/DynamicEndpoints_huntress-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "path/to/huntress-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "HUNTRESS_API_KEY": {
+                "type": "string",
+                "description": "Your Huntress API Key",
+                "required": true
+            },
+            "HUNTRESS_API_SECRET": {
+                "type": "string",
+                "description": "Your Huntress API Secret Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "env": {
+            "HUNTRESS_API_KEY": {
+                "type": "env",
+                "key": "HUNTRESS_API_KEY"
+            },
+            "HUNTRESS_API_SECRET": {
+                "type": "env",
+                "key": "HUNTRESS_API_SECRET"
+            }
+        }
+    }
+}

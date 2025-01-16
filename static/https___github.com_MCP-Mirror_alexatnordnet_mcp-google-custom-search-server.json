@@ -1,0 +1,41 @@
+{
+    "id": "google-search",
+    "name": "Google Custom Search",
+    "description": "A Model Context Protocol (MCP) server that provides web search capabilities through Google's Custom Search API. This server enables Language Learning Models (LLMs) to perform web searches using a standardized interface.",
+    "tags": [
+        "google",
+        "search",
+        "api"
+    ],
+    "repo": "https://github.com/MCP-Mirror/alexatnordnet_mcp-google-custom-search-server",
+    "command": "node",
+    "baseArgs": [
+        "/absolute/path/to/mcp-google-custom-search-server/build/index.js"
+    ],
+    "env": {},
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GOOGLE_API_KEY": {
+                "type": "string",
+                "description": "Your Google Custom Search API key",
+                "required": true
+            },
+            "GOOGLE_SEARCH_ENGINE_ID": {
+                "type": "string",
+                "description": "Your Custom Search Engine ID",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GOOGLE_API_KEY": {
+            "type": "env",
+            "key": "GOOGLE_API_KEY"
+        },
+        "GOOGLE_SEARCH_ENGINE_ID": {
+            "type": "env",
+            "key": "GOOGLE_SEARCH_ENGINE_ID"
+        }
+    }
+}

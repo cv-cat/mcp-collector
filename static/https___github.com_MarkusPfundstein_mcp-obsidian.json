@@ -1,0 +1,31 @@
+{
+    "id": "mcp-obsidian",
+    "name": "MCP for Obsidian",
+    "description": "MCP server to interact with Obsidian via the Local REST API community plugin.",
+    "repo": "https://github.com/MarkusPfundstein/mcp-obsidian",
+    "tags": [
+        "mcp",
+        "obsidian",
+        "api"
+    ],
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-obsidian"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "OBSIDIAN_API_KEY": {
+                "type": "string",
+                "description": "Obsidian REST API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "OBSIDIAN_API_KEY": {
+            "type": "env",
+            "key": "OBSIDIAN_API_KEY"
+        }
+    }
+}

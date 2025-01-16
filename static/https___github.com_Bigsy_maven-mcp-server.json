@@ -1,0 +1,40 @@
+{
+    "id": "maven-deps-server",
+    "name": "Maven Dependencies MCP Server",
+    "description": "An MCP (Model Context Protocol) server that provides tools for checking Maven dependency versions.",
+    "tags": [
+        "maven",
+        "dependencies",
+        "api"
+    ],
+    "repo": "https://github.com/Bigsy/maven-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/maven-deps-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "dependency": {
+                "type": "string",
+                "description": "Maven dependency in format \"groupId:artifactId\" (e.g. \"org.springframework:spring-core\")",
+                "required": true
+            },
+            "version": {
+                "type": "string",
+                "description": "Version to check (e.g. \"5.3.20\")",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "dependency": {
+            "type": "single",
+            "position": 0
+        },
+        "version": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

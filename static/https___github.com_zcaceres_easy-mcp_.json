@@ -1,0 +1,17 @@
+{
+    "id": "easy-mcp",
+    "name": "Easy MCP",
+    "description": "The simplest way to create Model Context Protocol (MCP) servers in TypeScript.",
+    "tags": [
+        "mcp",
+        "typescript",
+        "server"
+    ],
+    "repo": "https://github.com/zcaceres/easy-mcp",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "easy-mcp"
+    ],
+    "configurable": false
+}

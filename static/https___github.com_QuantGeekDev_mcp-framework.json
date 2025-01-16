@@ -1,0 +1,18 @@
+{
+    "id": "mcp-framework",
+    "name": "MCP Framework",
+    "description": "A framework for building Model Context Protocol (MCP) servers elegantly in TypeScript.",
+    "tags": [
+        "framework",
+        "typescript",
+        "mcp"
+    ],
+    "repo": "https://github.com/QuantGeekDev/mcp-framework",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "-g",
+        "mcp-framework"
+    ],
+    "configurable": false
+}

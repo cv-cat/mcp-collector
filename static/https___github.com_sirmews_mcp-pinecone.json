@@ -1,0 +1,44 @@
+{
+    "id": "mcp-pinecone",
+    "name": "Pinecone Model Context Protocol Server",
+    "description": "Read and write to a Pinecone index.",
+    "tags": [
+        "pinecone",
+        "model-context",
+        "server"
+    ],
+    "repo": "https://github.com/sirmews/mcp-pinecone",
+    "command": "uvx",
+    "baseArgs": [
+        "--index-name",
+        "{your-index-name}",
+        "--api-key",
+        "{your-secret-api-key}",
+        "mcp-pinecone"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "indexName": {
+                "type": "string",
+                "description": "The name of the Pinecone index",
+                "required": true
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "Your Pinecone API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "indexName": {
+            "type": "single",
+            "position": 1
+        },
+        "apiKey": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

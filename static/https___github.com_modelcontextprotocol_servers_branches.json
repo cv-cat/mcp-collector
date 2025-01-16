@@ -1,0 +1,60 @@
+{
+    "branches": {
+        "default": {
+            "name": "main",
+            "isDefault": true,
+            "mergeQueueEnabled": false,
+            "path": "/modelcontextprotocol/servers",
+            "protectedByBranchProtections": false,
+            "author": {
+                "login": "dsp-ant",
+                "name": "dsp-ant",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/167242713?s=32&v=4",
+                "path": "/dsp-ant"
+            },
+            "authoredDate": "2025-01-16T04:26:53.000+08:00",
+            "deleteable": false,
+            "deleteProtected": true,
+            "isBeingRenamed": false,
+            "renameable": false
+        },
+        "active": [
+            {
+                "name": "devin/1733957078-fix-linting-issues",
+                "isDefault": false,
+                "mergeQueueEnabled": false,
+                "path": "/modelcontextprotocol/servers/tree/devin/1733957078-fix-linting-issues",
+                "protectedByBranchProtections": false,
+                "author": {
+                    "login": "devin-ai-integration[bot]",
+                    "name": "devin-ai-integration",
+                    "avatarUrl": "https://avatars.githubusercontent.com/in/811515?s=32&v=4",
+                    "path": "/apps/devin-ai-integration"
+                },
+                "authoredDate": "2024-12-13T07:40:21.000+08:00",
+                "deleteable": true,
+                "deleteProtected": false,
+                "isBeingRenamed": false,
+                "renameable": false
+            },
+            {
+                "name": "jadamson/click-server",
+                "isDefault": false,
+                "mergeQueueEnabled": false,
+                "path": "/modelcontextprotocol/servers/tree/jadamson/click-server",
+                "protectedByBranchProtections": false,
+                "author": {
+                    "login": "jackadamson",
+                    "name": "jackadamson",
+                    "avatarUrl": "https://avatars.githubusercontent.com/u/7891953?s=32&v=4",
+                    "path": "/jackadamson"
+                },
+                "authoredDate": "2024-11-28T23:17:23.000+08:00",
+                "deleteable": true,
+                "deleteProtected": false,
+                "isBeingRenamed": false,
+                "renameable": false
+            }
+        ]
+    }
+}

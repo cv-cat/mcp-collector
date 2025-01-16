@@ -1,0 +1,34 @@
+{
+    "id": "ancestry",
+    "name": "Ancestry MCP Server",
+    "description": "Python server implementing Model Context Protocol (MCP) for interactibility with .ged files (GEDCOM files, commonly seen on Ancestry.com)",
+    "tags": [
+        "mcp",
+        "gedcom",
+        "ancestry"
+    ],
+    "repo": "https://github.com/reeeeemo/ancestry-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli",
+        "install",
+        "mcp-server-ancestry"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "gedcomPath": {
+                "type": "string",
+                "description": "Path to your .ged files",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "gedcomPath": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

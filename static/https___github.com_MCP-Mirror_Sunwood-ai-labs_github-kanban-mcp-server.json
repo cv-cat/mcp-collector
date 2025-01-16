@@ -1,0 +1,46 @@
+{
+    "id": "github-kanban",
+    "name": "GitHub Kanban MCP Server",
+    "description": "GitHub\u306eissue\u3092\u30ab\u30f3\u30d0\u30f3\u30dc\u30fc\u30c9\u5f62\u5f0f\u3067\u7ba1\u7406\u3057\u3001LLM\u306e\u30bf\u30b9\u30af\u7ba1\u7406\u3092\u52b9\u7387\u5316\u3059\u308b\u305f\u3081\u306eModel Context Protocol\uff08MCP\uff09\u30b5\u30fc\u30d0\u30fc\u3067\u3059\u3002",
+    "tags": [
+        "github",
+        "kanban",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Sunwood-ai-labs_github-kanban-mcp-server",
+    "command": "github-kanban-mcp-server",
+    "baseArgs": [],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "repo": {
+                "type": "string",
+                "description": "GitHub\u30ea\u30dd\u30b8\u30c8\u30ea\u540d",
+                "required": true
+            },
+            "state": {
+                "type": "string",
+                "description": "issue\u306e\u72b6\u614b\uff08'open', 'closed', 'all'\uff09"
+            },
+            "labels": {
+                "type": "array",
+                "description": "\u30d5\u30a3\u30eb\u30bf\u30ea\u30f3\u30b0\u3059\u308b\u30e9\u30d9\u30eb\u306e\u914d\u5217"
+            }
+        }
+    },
+    "argsMapping": {
+        "repo": {
+            "type": "single",
+            "position": 0
+        },
+        "state": {
+            "type": "single",
+            "position": 1
+        },
+        "labels": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

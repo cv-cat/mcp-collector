@@ -1,0 +1,58 @@
+{
+    "id": "mcp-atlassian",
+    "name": "MCP Atlassian",
+    "description": "Model Context Protocol (MCP) server for Atlassian Cloud products (Confluence and Jira). This integration is designed specifically for Atlassian Cloud instances and does not support Atlassian Server or Data Center deployments.",
+    "tags": [
+        "atlassian",
+        "mcp",
+        "integration"
+    ],
+    "repo": "https://github.com/sooperset/mcp-atlassian",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-atlassian"
+    ],
+    "env": {
+        "CONFLUENCE_URL": "https://your-domain.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your.email@domain.com",
+        "CONFLUENCE_API_TOKEN": "your_api_token",
+        "JIRA_URL": "https://your-domain.atlassian.net",
+        "JIRA_USERNAME": "your.email@domain.com",
+        "JIRA_API_TOKEN": "your_api_token"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "CONFLUENCE_URL": {
+                "type": "string",
+                "description": "Confluence instance URL",
+                "required": true
+            },
+            "CONFLUENCE_USERNAME": {
+                "type": "string",
+                "description": "Confluence username",
+                "required": true
+            },
+            "CONFLUENCE_API_TOKEN": {
+                "type": "string",
+                "description": "Confluence API token",
+                "required": true
+            },
+            "JIRA_URL": {
+                "type": "string",
+                "description": "Jira instance URL",
+                "required": true
+            },
+            "JIRA_USERNAME": {
+                "type": "string",
+                "description": "Jira username",
+                "required": true
+            },
+            "JIRA_API_TOKEN": {
+                "type": "string",
+                "description": "Jira API token",
+                "required": true
+            }
+        }
+    }
+}

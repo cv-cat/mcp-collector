@@ -1,0 +1,31 @@
+{
+    "id": "rijksmuseum",
+    "name": "Rijksmuseum",
+    "description": "This project implements a Model Context Protocol (MCP) server that interfaces with the Rijksmuseum API. It allows you to search for artworks, retrieve detailed information about specific artworks, access image tiles for artworks, and explore user-created collections from Amsterdam's famous Rijksmuseum.",
+    "tags": [
+        "api",
+        "artwork",
+        "museum"
+    ],
+    "repo": "https://github.com/r-huijts/rijksmuseum-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/absolute/path/to/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "RIJKSMUSEUM_API_KEY": {
+                "type": "string",
+                "description": "Rijksmuseum API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "RIJKSMUSEUM_API_KEY": {
+            "type": "env",
+            "key": "RIJKSMUSEUM_API_KEY"
+        }
+    }
+}

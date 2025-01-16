@@ -1,0 +1,32 @@
+{
+    "id": "filesystem",
+    "name": "Filesystem",
+    "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations.",
+    "tags": [
+        "filesystem",
+        "access-control"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "paths": {
+                "type": "array",
+                "description": "Allowed file system paths",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "paths": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

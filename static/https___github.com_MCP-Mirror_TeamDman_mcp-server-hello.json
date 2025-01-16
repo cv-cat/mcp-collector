@@ -1,0 +1,21 @@
+{
+    "id": "current-time",
+    "name": "MCP Rust CLI server template",
+    "description": "A template to implement MCP CLI server in Rust.",
+    "repo": "https://github.com/MCP-Mirror/TeamDman_mcp-server-hello",
+    "tags": [
+        "mcp",
+        "rust",
+        "cli",
+        "server"
+    ],
+    "command": "mcp-rs-template",
+    "baseArgs": [
+        "--mcp"
+    ],
+    "env": {
+        "API_KEY": "xxxx"
+    },
+    "configurable": true,
+    "argsMapping": {}
+}

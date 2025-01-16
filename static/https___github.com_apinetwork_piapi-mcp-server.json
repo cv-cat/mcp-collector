@@ -1,0 +1,31 @@
+{
+    "id": "piapi",
+    "name": "PiAPI MCP Server",
+    "description": "A TypeScript implementation of a Model Context Protocol (MCP) server that integrates with PiAPI's API.",
+    "tags": [
+        "typescript",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/apinetwork/piapi-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/absolute/path/to/piapi-mcp-server/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "PIAPI_API_KEY": {
+                "type": "string",
+                "description": "A PiAPI API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "PIAPI_API_KEY": {
+            "type": "env",
+            "key": "PIAPI_API_KEY"
+        }
+    }
+}

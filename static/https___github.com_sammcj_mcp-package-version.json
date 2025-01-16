@@ -1,0 +1,32 @@
+{
+    "id": "package-version",
+    "name": "Package Version MCP Server",
+    "description": "An MCP server that provides tools for checking latest stable package versions from multiple package registries.",
+    "tags": [
+        "mcp",
+        "package management",
+        "version checking"
+    ],
+    "repo": "https://github.com/sammcj/mcp-package-version",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "mcp-package-version"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "dependencies": {
+                "type": "object",
+                "description": "Package dependencies to check versions for",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "dependencies": {
+            "type": "spread",
+            "position": 0
+        }
+    }
+}

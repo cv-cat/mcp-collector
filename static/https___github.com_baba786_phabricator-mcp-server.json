@@ -1,0 +1,31 @@
+{
+    "id": "phabricator",
+    "name": "Phabricator MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation for interacting with Phabricator API. This server allows LLMs to interact with Phabricator through a standardized interface.",
+    "tags": [
+        "phabricator",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/baba786/phabricator-mcp-server",
+    "command": "python",
+    "baseArgs": [
+        "server.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "PHABRICATOR_TOKEN": {
+                "type": "string",
+                "description": "Phabricator API token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "PHABRICATOR_TOKEN": {
+            "type": "env",
+            "key": "PHABRICATOR_TOKEN"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "python-run-mcp",
+    "name": "MCP Server",
+    "description": "Python service implementing Model Context Protocol (MCP) for Python code execution via standardized API endpoints.",
+    "repo": "https://github.com/topherbc/python-run-mcp",
+    "tags": [
+        "python",
+        "mcp",
+        "api"
+    ],
+    "command": "python",
+    "baseArgs": [
+        "src/server.py"
+    ],
+    "configurable": false,
+    "configSchema": {},
+    "argsMapping": {}
+}

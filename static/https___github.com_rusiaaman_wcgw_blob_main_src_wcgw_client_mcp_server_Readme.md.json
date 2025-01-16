@@ -1,0 +1,37 @@
+{
+    "id": "wcgw",
+    "name": "WCGW",
+    "description": "Claude desktop support enabling shell and file system access on Mac.",
+    "repo": "https://github.com/rusiaaman/wcgw",
+    "tags": [
+        "desktop",
+        "automation"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "tool",
+        "run"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "command": {
+                "type": "string",
+                "description": "Command to run the server",
+                "required": true
+            },
+            "args": {
+                "type": "array",
+                "description": "Arguments for the command",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "args": {
+            "type": "spread",
+            "position": 3
+        }
+    }
+}

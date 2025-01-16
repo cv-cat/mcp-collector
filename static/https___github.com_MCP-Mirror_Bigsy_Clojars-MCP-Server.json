@@ -1,0 +1,17 @@
+{
+    "id": "clojars-deps-server",
+    "name": "Clojars MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides tools for fetching dependency information from Clojars, the Clojure community's artifact repository.",
+    "tags": [
+        "clojars",
+        "mcp",
+        "dependency"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Bigsy_Clojars-MCP-Server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/clojars-deps-server/build/index.js"
+    ],
+    "configurable": false,
+    "argsMapping": {}
+}

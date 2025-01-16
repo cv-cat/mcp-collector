@@ -1,0 +1,50 @@
+{
+    "id": "keycloak",
+    "name": "Keycloak",
+    "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
+    "tags": [
+        "keycloak",
+        "mcp",
+        "authentication"
+    ],
+    "repo": "https://github.com/ChristophEnglisch/keycloak-model-context-protocol",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "keycloak-model-context-protocol"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "KEYCLOAK_URL": {
+                "type": "string",
+                "description": "Keycloak URL",
+                "required": true
+            },
+            "KEYCLOAK_ADMIN": {
+                "type": "string",
+                "description": "Keycloak admin username",
+                "required": true
+            },
+            "KEYCLOAK_ADMIN_PASSWORD": {
+                "type": "string",
+                "description": "Keycloak admin password",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "KEYCLOAK_URL": {
+            "type": "env",
+            "key": "KEYCLOAK_URL"
+        },
+        "KEYCLOAK_ADMIN": {
+            "type": "env",
+            "key": "KEYCLOAK_ADMIN"
+        },
+        "KEYCLOAK_ADMIN_PASSWORD": {
+            "type": "env",
+            "key": "KEYCLOAK_ADMIN_PASSWORD"
+        }
+    }
+}

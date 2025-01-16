@@ -1,0 +1,258 @@
+[
+    {
+        "id": "5ire",
+        "name": "5ire",
+        "description": "5ire is a cross-platform desktop AI assistant, MCP client. It compatible with major service providers, supports local knowledge base and tools via model context protocol servers.",
+        "repo": "https://github.com/nanbingxyz/5ire",
+        "tags": [
+            "desktop",
+            "AI",
+            "assistant",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/5ire"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "platforms": {
+                    "type": "array",
+                    "description": "Supported platforms",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "platforms": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "chatmcp",
+        "name": "ChatMCP",
+        "description": "ChatMCP is an AI chat client implementing the Model Context Protocol (MCP).",
+        "repo": "https://github.com/daodao97/chatmcp",
+        "tags": [
+            "AI",
+            "chat",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/chatmcp"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "platforms": {
+                    "type": "array",
+                    "description": "Supported platforms",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "platforms": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "claude-desktop",
+        "name": "Claude Desktop",
+        "description": "The Claude desktop app brings Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.",
+        "repo": "https://claude.ai/download",
+        "tags": [
+            "desktop",
+            "AI"
+        ],
+        "command": "download",
+        "baseArgs": [],
+        "configurable": false
+    },
+    {
+        "id": "claudemind",
+        "name": "ClaudeMind",
+        "description": "Experience Claude AI without limits. Use our desktop app for everyday AI assistance, or boost your coding productivity with our JetBrains plugin.",
+        "repo": "https://claudemind.com/",
+        "tags": [
+            "desktop",
+            "AI"
+        ],
+        "command": "download",
+        "baseArgs": [],
+        "configurable": false
+    },
+    {
+        "id": "cline",
+        "name": "Cline",
+        "description": "Cline can handle complex software development tasks step-by-step and use the Model Context Protocol (MCP) to create new tools.",
+        "repo": "https://github.com/cline/cline",
+        "tags": [
+            "development",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/cline"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "tasks": {
+                    "type": "array",
+                    "description": "Tasks for Cline to perform",
+                    "required": true,
+                    "minItems": 1
+                }
+            }
+        },
+        "argsMapping": {
+            "tasks": {
+                "type": "spread",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "console-chat-gpt",
+        "name": "Console Chat GPT",
+        "description": "Enjoy seamless interactions with ChatGPT and other LLMs directly from your command line.",
+        "repo": "https://github.com/amidabuddha/console-chat-gpt",
+        "tags": [
+            "CLI",
+            "chat",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/console-chat-gpt"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "continue",
+        "name": "Continue",
+        "description": "Continue is the leading open-source AI code assistant. Connect any models to build custom autocomplete and chat experiences inside VS Code.",
+        "repo": "https://github.com/continuedev/continue",
+        "tags": [
+            "VS Code",
+            "AI",
+            "assistant"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/continue"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "hyperchat",
+        "name": "HyperChat",
+        "description": "HyperChat is an open Chat client that can use various APIs to provide the best Chat experience.",
+        "repo": "https://github.com/BigSweetPotatoStudio/HyperChat",
+        "tags": [
+            "desktop",
+            "chat",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/hyperchat"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "librechat",
+        "name": "LibreChat",
+        "description": "Enhanced ChatGPT Clone featuring multiple AI models, agents, and various productivity tools.",
+        "repo": "https://github.com/danny-avila/LibreChat",
+        "tags": [
+            "web app",
+            "AI"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/librechat"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "mcp-chatbot",
+        "name": "MCP Chatbot",
+        "description": "A chatbot example that integrates the Model Context Protocol (MCP).",
+        "repo": "https://github.com/3choff/mcp-chatbot",
+        "tags": [
+            "CLI",
+            "chat",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/mcp-chatbot"
+        ],
+        "configurable": true,
+        "configSchema": {
+            "properties": {
+                "model": {
+                    "type": "string",
+                    "description": "Name of the AI model to use",
+                    "required": true
+                }
+            }
+        },
+        "argsMapping": {
+            "model": {
+                "type": "single",
+                "position": 2
+            }
+        }
+    },
+    {
+        "id": "mcp-cli-client",
+        "name": "MCP CLI client",
+        "description": "A simple CLI to run LLM prompt and implement MCP client.",
+        "repo": "https://github.com/adhikasp/mcp-client-cli",
+        "tags": [
+            "CLI",
+            "MCP"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/mcp-client-cli"
+        ],
+        "configurable": false
+    },
+    {
+        "id": "zed",
+        "name": "Zed",
+        "description": "Zed is a high-performance, multiplayer code editor from the creators of Atom.",
+        "repo": "https://github.com/zed-industries/zed",
+        "tags": [
+            "desktop",
+            "editor"
+        ],
+        "command": "npx",
+        "baseArgs": [
+            "-y",
+            "@modelcontextprotocol/zed"
+        ],
+        "configurable": false
+    }
+]

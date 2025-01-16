@@ -1,0 +1,17 @@
+{
+    "id": "simple-timeserver",
+    "name": "MCP Simple Timeserver",
+    "description": "A simple MCP server that provides current local time and timezone information.",
+    "tags": [
+        "mcp",
+        "timeserver",
+        "time"
+    ],
+    "repo": "https://github.com/andybrandt/mcp-simple-timeserver",
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "mcp_simple_timeserver"
+    ],
+    "configurable": false
+}

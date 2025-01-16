@@ -1,0 +1,59 @@
+{
+    "id": "xcode-mcp-server",
+    "name": "Xcode MCP Server",
+    "description": "A Model Context Protocol server for building Xcode projects directly from LLM applications",
+    "tags": [
+        "xcode",
+        "build",
+        "mcp"
+    ],
+    "repo": "https://github.com/MCP-Mirror/PolarVista_Xcode-mcp-server",
+    "command": "npm run",
+    "baseArgs": [
+        "start",
+        "/path/to/build/logs/directory"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "projectPath": {
+                "type": "string",
+                "description": "Path to the .xcodeproj or .xcworkspace",
+                "required": true
+            },
+            "scheme": {
+                "type": "string",
+                "description": "Build scheme name",
+                "required": true
+            },
+            "configuration": {
+                "type": "string",
+                "description": "Build configuration (Debug/Release, defaults to Debug)",
+                "required": false
+            },
+            "destination": {
+                "type": "string",
+                "description": "Build destination (defaults to \"platform=iOS Simulator,name=iPhone 15 Pro\")",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "projectPath": {
+            "type": "single",
+            "position": 0
+        },
+        "scheme": {
+            "type": "single",
+            "position": 1
+        },
+        "configuration": {
+            "type": "optional",
+            "position": 2
+        },
+        "destination": {
+            "type": "optional",
+            "position": 3
+        }
+    }
+}

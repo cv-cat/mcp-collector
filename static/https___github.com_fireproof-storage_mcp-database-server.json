@@ -1,0 +1,13 @@
+{
+    "id": "fireproof",
+    "name": "Fireproof Database",
+    "description": "A simple example database for Model Context Protocol server with CRUD operations",
+    "tags": [
+        "database",
+        "json",
+        "api"
+    ],
+    "repo": "https://github.com/fireproof-storage/mcp-database-server",
+    "command": "/path/to/fireproof-mcp/build/index.js",
+    "configurable": false
+}

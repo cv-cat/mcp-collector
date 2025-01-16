@@ -1,0 +1,60 @@
+{
+    "pullRequests": [
+        {
+            "id": "185",
+            "title": "Add iterm-mcp",
+            "author": "ferrislucas",
+            "createdAt": "2025-01-14T04:52:57Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/185",
+            "status": "open"
+        },
+        {
+            "id": "184",
+            "title": "Add Java and Spring MCP SDK link",
+            "author": "tzolov",
+            "createdAt": "2025-01-13T16:07:52Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/184",
+            "status": "open"
+        },
+        {
+            "id": "183",
+            "title": "docs: Update README.md with LibreChat Client",
+            "author": "danny-avila",
+            "createdAt": "2025-01-10T17:29:57Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/183",
+            "status": "open"
+        },
+        {
+            "id": "179",
+            "title": "add elasticsearch-mcp-server",
+            "author": "cr7258",
+            "createdAt": "2025-01-09T09:25:44Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/179",
+            "status": "open"
+        },
+        {
+            "id": "178",
+            "title": "add mcp-wecombot-server",
+            "author": "gotoolkits",
+            "createdAt": "2025-01-08T16:12:02Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/178",
+            "status": "open"
+        },
+        {
+            "id": "174",
+            "title": "JIRA and CONFLUENCE MCP servers",
+            "author": "thibautleaux-kreactive",
+            "createdAt": "2025-01-06T13:37:42Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/174",
+            "status": "open"
+        },
+        {
+            "id": "165",
+            "title": "YouTube Transcriber - Automated Transcription and Key Point Extraction",
+            "author": "theodx2",
+            "createdAt": "2025-01-02T00:35:29Z",
+            "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/165",
+            "status": "open"
+        }
+    ]
+}

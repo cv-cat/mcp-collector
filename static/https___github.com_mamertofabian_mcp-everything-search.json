@@ -1,0 +1,70 @@
+{
+    "id": "everything-search",
+    "name": "Everything Search",
+    "description": "An MCP server that provides fast file searching capabilities across Windows, macOS, and Linux.",
+    "tags": [
+        "search",
+        "files",
+        "mcp"
+    ],
+    "repo": "https://github.com/mamertofabian/mcp-everything-search",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-everything-search"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Search query string",
+                "required": true
+            },
+            "max_results": {
+                "type": "number",
+                "description": "Maximum number of results to return",
+                "required": false
+            },
+            "match_path": {
+                "type": "boolean",
+                "description": "Match against full path instead of filename only",
+                "required": false
+            },
+            "match_case": {
+                "type": "boolean",
+                "description": "Enable case-sensitive search",
+                "required": false
+            },
+            "match_whole_word": {
+                "type": "boolean",
+                "description": "Match whole words only",
+                "required": false
+            },
+            "match_regex": {
+                "type": "boolean",
+                "description": "Enable regex search",
+                "required": false
+            },
+            "sort_by": {
+                "type": "number",
+                "description": "Sort order for results",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "query": {
+            "type": "single",
+            "position": 0
+        },
+        "max_results": {
+            "type": "single",
+            "position": 1
+        },
+        "sort_by": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

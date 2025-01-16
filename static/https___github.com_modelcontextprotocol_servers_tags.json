@@ -1,0 +1,122 @@
+[
+    {
+        "id": "2025.1.15",
+        "name": "2025.1.15",
+        "description": "Release 2025.1.15",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/2025.1.15",
+        "tags": [
+            "release"
+        ],
+        "date": "2025-01-15T10:04:09Z",
+        "commit": "ae2e48a18d30c59eb134ad500cdff7395212eec3",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/2025.1.15.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/2025.1.15.tar.gz"
+        }
+    },
+    {
+        "id": "2025.1.14",
+        "name": "2025.1.14",
+        "description": "Release 2025.1.14",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/2025.1.14",
+        "tags": [
+            "release"
+        ],
+        "date": "2025-01-14T03:03:30Z",
+        "commit": "260032172a64a397961f6e80d754121a8b1931be",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/2025.1.14.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/2025.1.14.tar.gz"
+        }
+    },
+    {
+        "id": "typescript-servers-0.6.2",
+        "name": "typescript-servers-0.6.2",
+        "description": "Typescript Servers 0.6.2",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/typescript-servers-0.6.2",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-12-05T00:12:02Z",
+        "commit": "94a36286d2ea49d095704167846283f0c2c2d5d1",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/typescript-servers-0.6.2.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/typescript-servers-0.6.2.tar.gz"
+        }
+    },
+    {
+        "id": "typescript-servers-0.6.1",
+        "name": "typescript-servers-0.6.1",
+        "description": "Typescript servers 0.6.1",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/typescript-servers-0.6.1",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-12-03T17:50:10Z",
+        "commit": "129d80af313c6c0ad9a929f4923c6d8a07d6a9e5",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/typescript-servers-0.6.1.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/typescript-servers-0.6.1.tar.gz"
+        }
+    },
+    {
+        "id": "python-servers-0.6.2",
+        "name": "python-servers-0.6.2",
+        "description": "python servers 0.6.2",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/python-servers-0.6.2",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-12-04T15:57:54Z",
+        "commit": "e7e1c85058e029ca1102efe6b2797f0ed608221b",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/python-servers-0.6.2.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/python-servers-0.6.2.tar.gz"
+        }
+    },
+    {
+        "id": "python-servers-0.6.1",
+        "name": "python-servers-0.6.1",
+        "description": "python servers 0.6.1",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/python-servers-0.6.1",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-11-30T01:51:21Z",
+        "commit": "2578d6f6689ee446b47644b5803d87a88ae457b5",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/python-servers-0.6.1.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/python-servers-0.6.1.tar.gz"
+        }
+    },
+    {
+        "id": "0.5.1",
+        "name": "0.5.1",
+        "description": "0.5.1",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/0.5.1",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-11-25T19:56:36Z",
+        "commit": "0da25bea8720c8162895f3222b46abb0c96c7a81",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/0.5.1.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/0.5.1.tar.gz"
+        }
+    },
+    {
+        "id": "0.5.0",
+        "name": "0.5.0",
+        "description": "0.5.0",
+        "repo": "https://github.com/modelcontextprotocol/servers/releases/tag/0.5.0",
+        "tags": [
+            "release"
+        ],
+        "date": "2024-11-25T13:13:35Z",
+        "commit": "45c4f70da468e2d81b9efe0d736b49efde1b9263",
+        "downloadLinks": {
+            "zip": "/modelcontextprotocol/servers/archive/refs/tags/0.5.0.zip",
+            "tar": "/modelcontextprotocol/servers/archive/refs/tags/0.5.0.tar.gz"
+        }
+    }
+]

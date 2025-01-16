@@ -1,0 +1,98 @@
+{
+    "id": "minima",
+    "name": "Minima",
+    "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP.",
+    "tags": [
+        "mcp",
+        "rag",
+        "containers",
+        "chatgpt"
+    ],
+    "repo": "https://github.com/dmayboroda/minima",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path_to_cloned_minima_project/mcp-server",
+        "run",
+        "minima"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LOCAL_FILES_PATH": {
+                "type": "string",
+                "description": "Specify the root folder for indexing.",
+                "required": true
+            },
+            "EMBEDDING_MODEL_ID": {
+                "type": "string",
+                "description": "Specify the embedding model to use.",
+                "required": true
+            },
+            "EMBEDDING_SIZE": {
+                "type": "number",
+                "description": "Define the embedding dimension provided by the model.",
+                "required": true
+            },
+            "START_INDEXING": {
+                "type": "boolean",
+                "description": "Set this to 'true' on initial startup to begin indexing.",
+                "required": true
+            },
+            "OLLAMA_MODEL": {
+                "type": "string",
+                "description": "Set up the Ollama model.",
+                "required": true
+            },
+            "RERANKER_MODEL": {
+                "type": "string",
+                "description": "Specify the reranker model.",
+                "required": true
+            },
+            "USER_ID": {
+                "type": "string",
+                "description": "Just use your email here for custom GPT.",
+                "required": true
+            },
+            "PASSWORD": {
+                "type": "string",
+                "description": "Put any password here for create a firebase account.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LOCAL_FILES_PATH": {
+            "type": "single",
+            "position": 1
+        },
+        "EMBEDDING_MODEL_ID": {
+            "type": "single",
+            "position": 2
+        },
+        "EMBEDDING_SIZE": {
+            "type": "single",
+            "position": 3
+        },
+        "START_INDEXING": {
+            "type": "single",
+            "position": 4
+        },
+        "OLLAMA_MODEL": {
+            "type": "single",
+            "position": 5
+        },
+        "RERANKER_MODEL": {
+            "type": "single",
+            "position": 6
+        },
+        "USER_ID": {
+            "type": "single",
+            "position": 7
+        },
+        "PASSWORD": {
+            "type": "single",
+            "position": 8
+        }
+    }
+}

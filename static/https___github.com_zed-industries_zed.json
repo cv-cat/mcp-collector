@@ -1,0 +1,17 @@
+{
+    "id": "zed",
+    "name": "Zed",
+    "description": "A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+    "tags": [
+        "editor",
+        "multiplayer",
+        "code"
+    ],
+    "repo": "https://github.com/zed-industries/zed",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-zed"
+    ],
+    "configurable": false
+}

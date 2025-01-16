@@ -1,0 +1,36 @@
+{
+    "id": "kusto",
+    "name": "Kusto MCP Server",
+    "description": "A mcp server that provides access to Azure Data Explorer (ADX) clusters.",
+    "tags": [
+        "azure",
+        "data-explorer",
+        "kusto"
+    ],
+    "repo": "https://github.com/MCP-Mirror/ZZZHDW_mcp-server-kusto",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "{{PATH_TO_PROJECT}}\\mcp-server-kusto\\src\\mcp_server_kusto",
+        "run",
+        "mcp-server-kusto",
+        "--cluster",
+        "{{ADX_CLUSTER_URL}}"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "clusterUrl": {
+                "type": "string",
+                "description": "The URL of the Azure Data Explorer cluster.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "clusterUrl": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

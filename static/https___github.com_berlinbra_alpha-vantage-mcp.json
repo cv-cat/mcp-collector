@@ -1,0 +1,63 @@
+{
+    "id": "alpha-vantage-mcp",
+    "name": "Alpha Vantage MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free Alpha Vantage API. This server implements a standardized interface for retrieving stock quotes and company information.",
+    "tags": [
+        "finance",
+        "api",
+        "market-data"
+    ],
+    "repo": "https://github.com/berlinbra/alpha-vantage-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp",
+        "run",
+        "alpha-vantage-mcp"
+    ],
+    "env": {
+        "ALPHA_VANTAGE_API_KEY": "<insert api key>"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "symbol": {
+                "type": "string",
+                "description": "Stock symbol (e.g., AAPL, MSFT)",
+                "required": true
+            },
+            "crypto_symbol": {
+                "type": "string",
+                "description": "Cryptocurrency symbol (e.g., BTC, ETH)"
+            },
+            "market": {
+                "type": "string",
+                "description": "Market currency (e.g., USD, EUR)",
+                "default": "USD"
+            },
+            "outputsize": {
+                "type": "string",
+                "description": "compact (latest 100 data points) or full (up to 20 years of data)",
+                "default": "compact"
+            }
+        }
+    },
+    "argsMapping": {
+        "symbol": {
+            "type": "single",
+            "position": 1
+        },
+        "crypto_symbol": {
+            "type": "single",
+            "position": 1
+        },
+        "market": {
+            "type": "single",
+            "position": 2
+        },
+        "outputsize": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

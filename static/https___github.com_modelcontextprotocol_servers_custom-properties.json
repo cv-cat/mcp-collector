@@ -1,0 +1,30 @@
+{
+    "id": "repo_protection_L3",
+    "name": "Repo Protection L3",
+    "description": "L3 protections enabled",
+    "repo": "https://github.com/modelcontextprotocol/servers",
+    "tags": [
+        "security",
+        "protection",
+        "repo"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "repo_protection_L3": {
+                "type": "boolean",
+                "description": "L3 protections enabled",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "repo_protection_L3": {
+            "type": "single",
+            "position": 0
+        }
+    },
+    "values": {
+        "repo_protection_L3": "true"
+    }
+}

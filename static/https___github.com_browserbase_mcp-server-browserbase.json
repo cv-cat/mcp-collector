@@ -1,0 +1,17 @@
+{
+    "id": "browserbase",
+    "name": "Browserbase MCP Server",
+    "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. Enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+    "tags": [
+        "browser",
+        "automation",
+        "LLM"
+    ],
+    "repo": "https://github.com/browserbase/mcp-server-browserbase",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@browserbase/server-browserbase"
+    ],
+    "configurable": false
+}

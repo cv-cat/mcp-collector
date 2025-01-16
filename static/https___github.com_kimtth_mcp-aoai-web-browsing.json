@@ -1,0 +1,58 @@
+{
+    "id": "mcp-aoai-web-browsing",
+    "name": "MCP Server & Client",
+    "description": "MCP Server & Client implementation for using Azure OpenAI.",
+    "tags": [
+        "mcp",
+        "azure",
+        "openai"
+    ],
+    "repo": "https://github.com/kimtth/mcp-aoai-web-browsing",
+    "command": "python",
+    "baseArgs": [
+        "chatgui.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AZURE_OPEN_AI_ENDPOINT": {
+                "type": "string",
+                "description": "Azure OpenAI endpoint",
+                "required": true
+            },
+            "AZURE_OPEN_AI_API_KEY": {
+                "type": "string",
+                "description": "Azure OpenAI API key",
+                "required": true
+            },
+            "AZURE_OPEN_AI_DEPLOYMENT_MODEL": {
+                "type": "string",
+                "description": "Azure OpenAI deployment model",
+                "required": true
+            },
+            "AZURE_OPEN_AI_API_VERSION": {
+                "type": "string",
+                "description": "Azure OpenAI API version",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "AZURE_OPEN_AI_ENDPOINT": {
+            "type": "env",
+            "key": "AZURE_OPEN_AI_ENDPOINT"
+        },
+        "AZURE_OPEN_AI_API_KEY": {
+            "type": "env",
+            "key": "AZURE_OPEN_AI_API_KEY"
+        },
+        "AZURE_OPEN_AI_DEPLOYMENT_MODEL": {
+            "type": "env",
+            "key": "AZURE_OPEN_AI_DEPLOYMENT_MODEL"
+        },
+        "AZURE_OPEN_AI_API_VERSION": {
+            "type": "env",
+            "key": "AZURE_OPEN_AI_API_VERSION"
+        }
+    }
+}

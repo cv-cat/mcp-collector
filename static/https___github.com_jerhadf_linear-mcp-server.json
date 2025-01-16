@@ -1,0 +1,32 @@
+{
+    "id": "linear",
+    "name": "Linear MCP Server",
+    "description": "A Model Context Protocol server for the Linear API, allowing LLMs to interact with Linear issues.",
+    "tags": [
+        "linear",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/jerhadf/linear-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-linear"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LINEAR_API_KEY": {
+                "type": "string",
+                "description": "Your Linear API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LINEAR_API_KEY": {
+            "type": "env",
+            "key": "LINEAR_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "id": "roam-research",
+    "name": "Roam Research MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides comprehensive access to Roam Research's API functionality.",
+    "tags": [
+        "roam",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/2b3pro/roam-research-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/roam-research/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "ROAM_API_TOKEN": {
+                "type": "string",
+                "description": "Roam Research API token",
+                "required": true
+            },
+            "ROAM_GRAPH_NAME": {
+                "type": "string",
+                "description": "Name of your Roam graph",
+                "required": true
+            },
+            "MEMORIES_TAG": {
+                "type": "string",
+                "description": "Tag for memories",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "ROAM_API_TOKEN": {
+            "type": "env",
+            "key": "ROAM_API_TOKEN"
+        },
+        "ROAM_GRAPH_NAME": {
+            "type": "env",
+            "key": "ROAM_GRAPH_NAME"
+        },
+        "MEMORIES_TAG": {
+            "type": "env",
+            "key": "MEMORIES_TAG"
+        }
+    }
+}

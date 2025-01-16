@@ -1,0 +1,41 @@
+{
+    "id": "mcp-codex-keeper",
+    "name": "MCP Codex Keeper",
+    "description": "An intelligent MCP server that serves as a guardian of development knowledge, providing AI assistants with curated access to latest documentation and best practices.",
+    "tags": [
+        "mcp",
+        "ai",
+        "documentation"
+    ],
+    "repo": "https://github.com/aindreyway/mcp-codex-keeper",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@aindreyway/mcp-codex-keeper@latest"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "npm_config_cache_max": {
+                "type": "string",
+                "description": "Max cache size for npm",
+                "required": true
+            },
+            "NODE_OPTIONS": {
+                "type": "string",
+                "description": "Node.js options for memory usage",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "npm_config_cache_max": {
+            "type": "env",
+            "key": "NPM_CONFIG_CACHE_MAX"
+        },
+        "NODE_OPTIONS": {
+            "type": "env",
+            "key": "NODE_OPTIONS"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "id": "meilisearch",
+    "name": "Meilisearch",
+    "description": "A Model Context Protocol (MCP) server for interacting with Meilisearch through LLM interfaces.",
+    "repo": "https://github.com/meilisearch/meilisearch-mcp",
+    "tags": [
+        "mcp",
+        "search",
+        "database"
+    ],
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "src.meilisearch_mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "Meilisearch server URL",
+                "required": true
+            },
+            "api_key": {
+                "type": "string",
+                "description": "Meilisearch API key",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 0
+        },
+        "api_key": {
+            "type": "env",
+            "key": "MEILI_MASTER_KEY"
+        }
+    }
+}

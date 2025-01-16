@@ -1,0 +1,23 @@
+{
+    "id": "genkit",
+    "name": "Genkit",
+    "description": "AI framework for building applications with Node.js and Go.",
+    "tags": [
+        "ai",
+        "framework",
+        "nodejs",
+        "go"
+    ],
+    "repo": "https://github.com/firebase/genkit",
+    "command": "npm",
+    "baseArgs": [
+        "i",
+        "-g",
+        "genkit"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

@@ -1,0 +1,17 @@
+{
+    "id": "jetbrains",
+    "name": "JetBrains MCP Proxy Server",
+    "description": "The server proxies requests from client to JetBrains IDE.",
+    "repo": "https://github.com/JetBrains/mcp-jetbrains",
+    "tags": [
+        "proxy",
+        "jetbrains",
+        "server"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@jetbrains/mcp-proxy"
+    ],
+    "configurable": false
+}

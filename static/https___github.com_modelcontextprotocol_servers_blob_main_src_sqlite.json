@@ -1,0 +1,29 @@
+{
+    "id": "sqlite",
+    "name": "SQLite",
+    "description": "Database management and analysis tool with support for SQL queries and business insights.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+    "tags": [
+        "database",
+        "sqlite",
+        "sql"
+    ],
+    "command": "uv",
+    "baseArgs": [],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "dbPath": {
+                "type": "string",
+                "description": "Path to the SQLite database file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "dbPath": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

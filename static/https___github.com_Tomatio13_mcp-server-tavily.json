@@ -1,0 +1,38 @@
+{
+    "id": "tavily-search",
+    "name": "Tavily Search",
+    "description": "A MCP server project using the Tavily API to perform searches based on specified queries.",
+    "tags": [
+        "search",
+        "API"
+    ],
+    "repo": "https://github.com/Tomatio13/mcp-server-tavily",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "C:\\your_path\\mcp-server-tavily",
+        "run",
+        "tavily-search"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "TAVILY_API_KEY": {
+                "type": "string",
+                "description": "Your Tavily API key",
+                "required": true
+            },
+            "PYTHONIOENCODING": {
+                "type": "string",
+                "description": "Python IO encoding",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

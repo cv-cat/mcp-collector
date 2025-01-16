@@ -1,0 +1,14 @@
+{
+    "id": "notes-server",
+    "name": "Notes Server",
+    "description": "A JSON-RPC 2.0 compliant server implementing the Model Context Protocol (MCP) for note management (as an example)",
+    "tags": [
+        "json-rpc",
+        "mcp",
+        "note management"
+    ],
+    "repo": "https://github.com/MCP-Mirror/AndrewDonelson_go-mcp-server-service",
+    "command": "./bin/dev/<platform>/notes-server",
+    "baseArgs": [],
+    "configurable": false
+}

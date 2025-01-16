@@ -1,0 +1,19 @@
+{
+    "id": "uniprot",
+    "name": "UniProt MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides access to UniProt protein information. This server allows AI assistants to fetch protein function and sequence information directly from UniProt.",
+    "tags": [
+        "protein",
+        "api",
+        "uniprot"
+    ],
+    "repo": "https://github.com/MCP-Mirror/TakumiY235_uniprot-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "path/to/uniprot-mcp-server",
+        "run",
+        "uniprot-mcp-server"
+    ],
+    "configurable": false
+}

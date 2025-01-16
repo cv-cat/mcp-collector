@@ -1,0 +1,53 @@
+{
+    "id": "mcp-server-aws",
+    "name": "AWS MCP Server",
+    "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the `audit://aws-operations` resource endpoint.",
+    "repo": "https://github.com/rishikavikondala/mcp-server-aws",
+    "tags": [
+        "aws",
+        "mcp",
+        "server"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/repo/mcp-server-aws",
+        "run",
+        "mcp-server-aws"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AWS_ACCESS_KEY_ID": {
+                "type": "string",
+                "description": "AWS Access Key ID",
+                "required": true
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "type": "string",
+                "description": "AWS Secret Access Key",
+                "required": true
+            },
+            "AWS_REGION": {
+                "type": "string",
+                "description": "AWS Region",
+                "required": true,
+                "default": "us-east-1"
+            }
+        }
+    },
+    "argsMapping": {
+        "AWS_ACCESS_KEY_ID": {
+            "type": "env",
+            "key": "AWS_ACCESS_KEY_ID"
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "type": "env",
+            "key": "AWS_SECRET_ACCESS_KEY"
+        },
+        "AWS_REGION": {
+            "type": "env",
+            "key": "AWS_REGION"
+        }
+    }
+}

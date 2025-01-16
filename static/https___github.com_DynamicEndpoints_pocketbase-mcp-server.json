@@ -1,0 +1,59 @@
+{
+    "id": "pocketbase",
+    "name": "PocketBase MCP Server",
+    "description": "A comprehensive MCP server that provides sophisticated tools for interacting with PocketBase databases.",
+    "tags": [
+        "pocketbase",
+        "database",
+        "mcp"
+    ],
+    "repo": "https://github.com/DynamicEndpoints/pocketbase-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-pocketbase"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "POCKETBASE_URL": {
+                "type": "string",
+                "description": "URL of your PocketBase instance (e.g., 'http://127.0.0.1:8090')",
+                "required": true
+            },
+            "POCKETBASE_ADMIN_EMAIL": {
+                "type": "string",
+                "description": "Admin email for certain operations",
+                "required": false
+            },
+            "POCKETBASE_ADMIN_PASSWORD": {
+                "type": "string",
+                "description": "Admin password",
+                "required": false
+            },
+            "POCKETBASE_DATA_DIR": {
+                "type": "string",
+                "description": "Custom data directory path",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "POCKETBASE_URL": {
+            "type": "single",
+            "position": 0
+        },
+        "POCKETBASE_ADMIN_EMAIL": {
+            "type": "env",
+            "key": "POCKETBASE_ADMIN_EMAIL"
+        },
+        "POCKETBASE_ADMIN_PASSWORD": {
+            "type": "env",
+            "key": "POCKETBASE_ADMIN_PASSWORD"
+        },
+        "POCKETBASE_DATA_DIR": {
+            "type": "env",
+            "key": "POCKETBASE_DATA_DIR"
+        }
+    }
+}

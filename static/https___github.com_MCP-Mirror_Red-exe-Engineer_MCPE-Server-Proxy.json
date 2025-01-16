@@ -1,0 +1,31 @@
+{
+    "id": "mcpe-server-proxy",
+    "name": "MCPE Server Proxy",
+    "description": "This helps with joining MCPI-Revival servers on MCPE (0.6.1), MCPI, or old versions of MCPI-Revival.",
+    "tags": [
+        "mcpe",
+        "proxy",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Red-exe-Engineer_MCPE-Server-Proxy",
+    "command": "python",
+    "baseArgs": [
+        "main.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "preset": {
+                "type": "string",
+                "description": "Server address preset",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "preset": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

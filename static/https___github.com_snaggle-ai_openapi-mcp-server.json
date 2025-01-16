@@ -1,0 +1,32 @@
+{
+    "id": "openapi-mcp-server",
+    "name": "OpenAPI MCP Server",
+    "description": "This tool creates a Model Context Protocol (MCP) server that acts as a proxy for any API that has an OpenAPI v3.1 specification.",
+    "tags": [
+        "api",
+        "openapi",
+        "proxy"
+    ],
+    "repo": "https://github.com/snaggle-ai/openapi-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "openapi-mcp-server",
+        "/path/to/openapi.json"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiSpecPath": {
+                "type": "string",
+                "description": "Path to the OpenAPI specification file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiSpecPath": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

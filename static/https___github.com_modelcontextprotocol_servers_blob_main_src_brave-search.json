@@ -1,0 +1,36 @@
+{
+    "id": "brave-search",
+    "name": "Brave Search",
+    "description": "An MCP server implementation that integrates the Brave Search API, providing both web and local search capabilities.",
+    "tags": [
+        "search",
+        "brave",
+        "api"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "BRAVE_API_KEY",
+        "mcp/brave-search"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "BRAVE_API_KEY": {
+                "type": "string",
+                "description": "Brave Search API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "BRAVE_API_KEY": {
+            "type": "env",
+            "key": "BRAVE_API_KEY"
+        }
+    }
+}

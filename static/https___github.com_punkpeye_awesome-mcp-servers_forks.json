@@ -1,0 +1,56 @@
+{
+    "forks": [
+        {
+            "id": "awesome-mcp-servers-1",
+            "name": "awesome-mcp-servers-1",
+            "description": "A collection of MCP servers. Contribute to punkpeye/awesome-mcp-servers development by creating an account on GitHub.",
+            "repo": "https://github.com/danny-avila/awesome-mcp-servers-1",
+            "tags": [
+                "mcp",
+                "servers"
+            ],
+            "stars": 1,
+            "createdAt": "2025-01-11T01:28:16+08:00",
+            "updatedAt": "2025-01-11T01:35:27+08:00"
+        },
+        {
+            "id": "awesome-mcp-servers",
+            "name": "awesome-mcp-servers",
+            "description": "A collection of MCP servers. Contribute to executeautomation/awesome-mcp-servers development by creating an account on GitHub.",
+            "repo": "https://github.com/executeautomation/awesome-mcp-servers",
+            "tags": [
+                "mcp",
+                "servers"
+            ],
+            "stars": 1,
+            "createdAt": "2024-12-05T08:58:05+08:00",
+            "updatedAt": "2024-12-05T09:03:11+08:00"
+        },
+        {
+            "id": "awesome-mcp-servers",
+            "name": "awesome-mcp-servers",
+            "description": "A collection of MCP servers. Contribute to jlowin/awesome-mcp-servers development by creating an account on GitHub.",
+            "repo": "https://github.com/jlowin/awesome-mcp-servers",
+            "tags": [
+                "mcp",
+                "servers"
+            ],
+            "stars": 1,
+            "createdAt": "2024-12-17T22:31:36+08:00",
+            "updatedAt": "2024-12-17T22:34:42+08:00"
+        },
+        {
+            "id": "awesome-mcp-servers",
+            "name": "awesome-mcp-servers",
+            "description": "A collection of MCP servers. Contribute to MarkusPfundstein/awesome-mcp-servers development by creating an account on GitHub.",
+            "repo": "https://github.com/MarkusPfundstein/awesome-mcp-servers-f",
+            "tags": [
+                "mcp",
+                "servers"
+            ],
+            "stars": 0,
+            "createdAt": "2024-12-06T05:55:23+08:00",
+            "updatedAt": "2024-12-06T14:40:14+08:00"
+        }
+    ]
+}

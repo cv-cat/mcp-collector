@@ -1,0 +1,49 @@
+{
+    "id": "website-downloader",
+    "name": "Website Downloader",
+    "description": "This MCP server provides a tool to download entire websites using wget. It preserves the website structure and converts links to work locally.",
+    "tags": [
+        "wget",
+        "website",
+        "downloader"
+    ],
+    "repo": "https://github.com/pskill9/website-downloader",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/website-downloader/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "The URL of the website to download",
+                "required": true
+            },
+            "outputPath": {
+                "type": "string",
+                "description": "The directory where the website should be downloaded. Defaults to the current directory.",
+                "required": false
+            },
+            "depth": {
+                "type": "integer",
+                "description": "Maximum depth level for recursive downloading. Set to 0 for just the specified page.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 0
+        },
+        "outputPath": {
+            "type": "single",
+            "position": 1
+        },
+        "depth": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

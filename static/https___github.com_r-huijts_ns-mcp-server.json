@@ -1,0 +1,31 @@
+{
+    "id": "ns-server",
+    "name": "NS Travel Information MCP Server",
+    "description": "An MCP server that provides access to NS (Dutch Railways) travel information.",
+    "tags": [
+        "ns",
+        "travel",
+        "information"
+    ],
+    "repo": "https://github.com/r-huijts/ns-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/ns-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "NS_API_KEY": {
+                "type": "string",
+                "description": "Your NS API key (required)",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "NS_API_KEY": {
+            "type": "env",
+            "key": "NS_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "id": "mcp-badges",
+    "name": "Model Context Protocol Badges",
+    "description": "Quickly highlight your MCP project with clear, eye-catching badges",
+    "repo": "https://github.com/mcpx-dev/mcp-badges",
+    "tags": [
+        "mcp",
+        "badges"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+    ],
+    "configurable": false
+}

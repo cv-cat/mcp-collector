@@ -1,0 +1,31 @@
+{
+    "id": "qb-time-tools",
+    "name": "QuickBooks Time MCP Server",
+    "description": "A combined MCP server that provides access to all QuickBooks Time API functionality through a single interface.",
+    "tags": [
+        "quickbooks",
+        "time",
+        "api"
+    ],
+    "repo": "https://github.com/aallsbury/qb-time-mcp-server",
+    "command": "python",
+    "baseArgs": [
+        "./qb-time-mcp-server/main.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "QB_TIME_ACCESS_TOKEN": {
+                "type": "string",
+                "description": "QuickBooks Time access token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "QB_TIME_ACCESS_TOKEN": {
+            "type": "env",
+            "key": "QB_TIME_ACCESS_TOKEN"
+        }
+    }
+}

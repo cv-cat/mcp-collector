@@ -1,0 +1,16 @@
+{
+    "id": "openrpc",
+    "name": "OpenRPC MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides JSON-RPC functionality through OpenRPC.",
+    "tags": [
+        "json-rpc",
+        "mcp",
+        "openrpc"
+    ],
+    "repo": "https://github.com/shanejonas/openrpc-mpc-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/openrpc-mcp-server/build/index.js"
+    ],
+    "configurable": false
+}

@@ -1,0 +1,17 @@
+{
+    "id": "everything",
+    "name": "Everything MCP Server",
+    "description": "This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/everything",
+    "tags": [
+        "mcp",
+        "server",
+        "testing"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+    ],
+    "configurable": false
+}

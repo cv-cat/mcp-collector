@@ -1,0 +1,32 @@
+{
+    "id": "travel-planner",
+    "name": "Travel Planner MCP Server",
+    "description": "A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.",
+    "tags": [
+        "travel",
+        "maps",
+        "google",
+        "api"
+    ],
+    "repo": "https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server",
+    "command": "npx",
+    "baseArgs": [
+        "@gongrzhe/server-travelplanner-mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GOOGLE_MAPS_API_KEY": {
+                "type": "string",
+                "description": "Your Google Maps API key with the following APIs enabled: Places API, Directions API, Geocoding API, Time Zone API.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GOOGLE_MAPS_API_KEY": {
+            "type": "env",
+            "key": "GOOGLE_MAPS_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "id": "mcp-git-ingest",
+    "name": "MCP Git Ingest",
+    "description": "A Model Context Protocol (MCP) server that helps read GitHub repository structure and important files.",
+    "tags": [
+        "github",
+        "mcp",
+        "git"
+    ],
+    "repo": "https://github.com/adhikasp/mcp-git-ingest",
+    "command": "uvx",
+    "baseArgs": [
+        "--from",
+        "git+https://github.com/adhikasp/mcp-git-ingest"
+    ],
+    "configurable": false
+}

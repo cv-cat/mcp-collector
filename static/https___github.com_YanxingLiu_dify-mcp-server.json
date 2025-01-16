@@ -1,0 +1,34 @@
+{
+    "id": "mcp-server-rag-web-browser",
+    "name": "MCP Server for Dify Workflows",
+    "description": "A simple implementation of an MCP server for using dify. It achieves the invocation of the Dify workflow by calling the tools of MCP.",
+    "repo": "https://github.com/YanxingLiu/dify-mcp-server",
+    "tags": [
+        "mcp",
+        "dify",
+        "server"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "${DIFY_MCP_SERVER_PATH}",
+        "run",
+        "dify_mcp_server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "CONFIG_PATH": {
+                "type": "string",
+                "description": "Path to the config.yaml file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "CONFIG_PATH": {
+            "type": "env",
+            "key": "CONFIG_PATH"
+        }
+    }
+}

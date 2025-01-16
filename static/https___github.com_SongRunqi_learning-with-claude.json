@@ -1,0 +1,13 @@
+{
+    "id": "learning-with-claude",
+    "name": "Learning with Claude",
+    "description": "My learning notes with Claude, focusing on software development topics.",
+    "repo": "https://github.com/SongRunqi/learning-with-claude",
+    "tags": [
+        "java",
+        "websocket",
+        "proxy",
+        "design-patterns"
+    ],
+    "configurable": false
+}

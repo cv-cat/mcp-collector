@@ -1,0 +1,32 @@
+{
+    "id": "neon",
+    "name": "Neon MCP Server",
+    "description": "Model Context Protocol (MCP) server for managing context between LLMs and external systems.",
+    "tags": [
+        "mcp",
+        "neon",
+        "database"
+    ],
+    "repo": "https://github.com/neondatabase/mcp-server-neon",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@neondatabase/mcp-server-neon"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Neon API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "NEON_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id": "filesystem",
+    "name": "Filesystem",
+    "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
+    "tags": [
+        "filesystem",
+        "api"
+    ],
+    "repo": "https://github.com/mark3labs/mcp-filesystem-server",
+    "command": "go install",
+    "baseArgs": [
+        "github.com/mark3labs/mcp-filesystem-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "paths": {
+                "type": "array",
+                "description": "Allowed file system paths",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "paths": {
+            "type": "spread",
+            "position": 1
+        }
+    }
+}

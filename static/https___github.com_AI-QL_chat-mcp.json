@@ -1,0 +1,69 @@
+{
+    "id": "chat-mcp",
+    "name": "MCP Chat Desktop App",
+    "description": "A Cross-Platform Interface for LLMs",
+    "tags": [
+        "chat",
+        "desktop",
+        "MCP",
+        "LLMs"
+    ],
+    "repo": "https://github.com/AI-QL/chat-mcp",
+    "command": "npm",
+    "baseArgs": [
+        "run",
+        "start"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "API key for authentication",
+                "required": true
+            },
+            "url": {
+                "type": "string",
+                "description": "Base URL for API requests",
+                "required": true
+            },
+            "path": {
+                "type": "string",
+                "description": "API endpoint path",
+                "required": true
+            },
+            "model": {
+                "type": "string",
+                "description": "LLM model to use",
+                "required": true
+            },
+            "max_tokens_value": {
+                "type": "string",
+                "description": "Maximum tokens for responses",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "API_KEY"
+        },
+        "url": {
+            "type": "single",
+            "position": 1
+        },
+        "path": {
+            "type": "single",
+            "position": 2
+        },
+        "model": {
+            "type": "single",
+            "position": 3
+        },
+        "max_tokens_value": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

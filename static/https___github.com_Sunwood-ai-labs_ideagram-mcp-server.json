@@ -1,0 +1,31 @@
+{
+    "id": "ideagram",
+    "name": "Ideogram MCP Server",
+    "description": "Ideogram API\u3092\u4f7f\u7528\u3057\u3066\u753b\u50cf\u751f\u6210\u6a5f\u80fd\u3092\u63d0\u4f9b\u3059\u308bModel Context Protocol (MCP) \u30b5\u30fc\u30d0\u30fc",
+    "tags": [
+        "mcp",
+        "api",
+        "image-generation"
+    ],
+    "repo": "https://github.com/Sunwood-ai-labs/ideagram-mcp-server",
+    "command": "npm",
+    "baseArgs": [
+        "install"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "IDEOGRAM_API_KEY": {
+                "type": "string",
+                "description": "Ideogram API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "IDEOGRAM_API_KEY": {
+            "type": "env",
+            "key": "IDEOGRAM_API_KEY"
+        }
+    }
+}

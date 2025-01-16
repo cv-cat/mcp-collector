@@ -1,0 +1,39 @@
+{
+    "id": "financial-analysis-mcp-server",
+    "name": "Financial Analysis MCP Server",
+    "description": "An MCP server implementation for financial analysis using Alpha Vantage and Financial Modeling Prep APIs.",
+    "tags": [
+        "finance",
+        "api"
+    ],
+    "repo": "https://github.com/kablewy/financial-analysis-mcp-server",
+    "command": "npm",
+    "baseArgs": [
+        "install"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "ALPHA_VANTAGE_API_KEY": {
+                "type": "string",
+                "description": "Alpha Vantage API Key",
+                "required": true
+            },
+            "FMP_API_KEY": {
+                "type": "string",
+                "description": "Financial Modeling Prep API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "ALPHA_VANTAGE_API_KEY": {
+            "type": "env",
+            "key": "ALPHA_VANTAGE_API_KEY"
+        },
+        "FMP_API_KEY": {
+            "type": "env",
+            "key": "FMP_API_KEY"
+        }
+    }
+}

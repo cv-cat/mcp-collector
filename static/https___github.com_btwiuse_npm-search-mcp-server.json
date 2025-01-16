@@ -1,0 +1,32 @@
+{
+    "id": "npm-search",
+    "name": "NPM Search",
+    "description": "A Model Context Protocol server that allows you to search for npm packages by calling the npm search command.",
+    "repo": "https://github.com/btwiuse/npm-search-mcp-server",
+    "tags": [
+        "npm",
+        "search",
+        "packages"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "npm-search-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The search query.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "query": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

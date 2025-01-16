@@ -1,0 +1,42 @@
+{
+    "id": "weather_service",
+    "name": "Weather Service",
+    "description": "A simple note-saving system implementing customizable note access and storage.",
+    "tags": [
+        "note",
+        "python",
+        "service"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Sunwood-ai-labs_mcp-weather-service-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "C:\\Prj\\weather_service",
+        "run"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The name of the note",
+                "required": true
+            },
+            "content": {
+                "type": "string",
+                "description": "Content of the note",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "name": {
+            "type": "single",
+            "position": 1
+        },
+        "content": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "id": "github",
+    "name": "GitHub MCP Server",
+    "description": "Enhanced GitHub MCP server with code analysis, security scanning, and automated reviews",
+    "tags": [
+        "github",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/DynamicEndpoints/github-mcp-server",
+    "command": "npx",
+    "baseArgs": [],
+    "configurable": false
+}

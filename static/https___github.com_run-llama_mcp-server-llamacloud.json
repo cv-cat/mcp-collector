@@ -1,0 +1,50 @@
+{
+    "id": "llamacloud",
+    "name": "LlamaCloud",
+    "description": "A MCP server connecting to a managed index on LlamaCloud",
+    "tags": [
+        "mcp",
+        "cloud",
+        "server",
+        "index"
+    ],
+    "repo": "https://github.com/run-llama/mcp-server-llamacloud",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/llamacloud/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LLAMA_CLOUD_INDEX_NAME": {
+                "type": "string",
+                "description": "Name of the LlamaCloud index",
+                "required": true
+            },
+            "LLAMA_CLOUD_PROJECT_NAME": {
+                "type": "string",
+                "description": "Name of the LlamaCloud project",
+                "required": true
+            },
+            "LLAMA_CLOUD_API_KEY": {
+                "type": "string",
+                "description": "API key for LlamaCloud",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LLAMA_CLOUD_INDEX_NAME": {
+            "type": "env",
+            "key": "LLAMA_CLOUD_INDEX_NAME"
+        },
+        "LLAMA_CLOUD_PROJECT_NAME": {
+            "type": "env",
+            "key": "LLAMA_CLOUD_PROJECT_NAME"
+        },
+        "LLAMA_CLOUD_API_KEY": {
+            "type": "env",
+            "key": "LLAMA_CLOUD_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "id": "linkup",
+    "name": "Linkup for Claude",
+    "description": "Internet Access for Your AI Assistant",
+    "repo": "https://github.com/MCP-Mirror/LinkupPlatform_python-mcp-server",
+    "tags": [
+        "internet",
+        "ai",
+        "access"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-linkup"
+    ],
+    "configurable": false
+}

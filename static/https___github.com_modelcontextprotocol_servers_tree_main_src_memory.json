@@ -1,0 +1,21 @@
+{
+    "id": "memory",
+    "name": "Memory",
+    "description": "A basic implementation of persistent memory using a local knowledge graph.",
+    "tags": [
+        "knowledge-graph",
+        "memory",
+        "persistence"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

@@ -1,0 +1,31 @@
+{
+    "id": "kagi-server",
+    "name": "Kagi Server",
+    "description": "MCP server for Kagi API integration",
+    "tags": [
+        "kagi",
+        "api",
+        "search"
+    ],
+    "repo": "https://github.com/MCP-Mirror/ac3xx_mcp-servers-kagi",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/kagi-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "KAGI_API_KEY": {
+                "type": "string",
+                "description": "Kagi API key for authentication",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "KAGI_API_KEY": {
+            "type": "env",
+            "key": "KAGI_API_KEY"
+        }
+    }
+}

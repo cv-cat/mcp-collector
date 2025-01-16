@@ -1,0 +1,14 @@
+{
+    "id": "minecraft-mcp-server",
+    "name": "Minecraft MCP Server",
+    "description": "An early prototype of a Model Context Protocol (MCP) server implementation integrating the Mineflayer API to interact with Minecraft.",
+    "tags": [
+        "mcp",
+        "minecraft",
+        "mineflayer"
+    ],
+    "repo": "https://github.com/DennisTraub/minecraft-mcp-server",
+    "command": "npx",
+    "baseArgs": [],
+    "configurable": false
+}

@@ -1,0 +1,27 @@
+{
+    "id": "my_mcp_server",
+    "name": "MyMCP Server",
+    "description": "A powerful Model Context Protocol (MCP) server implementation with integrations for GitLab, Jira, Confluence, YouTube, and more.",
+    "repo": "https://github.com/nguyenvanduocit/all-in-one-model-context-protocol",
+    "command": "all-in-one-model-context-protocol",
+    "baseArgs": [
+        "-env",
+        "/path/to/.env"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "ENABLE_TOOLS": {
+                "type": "string",
+                "description": "Comma separated list of tools group to enable. If not set, all tools will be enabled. Leave it empty to enable all tools.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "ENV": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

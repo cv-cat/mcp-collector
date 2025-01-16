@@ -1,0 +1,49 @@
+{
+    "id": "cloudinary",
+    "name": "Cloudinary",
+    "description": "This MCP server provides tools for uploading images and videos to Cloudinary through Claude Desktop and compatible MCP clients.",
+    "tags": [
+        "cloudinary",
+        "upload",
+        "media"
+    ],
+    "repo": "https://github.com/felores/cloudinary-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "@felores/cloudinary-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "CLOUDINARY_CLOUD_NAME": {
+                "type": "string",
+                "description": "Your Cloudinary cloud name",
+                "required": true
+            },
+            "CLOUDINARY_API_KEY": {
+                "type": "string",
+                "description": "Your Cloudinary API key",
+                "required": true
+            },
+            "CLOUDINARY_API_SECRET": {
+                "type": "string",
+                "description": "Your Cloudinary API secret",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "CLOUDINARY_CLOUD_NAME": {
+            "type": "env",
+            "key": "CLOUDINARY_CLOUD_NAME"
+        },
+        "CLOUDINARY_API_KEY": {
+            "type": "env",
+            "key": "CLOUDINARY_API_KEY"
+        },
+        "CLOUDINARY_API_SECRET": {
+            "type": "env",
+            "key": "CLOUDINARY_API_SECRET"
+        }
+    }
+}

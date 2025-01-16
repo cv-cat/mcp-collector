@@ -1,0 +1,34 @@
+{
+    "id": "obsidian",
+    "name": "Obsidian MCP Server",
+    "description": "An MCP (Model Context Protocol) server that enables AI assistants to interact with Obsidian vaults, providing tools for reading, creating, editing and managing notes and tags.",
+    "tags": [
+        "mcp",
+        "obsidian",
+        "note",
+        "ai"
+    ],
+    "repo": "https://github.com/StevenStavrakis/obsidian-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "obsidian-mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "vaultPaths": {
+                "type": "array",
+                "description": "Paths to your Obsidian vaults",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "vaultPaths": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

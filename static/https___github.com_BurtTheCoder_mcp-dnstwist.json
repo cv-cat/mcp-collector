@@ -1,0 +1,87 @@
+{
+    "id": "dnstwist",
+    "name": "DNStwist MCP Server",
+    "description": "A powerful DNS fuzzing tool that helps detect typosquatting, phishing, and corporate espionage.",
+    "tags": [
+        "dns",
+        "fuzzing",
+        "security"
+    ],
+    "repo": "https://github.com/BurtTheCoder/mcp-dnstwist",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "-g",
+        "mcp-dnstwist"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "domain": {
+                "type": "string",
+                "description": "Domain name to analyze (e.g., example.com)",
+                "required": true
+            },
+            "nameservers": {
+                "type": "string",
+                "description": "Comma-separated list of DNS servers",
+                "required": false
+            },
+            "threads": {
+                "type": "number",
+                "description": "Number of threads for parallel processing",
+                "required": false
+            },
+            "format": {
+                "type": "string",
+                "description": "Output format (json, csv, list)",
+                "required": false
+            },
+            "registered_only": {
+                "type": "boolean",
+                "description": "Show only registered domains",
+                "required": false
+            },
+            "mxcheck": {
+                "type": "boolean",
+                "description": "Check for MX records",
+                "required": false
+            },
+            "banners": {
+                "type": "boolean",
+                "description": "Capture HTTP banner information",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "domain": {
+            "type": "single",
+            "position": 0
+        },
+        "nameservers": {
+            "type": "spread",
+            "position": 1
+        },
+        "threads": {
+            "type": "single",
+            "position": 2
+        },
+        "format": {
+            "type": "single",
+            "position": 3
+        },
+        "registered_only": {
+            "type": "single",
+            "position": 4
+        },
+        "mxcheck": {
+            "type": "single",
+            "position": 5
+        },
+        "banners": {
+            "type": "single",
+            "position": 6
+        }
+    }
+}

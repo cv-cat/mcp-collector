@@ -1,0 +1,19 @@
+{
+    "id": "cloudflare",
+    "name": "Cloudflare MCP Server",
+    "description": "Model Context Protocol (MCP) for managing context between large language models and Cloudflare's API.",
+    "tags": [
+        "cloudflare",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "command": "npx",
+    "baseArgs": [
+        "@cloudflare/mcp-server-cloudflare"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "id": "prometheus",
+    "name": "MCP Server for Prometheus",
+    "description": "A Model Context Protocol (MCP) server for retrieving data from Prometheus databases. This MCP server enables Large Language Models (LLMs) to invoke tool functions that retrieve and analyze vast amounts of metric data, search metric usage, execute complex queries, and perform other related tasks through pre-defined routes with enhanced control over usage.",
+    "tags": [
+        "prometheus",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/CaesarYangs_prometheus_mcp_server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/prometheus_mcp_server",
+        "run",
+        "server.py"
+    ],
+    "env": {
+        "PROMETHEUS_HOST": "http://localhost:9090"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "directory": {
+                "type": "string",
+                "description": "Directory path to the MCP server",
+                "required": true
+            },
+            "prometheusHost": {
+                "type": "string",
+                "description": "Prometheus server host URL",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "single",
+            "position": 1
+        },
+        "prometheusHost": {
+            "type": "env",
+            "key": "PROMETHEUS_HOST"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "id": "mcp-server-motherduck",
+    "name": "MCP Server for MotherDuck",
+    "description": "An MCP server for MotherDuck and local DuckDB.",
+    "tags": [
+        "mcp",
+        "motherduck",
+        "duckdb"
+    ],
+    "repo": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-server-motherduck"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "motherduck_token": {
+                "type": "string",
+                "description": "MotherDuck token",
+                "required": true
+            },
+            "HOME": {
+                "type": "string",
+                "description": "Home directory",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "motherduck_token": {
+            "type": "env",
+            "key": "MOTHERDUCK_TOKEN"
+        },
+        "HOME": {
+            "type": "env",
+            "key": "HOME"
+        }
+    }
+}

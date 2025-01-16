@@ -1,0 +1,32 @@
+{
+    "id": "supabase",
+    "name": "Supabase MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides programmatic access to the Supabase Management API. This server allows AI models and other clients to manage Supabase projects and organizations through a standardized interface.",
+    "tags": [
+        "supabase",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/MCP-Mirror/JoshuaRileyDev_supabase-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "y",
+        "@joshuarileydev/supabase-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "SUPABASE_API_KEY": {
+                "type": "string",
+                "description": "Supabase API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "SUPABASE_API_KEY": {
+            "type": "env",
+            "key": "SUPABASE_API_KEY"
+        }
+    }
+}

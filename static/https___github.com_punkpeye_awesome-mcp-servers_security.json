@@ -1,0 +1,10 @@
+{
+    "id": "security",
+    "name": "Security",
+    "description": "No published security advisories.",
+    "repo": "https://github.com/punkpeye/awesome-mcp-servers",
+    "tags": [
+        "security"
+    ],
+    "configurable": false
+}

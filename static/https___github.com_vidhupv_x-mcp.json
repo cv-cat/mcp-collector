@@ -1,0 +1,76 @@
+{
+    "id": "x_mcp",
+    "name": "X(Twitter) MCP Server",
+    "description": "An MCP server to create, manage and publish X/Twitter posts directly through Claude chat.",
+    "tags": [
+        "twitter",
+        "mcp",
+        "x-api"
+    ],
+    "repo": "https://github.com/vidhupv/x-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/x-mcp",
+        "run",
+        "x-mcp"
+    ],
+    "env": {
+        "TWITTER_API_KEY": "your_api_key",
+        "TWITTER_API_SECRET": "your_api_secret",
+        "TWITTER_ACCESS_TOKEN": "your_access_token",
+        "TWITTER_ACCESS_TOKEN_SECRET": "your_access_token_secret"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "repositoryPath": {
+                "type": "string",
+                "description": "Path to the local x-mcp repository",
+                "required": true
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "X/Twitter API Key",
+                "required": true
+            },
+            "apiSecret": {
+                "type": "string",
+                "description": "X/Twitter API Secret",
+                "required": true
+            },
+            "accessToken": {
+                "type": "string",
+                "description": "X/Twitter Access Token",
+                "required": true
+            },
+            "accessTokenSecret": {
+                "type": "string",
+                "description": "X/Twitter Access Token Secret",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "repositoryPath": {
+            "type": "single",
+            "position": 1
+        },
+        "apiKey": {
+            "type": "env",
+            "key": "TWITTER_API_KEY"
+        },
+        "apiSecret": {
+            "type": "env",
+            "key": "TWITTER_API_SECRET"
+        },
+        "accessToken": {
+            "type": "env",
+            "key": "TWITTER_ACCESS_TOKEN"
+        },
+        "accessTokenSecret": {
+            "type": "env",
+            "key": "TWITTER_ACCESS_TOKEN_SECRET"
+        }
+    }
+}

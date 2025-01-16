@@ -1,0 +1,32 @@
+{
+    "id": "google-maps",
+    "name": "Google Maps",
+    "description": "MCP Server for the Google Maps API.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps",
+    "tags": [
+        "maps",
+        "google",
+        "api"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-google-maps"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GOOGLE_MAPS_API_KEY": {
+                "type": "string",
+                "description": "Google Maps API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GOOGLE_MAPS_API_KEY": {
+            "type": "env",
+            "key": "GOOGLE_MAPS_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "id": "gdrive",
+    "name": "Google Drive",
+    "description": "File access and search capabilities for Google Drive",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+    "tags": [
+        "google",
+        "filesystem",
+        "api"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "clientId": {
+                "type": "string",
+                "description": "Google OAuth Client ID",
+                "required": true
+            },
+            "clientSecret": {
+                "type": "string",
+                "description": "Google OAuth Client Secret",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "clientId": {
+            "type": "env",
+            "key": "GOOGLE_OAUTH_CLIENT_ID"
+        },
+        "clientSecret": {
+            "type": "env",
+            "key": "GOOGLE_OAUTH_CLIENT_SECRET"
+        }
+    }
+}

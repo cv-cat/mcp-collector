@@ -1,0 +1,30 @@
+{
+    "id": "mongodb",
+    "name": "MongoDB",
+    "description": "A Model Context Protocol (MCP) server that enables LLMs to interact directly with MongoDB databases.",
+    "tags": [
+        "database",
+        "mongodb"
+    ],
+    "repo": "https://github.com/QuantGeekDev/mongo-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "mongo-mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "connectionString": {
+                "type": "string",
+                "description": "MongoDB connection string",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

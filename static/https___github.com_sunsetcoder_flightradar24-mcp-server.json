@@ -1,0 +1,41 @@
+{
+    "id": "flightradar24-server",
+    "name": "Flightradar24 MCP Server",
+    "description": "A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!",
+    "tags": [
+        "flightradar24",
+        "mcp",
+        "server",
+        "aviation"
+    ],
+    "repo": "https://github.com/sunsetcoder/flightradar24-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "FR24_API_KEY": {
+                "type": "string",
+                "description": "Your Flightradar24 API key",
+                "required": true
+            },
+            "FR24_API_URL": {
+                "type": "string",
+                "description": "API endpoint for Flightradar24",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "FR24_API_KEY": {
+            "type": "env",
+            "key": "FR24_API_KEY"
+        },
+        "FR24_API_URL": {
+            "type": "string",
+            "position": 1
+        }
+    }
+}

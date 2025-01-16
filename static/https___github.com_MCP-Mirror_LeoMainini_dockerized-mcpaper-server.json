@@ -1,0 +1,32 @@
+{
+    "id": "dockerized-mcpaper-server",
+    "name": "Dockerized MCPaper Server",
+    "description": "A Dockerized version of the MCPaper server for easy deployment",
+    "tags": [
+        "docker",
+        "mcpaper",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/LeoMainini_dockerized-mcpaper-server",
+    "command": "docker-compose",
+    "baseArgs": [
+        "up",
+        "-d"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "databaseUrl": {
+                "type": "string",
+                "description": "Connection URL for the database",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "databaseUrl": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

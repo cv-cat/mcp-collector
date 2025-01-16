@@ -1,0 +1,37 @@
+{
+    "id": "mcp-difyworkflow-server",
+    "name": "MCP Dify Workflow Server",
+    "description": "An MCP server Tools application that implements the query and invocation of Dify workflows, supporting the on-demand operation of multiple custom Dify workflows.",
+    "tags": [
+        "mcp",
+        "dify",
+        "workflow",
+        "server"
+    ],
+    "repo": "https://github.com/gotoolkits/mcp-difyworkflow-server",
+    "command": "mcp-difyworkflow-server",
+    "baseArgs": [
+        "-base-url",
+        "http://localhost/v1"
+    ],
+    "env": {
+        "DIFY_WORKFLOW_NAME": "workflow-translator,workflow-genImag",
+        "DIFY_API_KEYS": "appkey-xxxxxxxxxxxa,appkey-xxxxxxxxxxxb"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "baseUrl": {
+                "type": "string",
+                "description": "The base URL of the Dify platform API server url.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "baseUrl": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

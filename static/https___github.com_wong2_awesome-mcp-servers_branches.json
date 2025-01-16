@@ -1,0 +1,20 @@
+{
+    "branches": [
+        {
+            "id": "main",
+            "name": "main",
+            "description": "Default branch",
+            "updated": "Jan 11, 2025",
+            "checkStatus": null,
+            "aheadBehind": {
+                "behind": 0,
+                "ahead": 0
+            },
+            "pullRequest": null,
+            "actions": {
+                "delete": false,
+                "menu": true
+            }
+        }
+    ]
+}

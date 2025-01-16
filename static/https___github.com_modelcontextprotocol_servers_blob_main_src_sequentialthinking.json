@@ -1,0 +1,105 @@
+{
+    "id": "sequentialthinking",
+    "name": "Sequential Thinking MCP Server",
+    "description": "An MCP server implementation that provides a tool for dynamic and reflective problem-solving through a structured thinking process.",
+    "tags": [
+        "mcp",
+        "sequential",
+        "thinking",
+        "problem-solving"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "thought": {
+                "type": "string",
+                "description": "The current thinking step",
+                "required": true
+            },
+            "nextThoughtNeeded": {
+                "type": "boolean",
+                "description": "Whether another thought step is needed",
+                "required": true
+            },
+            "thoughtNumber": {
+                "type": "integer",
+                "description": "Current thought number",
+                "required": true
+            },
+            "totalThoughts": {
+                "type": "integer",
+                "description": "Estimated total thoughts needed",
+                "required": true
+            },
+            "isRevision": {
+                "type": "boolean",
+                "description": "Whether this revises previous thinking",
+                "required": false
+            },
+            "revisesThought": {
+                "type": "integer",
+                "description": "Which thought is being reconsidered",
+                "required": false
+            },
+            "branchFromThought": {
+                "type": "integer",
+                "description": "Branching point thought number",
+                "required": false
+            },
+            "branchId": {
+                "type": "string",
+                "description": "Branch identifier",
+                "required": false
+            },
+            "needsMoreThoughts": {
+                "type": "boolean",
+                "description": "If more thoughts are needed",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "thought": {
+            "type": "single",
+            "position": 0
+        },
+        "nextThoughtNeeded": {
+            "type": "single",
+            "position": 1
+        },
+        "thoughtNumber": {
+            "type": "single",
+            "position": 2
+        },
+        "totalThoughts": {
+            "type": "single",
+            "position": 3
+        },
+        "isRevision": {
+            "type": "single",
+            "position": 4
+        },
+        "revisesThought": {
+            "type": "single",
+            "position": 5
+        },
+        "branchFromThought": {
+            "type": "single",
+            "position": 6
+        },
+        "branchId": {
+            "type": "single",
+            "position": 7
+        },
+        "needsMoreThoughts": {
+            "type": "single",
+            "position": 8
+        }
+    }
+}

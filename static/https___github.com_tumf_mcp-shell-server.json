@@ -1,0 +1,62 @@
+{
+    "id": "shell",
+    "name": "MCP Shell Server",
+    "description": "A secure shell command execution server implementing the Model Context Protocol (MCP). This server allows remote execution of whitelisted shell commands with support for stdin input.",
+    "tags": [
+        "shell",
+        "mcp",
+        "command-execution"
+    ],
+    "repo": "https://github.com/tumf/mcp-shell-server",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-shell-server"
+    ],
+    "env": {
+        "ALLOW_COMMANDS": "ls,cat,pwd,grep,wc,touch,find"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "command": {
+                "type": "array",
+                "description": "Command and its arguments as array elements",
+                "required": true,
+                "minItems": 1
+            },
+            "stdin": {
+                "type": "string",
+                "description": "Input to be passed to the command",
+                "required": false
+            },
+            "directory": {
+                "type": "string",
+                "description": "Working directory for command execution",
+                "required": false
+            },
+            "timeout": {
+                "type": "integer",
+                "description": "Maximum execution time in seconds",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "command": {
+            "type": "spread",
+            "position": 0
+        },
+        "stdin": {
+            "type": "single",
+            "position": 2
+        },
+        "directory": {
+            "type": "single",
+            "position": 3
+        },
+        "timeout": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

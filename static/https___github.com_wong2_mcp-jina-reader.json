@@ -1,0 +1,17 @@
+{
+    "id": "mcp-jina-reader",
+    "name": "Jina Reader MCP Server",
+    "description": "Fetch the content of a remote URL as Markdown with Jina Reader",
+    "tags": [
+        "jina",
+        "mcp",
+        "markdown"
+    ],
+    "repo": "https://github.com/wong2/mcp-jina-reader",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-jina-reader"
+    ],
+    "configurable": false
+}

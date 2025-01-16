@@ -1,0 +1,55 @@
+{
+    "id": "mcp-twikit",
+    "name": "MCP-Twikit",
+    "description": "A Model Context Protocol (MCP) server for interacting with Twitter.",
+    "tags": [
+        "twitter",
+        "mcp"
+    ],
+    "repo": "https://github.com/adhikasp/mcp-twikit",
+    "command": "uvx",
+    "baseArgs": [
+        "--from",
+        "git+https://github.com/adhikasp/mcp-twikit",
+        "mcp-twikit"
+    ],
+    "env": {
+        "TWITTER_USERNAME": "@example",
+        "TWITTER_EMAIL": "me@example.com",
+        "TWITTER_PASSWORD": "secret"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "twitterUsername": {
+                "type": "string",
+                "description": "Twitter username for accessing the account",
+                "required": true
+            },
+            "twitterEmail": {
+                "type": "string",
+                "description": "Email associated with the Twitter account",
+                "required": true
+            },
+            "twitterPassword": {
+                "type": "string",
+                "description": "Password for the Twitter account",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "twitterUsername": {
+            "type": "env",
+            "key": "TWITTER_USERNAME"
+        },
+        "twitterEmail": {
+            "type": "env",
+            "key": "TWITTER_EMAIL"
+        },
+        "twitterPassword": {
+            "type": "env",
+            "key": "TWITTER_PASSWORD"
+        }
+    }
+}

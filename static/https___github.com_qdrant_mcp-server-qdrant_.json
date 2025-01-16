@@ -1,0 +1,67 @@
+{
+    "id": "qdrant",
+    "name": "Qdrant MCP Server",
+    "description": "A basic Model Context Protocol server for keeping and retrieving memories in the Qdrant vector search engine.",
+    "tags": [
+        "mcp",
+        "qdrant",
+        "vector-search"
+    ],
+    "repo": "https://github.com/qdrant/mcp-server-qdrant",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-server-qdrant"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "qdrantUrl": {
+                "type": "string",
+                "description": "URL of the Qdrant server",
+                "required": true
+            },
+            "qdrantApiKey": {
+                "type": "string",
+                "description": "API key for the Qdrant server",
+                "required": false
+            },
+            "collectionName": {
+                "type": "string",
+                "description": "Name of the collection to use",
+                "required": true
+            },
+            "fastembedModelName": {
+                "type": "string",
+                "description": "Name of the FastEmbed model to use",
+                "required": false
+            },
+            "qdrantLocalPath": {
+                "type": "string",
+                "description": "Path to the local Qdrant database",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "qdrantUrl": {
+            "type": "single",
+            "position": 2
+        },
+        "qdrantApiKey": {
+            "type": "single",
+            "position": 4
+        },
+        "collectionName": {
+            "type": "single",
+            "position": 6
+        },
+        "fastembedModelName": {
+            "type": "single",
+            "position": 8
+        },
+        "qdrantLocalPath": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

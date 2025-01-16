@@ -1,0 +1,31 @@
+{
+    "id": "duckdb",
+    "name": "DuckDB",
+    "description": "A Model Context Protocol (MCP) server implementation for DuckDB, providing database interaction capabilities through MCP tools.",
+    "tags": [
+        "duckdb",
+        "database"
+    ],
+    "repo": "https://github.com/ktanaka101/mcp-server-duckdb",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-server-duckdb",
+        "--db-path"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "db-path": {
+                "type": "string",
+                "description": "Path to the DuckDB database file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "db-path": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

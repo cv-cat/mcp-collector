@@ -1,0 +1,40 @@
+{
+    "id": "mcp-proxy",
+    "name": "MCP Proxy",
+    "description": "A TypeScript SSE proxy for MCP servers that use stdio transport.",
+    "tags": [
+        "proxy",
+        "sse",
+        "typescript"
+    ],
+    "repo": "https://github.com/punkpeye/mcp-proxy",
+    "command": "npx",
+    "baseArgs": [
+        "mcp-proxy"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "port": {
+                "type": "number",
+                "description": "Port for the SSE server",
+                "required": true
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "Endpoint for the SSE server",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "port": {
+            "type": "single",
+            "position": 2
+        },
+        "endpoint": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

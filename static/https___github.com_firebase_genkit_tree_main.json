@@ -1,0 +1,16 @@
+{
+    "id": "genkit",
+    "name": "Genkit",
+    "description": "A framework for building AI-powered applications.",
+    "repo": "https://github.com/firebase/genkit/tree/main",
+    "tags": [
+        "ai",
+        "framework",
+        "open-source"
+    ],
+    "command": "npm",
+    "baseArgs": [
+        "i"
+    ],
+    "configurable": false
+}

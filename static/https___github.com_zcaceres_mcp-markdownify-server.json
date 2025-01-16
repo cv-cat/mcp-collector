@@ -1,0 +1,31 @@
+{
+    "id": "markdownify",
+    "name": "Markdownify MCP Server",
+    "description": "Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format.",
+    "tags": [
+        "markdown",
+        "conversion",
+        "tools"
+    ],
+    "repo": "https://github.com/zcaceres/markdownify-mcp",
+    "command": "node",
+    "baseArgs": [
+        "{ABSOLUTE PATH TO FILE HERE}/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "UV_PATH": {
+                "type": "string",
+                "description": "Path to the 'uv' installation",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "UV_PATH": {
+            "type": "env",
+            "key": "UV_PATH"
+        }
+    }
+}

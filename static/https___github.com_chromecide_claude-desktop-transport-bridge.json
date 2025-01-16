@@ -1,0 +1,33 @@
+{
+    "id": "claude-desktop-transport-bridge",
+    "name": "Claude Desktop Transport Bridge",
+    "description": "A transport bridge for Claude Desktop that supports both SSE and WebSocket connections.",
+    "tags": [
+        "desktop",
+        "transport",
+        "bridge"
+    ],
+    "repo": "https://github.com/chromecide/claude-desktop-transport-bridge",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "-g",
+        "github:chromecide/claude-desktop-transport-bridge"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "SSE or WebSocket URL",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

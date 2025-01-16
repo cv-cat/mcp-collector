@@ -1,0 +1,44 @@
+{
+    "id": "cognee",
+    "name": "Cognee MCP",
+    "description": "Reliable LLM Memory for AI Applications and AI Agents",
+    "repo": "https://github.com/topoteretes/cognee/tree/dev/cognee-mcp",
+    "tags": [
+        "mcp",
+        "cognee",
+        "ai"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/{user}/cognee/cognee-mcp",
+        "run",
+        "cognee"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "ENV": {
+                "type": "string",
+                "description": "Environment setting",
+                "required": true
+            },
+            "TOKENIZERS_PARALLELISM": {
+                "type": "boolean",
+                "description": "Enable parallelism for tokenizers",
+                "required": true
+            },
+            "LLM_API_KEY": {
+                "type": "string",
+                "description": "API key for LLM",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

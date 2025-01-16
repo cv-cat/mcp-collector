@@ -1,0 +1,42 @@
+{
+    "id": "puppeteer",
+    "name": "Puppeteer",
+    "description": "A Model Context Protocol server that provides browser automation capabilities using Puppeteer.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+    "tags": [
+        "automation",
+        "browser",
+        "puppeteer",
+        "llm"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "URL to navigate to in the browser.",
+                "required": true
+            },
+            "screenshotName": {
+                "type": "string",
+                "description": "Name of the screenshot to capture.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 0
+        },
+        "screenshotName": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "id": "gmail",
+    "name": "Gmail MCP Server",
+    "description": "An MCP (Model Context Protocol) server that provides Gmail integration capabilities to MCP clients like Claude Desktop.",
+    "tags": [
+        "gmail",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/MCP-Mirror/ajbr0wn_gmail-mcp-server",
+    "command": "/path/to/conda/envs/mcp-gmail/bin/python",
+    "baseArgs": [
+        "-m",
+        "gmail_mcp_server.server"
+    ],
+    "env": {
+        "PYTHONPATH": "/path/to/gmail-mcp-server/src",
+        "GMAIL_CREDENTIALS_FILE": "/path/to/credentials.json",
+        "GMAIL_TOKEN_FILE": "/path/to/token.json"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GMAIL_CREDENTIALS_FILE": {
+                "type": "string",
+                "description": "Path to your Google OAuth credentials file",
+                "required": true
+            },
+            "GMAIL_TOKEN_FILE": {
+                "type": "string",
+                "description": "Path where the authentication token will be saved",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GMAIL_CREDENTIALS_FILE": {
+            "type": "env",
+            "key": "GMAIL_CREDENTIALS_FILE"
+        },
+        "GMAIL_TOKEN_FILE": {
+            "type": "env",
+            "key": "GMAIL_TOKEN_FILE"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "modelcontextprotocol-net",
+    "name": "ModelContextProtocol.NET",
+    "description": "A C# SDK implementation of the Model Context Protocol (MCP), enabling seamless integration between AI models and development environments.",
+    "tags": [
+        "mcp",
+        "sdk",
+        "csharp"
+    ],
+    "repo": "https://github.com/salty-flower/ModelContextProtocol.NET",
+    "command": "dotnet",
+    "baseArgs": [
+        "add",
+        "package",
+        "ModelContextProtocol.NET.Server"
+    ],
+    "configurable": false
+}

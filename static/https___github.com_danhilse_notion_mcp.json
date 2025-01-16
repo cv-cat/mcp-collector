@@ -1,0 +1,41 @@
+{
+    "id": "notion-todo",
+    "name": "Notion MCP Integration",
+    "description": "A simple Model Context Protocol (MCP) server that integrates with Notion's API to manage my personal todo list through Claude.",
+    "tags": [
+        "notion",
+        "mcp",
+        "todo"
+    ],
+    "repo": "https://github.com/danhilse/notion_mcp",
+    "command": "/path/to/your/.venv/bin/python",
+    "baseArgs": [
+        "-m",
+        "notion_mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Notion API key for accessing the Notion API",
+                "required": true
+            },
+            "databaseId": {
+                "type": "string",
+                "description": "Notion database ID for managing todos",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "NOTION_API_KEY"
+        },
+        "databaseId": {
+            "type": "env",
+            "key": "NOTION_DATABASE_ID"
+        }
+    }
+}

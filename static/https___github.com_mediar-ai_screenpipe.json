@@ -1,0 +1,13 @@
+{
+    "id": "screenpipe",
+    "name": "ScreenPipe",
+    "description": "Library & platform to build, distribute, monetize AI apps that have the full context",
+    "tags": [
+        "ai",
+        "app",
+        "os"
+    ],
+    "repo": "https://github.com/mediar-ai/screenpipe",
+    "command": "screenpipe",
+    "configurable": true
+}

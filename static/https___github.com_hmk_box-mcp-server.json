@@ -1,0 +1,40 @@
+{
+    "id": "box",
+    "name": "Box",
+    "description": "File storage and management via Box API",
+    "tags": [
+        "box",
+        "files",
+        "api"
+    ],
+    "repo": "https://github.com/hmk/box-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "box-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "BOX_JWT_CONFIG_PATH": {
+                "type": "string",
+                "description": "Path to the Box JWT configuration JSON",
+                "required": true
+            },
+            "BOX_USER_ID": {
+                "type": "string",
+                "description": "Box user ID for access control",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "BOX_JWT_CONFIG_PATH": {
+            "type": "single",
+            "position": 0
+        },
+        "BOX_USER_ID": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

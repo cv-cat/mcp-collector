@@ -1,0 +1,42 @@
+{
+    "id": "mcp-connect",
+    "name": "MCP Connect",
+    "description": "A tool that integrates cloud-based AI services with local MCP servers.",
+    "tags": [
+        "mcp",
+        "cloud",
+        "integration",
+        "tool"
+    ],
+    "repo": "https://github.com/EvalsOne/MCP-Connect",
+    "command": "npm",
+    "baseArgs": [
+        "run",
+        "start"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AUTH_TOKEN": {
+                "type": "string",
+                "description": "Authentication token for the bridge API",
+                "required": false
+            },
+            "PORT": {
+                "type": "number",
+                "description": "HTTP server port (default: 3000)",
+                "required": true
+            },
+            "LOG_LEVEL": {
+                "type": "string",
+                "description": "Logging level (default: info)",
+                "required": true
+            },
+            "NGROK_AUTH_TOKEN": {
+                "type": "string",
+                "description": "Ngrok auth token",
+                "required": false
+            }
+        }
+    }
+}

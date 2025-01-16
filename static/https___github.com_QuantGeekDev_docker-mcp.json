@@ -1,0 +1,17 @@
+{
+    "id": "docker-mcp",
+    "name": "Docker MCP",
+    "description": "A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.",
+    "tags": [
+        "docker",
+        "mcp",
+        "container",
+        "compose"
+    ],
+    "repo": "https://github.com/QuantGeekDev/docker-mcp",
+    "command": "uvx",
+    "baseArgs": [
+        "docker-mcp"
+    ],
+    "configurable": false
+}

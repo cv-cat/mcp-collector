@@ -1,0 +1,40 @@
+{
+    "id": "npmrc",
+    "name": ".npmrc",
+    "description": "Configuration file for npm package management",
+    "tags": [
+        "npm",
+        "configuration"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "registry": {
+                "type": "string",
+                "description": "NPM registry URL",
+                "required": true
+            },
+            "@modelcontextprotocol:registry": {
+                "type": "string",
+                "description": "Registry for model context protocol packages",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "registry": {
+            "type": "single",
+            "position": 1
+        },
+        "@modelcontextprotocol:registry": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

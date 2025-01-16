@@ -1,0 +1,31 @@
+{
+    "id": "time",
+    "name": "Time MCP Server",
+    "description": "A Model Context Protocol server that provides time and timezone conversion capabilities. This server enables LLMs to get current time information and perform timezone conversions using IANA timezone names, with automatic system timezone detection.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+    "tags": [
+        "mcp",
+        "time",
+        "timezone"
+    ],
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-server-time"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "localTimezone": {
+                "type": "string",
+                "description": "Optional local timezone to override system detection.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "localTimezone": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

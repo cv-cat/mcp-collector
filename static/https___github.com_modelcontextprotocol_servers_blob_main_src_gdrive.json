@@ -1,0 +1,33 @@
+{
+    "id": "gdrive",
+    "name": "Google Drive",
+    "description": "File access and search capabilities for Google Drive",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+    "tags": [
+        "google",
+        "filesystem",
+        "api"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+    ],
+    "configurable": false,
+    "configSchema": {
+        "properties": {
+            "paths": {
+                "type": "array",
+                "description": "Allowed file system paths",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

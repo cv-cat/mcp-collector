@@ -1,0 +1,14 @@
+{
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "description": "MCP Server that can connect to a Kubernetes cluster and manage it.",
+    "tags": [
+        "kubernetes"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Flux159_mcp-server-kubernetes",
+    "command": "npx",
+    "baseArgs": [
+        "mcp-server-kubernetes"
+    ],
+    "configurable": false
+}

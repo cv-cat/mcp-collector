@@ -1,0 +1,60 @@
+{
+    "id": "terminal",
+    "name": "Terminal",
+    "description": "Terminal server implementation for Model Context Protocol (MCP). Provides secure and controlled access to terminal commands and npm operations.",
+    "tags": [
+        "terminal",
+        "commands",
+        "npm"
+    ],
+    "repo": "https://github.com/MCP-Mirror/RichardTheuws_mcp-terminal-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-terminal"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "allowedCommands": {
+                "type": "array",
+                "description": "Commands allowed to execute",
+                "required": true,
+                "minItems": 1
+            },
+            "defaultTimeout": {
+                "type": "number",
+                "description": "Default timeout for commands in milliseconds",
+                "required": true
+            },
+            "defaultCwd": {
+                "type": "string",
+                "description": "Default working directory",
+                "required": true
+            },
+            "environmentVariables": {
+                "type": "object",
+                "description": "Environment variables for command execution",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "allowedCommands": {
+            "type": "spread",
+            "position": 0
+        },
+        "defaultTimeout": {
+            "type": "single",
+            "position": 1
+        },
+        "defaultCwd": {
+            "type": "single",
+            "position": 2
+        },
+        "environmentVariables": {
+            "type": "spread",
+            "position": 3
+        }
+    }
+}

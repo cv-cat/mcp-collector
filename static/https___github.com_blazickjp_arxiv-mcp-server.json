@@ -1,0 +1,33 @@
+{
+    "id": "arxiv-mcp-server",
+    "name": "ArXiv MCP Server",
+    "description": "Enable AI assistants to search and access arXiv papers through a simple MCP interface.",
+    "tags": [
+        "arxiv",
+        "ai",
+        "mcp"
+    ],
+    "repo": "https://github.com/blazickjp/arxiv-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "tool",
+        "run",
+        "arxiv-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "storagePath": {
+                "type": "string",
+                "description": "Paper storage location",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "storagePath": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

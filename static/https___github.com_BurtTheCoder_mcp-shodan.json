@@ -1,0 +1,37 @@
+{
+    "id": "shodan",
+    "name": "Shodan MCP Server",
+    "description": "A Model Context Protocol (MCP) server for querying the Shodan API and Shodan CVEDB.",
+    "tags": [
+        "shodan",
+        "api",
+        "cvedb"
+    ],
+    "repo": "https://github.com/BurtTheCoder/mcp-shodan",
+    "command": "mcp-shodan",
+    "baseArgs": [],
+    "env": {
+        "SHODAN_API_KEY": {
+            "type": "string",
+            "description": "Your Shodan API key",
+            "required": true
+        }
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "env": {
+                "type": "object",
+                "description": "Required environment variables",
+                "properties": {
+                    "SHODAN_API_KEY": {
+                        "type": "string",
+                        "description": "Shodan API key",
+                        "required": true
+                    }
+                }
+            }
+        }
+    },
+    "argsMapping": {}
+}

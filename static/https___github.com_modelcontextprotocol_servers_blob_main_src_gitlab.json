@@ -1,0 +1,45 @@
+{
+    "id": "gitlab",
+    "name": "GitLab",
+    "description": "MCP Server for the GitLab API, enabling project management, file operations, and more.",
+    "tags": [
+        "gitlab",
+        "api",
+        "project management"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/gitlab",
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-e",
+        "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "-e",
+        "GITLAB_API_URL",
+        "mcp/gitlab"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GITLAB_PERSONAL_ACCESS_TOKEN": {
+                "type": "string",
+                "description": "Your GitLab personal access token",
+                "required": true
+            },
+            "GITLAB_API_URL": {
+                "type": "string",
+                "description": "Base URL for GitLab API",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": {
+            "type": "env",
+            "key": "GITLAB_PERSONAL_ACCESS_TOKEN"
+        },
+        "GITLAB_API_URL": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

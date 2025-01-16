@@ -1,0 +1,210 @@
+{
+    "id": "windows-cli",
+    "name": "Windows CLI MCP Server",
+    "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, Git Bash shells, and remote systems via SSH.",
+    "tags": [
+        "windows",
+        "cli",
+        "mcp"
+    ],
+    "repo": "https://github.com/SimonB97/win-cli-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@simonb97/server-win-cli"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "security": {
+                "type": "object",
+                "description": "Security settings for the MCP server",
+                "required": true,
+                "properties": {
+                    "maxCommandLength": {
+                        "type": "number",
+                        "description": "Maximum allowed length for any command",
+                        "required": true
+                    },
+                    "blockedCommands": {
+                        "type": "array",
+                        "description": "Commands to block - blocks both direct use and full paths",
+                        "required": true,
+                        "minItems": 1
+                    },
+                    "blockedArguments": {
+                        "type": "array",
+                        "description": "Arguments that will be blocked when used with any command",
+                        "required": true,
+                        "minItems": 1
+                    },
+                    "allowedPaths": {
+                        "type": "array",
+                        "description": "List of directories where commands can be executed",
+                        "required": true,
+                        "minItems": 1
+                    },
+                    "restrictWorkingDirectory": {
+                        "type": "boolean",
+                        "description": "If true, commands can only run in allowedPaths",
+                        "required": true
+                    },
+                    "logCommands": {
+                        "type": "boolean",
+                        "description": "If true, saves command history",
+                        "required": true
+                    },
+                    "maxHistorySize": {
+                        "type": "number",
+                        "description": "Maximum number of commands to keep in history",
+                        "required": true
+                    },
+                    "commandTimeout": {
+                        "type": "number",
+                        "description": "Timeout for command execution in seconds",
+                        "required": true
+                    },
+                    "enableInjectionProtection": {
+                        "type": "boolean",
+                        "description": "Enable or disable protection against command injection",
+                        "required": true
+                    }
+                }
+            },
+            "shells": {
+                "type": "object",
+                "description": "Shell configuration",
+                "required": true,
+                "properties": {
+                    "powershell": {
+                        "type": "object",
+                        "description": "PowerShell shell configuration",
+                        "required": true,
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "description": "Enable/disable this shell",
+                                "required": true
+                            },
+                            "command": {
+                                "type": "string",
+                                "description": "Path to shell executable",
+                                "required": true
+                            },
+                            "args": {
+                                "type": "array",
+                                "description": "Default arguments for the shell",
+                                "required": true,
+                                "minItems": 1
+                            },
+                            "blockedOperators": {
+                                "type": "array",
+                                "description": "Specify which command operators to block",
+                                "required": false
+                            }
+                        }
+                    },
+                    "cmd": {
+                        "type": "object",
+                        "description": "Command Prompt shell configuration",
+                        "required": true,
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "description": "Enable/disable this shell",
+                                "required": true
+                            },
+                            "command": {
+                                "type": "string",
+                                "description": "Path to shell executable",
+                                "required": true
+                            },
+                            "args": {
+                                "type": "array",
+                                "description": "Default arguments for the shell",
+                                "required": true,
+                                "minItems": 1
+                            },
+                            "blockedOperators": {
+                                "type": "array",
+                                "description": "Specify which command operators to block",
+                                "required": false
+                            }
+                        }
+                    },
+                    "gitbash": {
+                        "type": "object",
+                        "description": "Git Bash shell configuration",
+                        "required": true,
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "description": "Enable/disable this shell",
+                                "required": true
+                            },
+                            "command": {
+                                "type": "string",
+                                "description": "Path to shell executable",
+                                "required": true
+                            },
+                            "args": {
+                                "type": "array",
+                                "description": "Default arguments for the shell",
+                                "required": true,
+                                "minItems": 1
+                            },
+                            "blockedOperators": {
+                                "type": "array",
+                                "description": "Specify which command operators to block",
+                                "required": false
+                            }
+                        }
+                    }
+                }
+            },
+            "ssh": {
+                "type": "object",
+                "description": "SSH configuration",
+                "required": false,
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Enable/disable SSH functionality",
+                        "required": true
+                    },
+                    "defaultTimeout": {
+                        "type": "number",
+                        "description": "Default timeout for SSH commands in seconds",
+                        "required": true
+                    },
+                    "maxConcurrentSessions": {
+                        "type": "number",
+                        "description": "Maximum number of concurrent SSH sessions",
+                        "required": true
+                    },
+                    "keepaliveInterval": {
+                        "type": "number",
+                        "description": "Interval for sending keepalive packets",
+                        "required": true
+                    },
+                    "keepaliveCountMax": {
+                        "type": "number",
+                        "description": "Maximum number of failed keepalive attempts before disconnecting",
+                        "required": true
+                    },
+                    "readyTimeout": {
+                        "type": "number",
+                        "description": "Timeout for establishing SSH connections (in milliseconds)",
+                        "required": true
+                    },
+                    "connections": {
+                        "type": "object",
+                        "description": "SSH connection profiles",
+                        "required": false
+                    }
+                }
+            }
+        }
+    },
+    "argsMapping": {}
+}

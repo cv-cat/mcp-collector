@@ -1,0 +1,31 @@
+{
+    "id": "kagi",
+    "name": "Kagi MCP",
+    "description": "Interact with Kagi's MCP server and API",
+    "tags": [
+        "kagi",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/kagisearch/kagimcp",
+    "command": "uv",
+    "baseArgs": [
+        "kagimcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "KAGI_API_KEY": {
+                "type": "string",
+                "description": "Kagi API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "KAGI_API_KEY": {
+            "type": "env",
+            "key": "KAGI_API_KEY"
+        }
+    }
+}

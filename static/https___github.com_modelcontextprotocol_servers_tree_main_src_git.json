@@ -1,0 +1,31 @@
+{
+    "id": "git",
+    "name": "Git",
+    "description": "A Model Context Protocol server for Git repository interaction and automation.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+    "tags": [
+        "git",
+        "repository",
+        "version-control"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "@modelcontextprotocol/server-git"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "repository": {
+                "type": "string",
+                "description": "Path to the Git repository",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "repository": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

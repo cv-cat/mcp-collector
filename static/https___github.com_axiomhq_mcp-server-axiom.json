@@ -1,0 +1,83 @@
+{
+    "id": "axiom",
+    "name": "MCP Server Axiom",
+    "description": "A Model Context Protocol server implementation for Axiom that enables AI agents to query your data using Axiom Processing Language (APL).",
+    "tags": [
+        "axiom",
+        "mcp",
+        "ai",
+        "data"
+    ],
+    "repo": "https://github.com/axiomhq/mcp-server-axiom",
+    "command": "/path/to/your/axiom-mcp-binary",
+    "baseArgs": [
+        "--config",
+        "/path/to/your/config.txt"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "Axiom Token",
+                "required": true
+            },
+            "url": {
+                "type": "string",
+                "description": "Axiom API URL",
+                "required": true
+            },
+            "orgId": {
+                "type": "string",
+                "description": "Your Organization ID",
+                "required": true
+            },
+            "queryRate": {
+                "type": "integer",
+                "description": "Rate limit for queries",
+                "required": true
+            },
+            "queryBurst": {
+                "type": "integer",
+                "description": "Burst limit for queries",
+                "required": true
+            },
+            "datasetsRate": {
+                "type": "integer",
+                "description": "Rate limit for datasets",
+                "required": true
+            },
+            "datasetsBurst": {
+                "type": "integer",
+                "description": "Burst limit for datasets",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "single",
+            "position": 1
+        },
+        "url": {
+            "type": "single",
+            "position": 2
+        },
+        "queryRate": {
+            "type": "single",
+            "position": 3
+        },
+        "queryBurst": {
+            "type": "single",
+            "position": 4
+        },
+        "datasetsRate": {
+            "type": "single",
+            "position": 5
+        },
+        "datasetsBurst": {
+            "type": "single",
+            "position": 6
+        }
+    }
+}

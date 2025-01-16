@@ -1,0 +1,34 @@
+{
+    "id": "llm-context",
+    "name": "LLM Context",
+    "description": "A tool that helps developers quickly inject relevant content from code/text projects into Large Language Model chat interfaces.",
+    "repo": "https://github.com/cyberchitta/llm-context.py",
+    "tags": [
+        "llm",
+        "ai",
+        "development",
+        "integration"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "tool",
+        "install",
+        "llm-context"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "projectPath": {
+                "type": "string",
+                "description": "Path to the project root",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "projectPath": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

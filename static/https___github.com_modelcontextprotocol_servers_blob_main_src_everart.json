@@ -1,0 +1,32 @@
+{
+    "id": "everart",
+    "name": "EverArt MCP Server",
+    "description": "Image generation server for Claude Desktop using EverArt's API.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/everart",
+    "tags": [
+        "image-generation",
+        "API",
+        "everart"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-everart"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "EVERART_API_KEY": {
+                "type": "string",
+                "description": "Your EverArt API key for authentication",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "EVERART_API_KEY": {
+            "type": "env",
+            "key": "EVERART_API_KEY"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "foxy-contexts",
+    "name": "Foxy Contexts",
+    "description": "Foxy contexts is a Golang library for building context servers supporting Model Context Protocol.",
+    "tags": [
+        "golang",
+        "context",
+        "mcp"
+    ],
+    "repo": "https://github.com/strowk/foxy-contexts",
+    "command": "git",
+    "baseArgs": [
+        "clone",
+        "https://github.com/strowk/foxy-contexts"
+    ],
+    "configurable": true,
+    "argsMapping": {}
+}

@@ -1,0 +1,57 @@
+{
+    "id": "fetch",
+    "name": "Fetch",
+    "description": "A Model Context Protocol server that provides web content fetching capabilities.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+    "tags": [
+        "fetch",
+        "mcp"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "@modelcontextprotocol/server-fetch"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "URL to fetch",
+                "required": true
+            },
+            "max_length": {
+                "type": "integer",
+                "description": "Maximum number of characters to return",
+                "required": false
+            },
+            "start_index": {
+                "type": "integer",
+                "description": "Start content from this character index",
+                "required": false
+            },
+            "raw": {
+                "type": "boolean",
+                "description": "Get raw content without markdown conversion",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "url": {
+            "type": "single",
+            "position": 0
+        },
+        "max_length": {
+            "type": "single",
+            "position": 1
+        },
+        "start_index": {
+            "type": "single",
+            "position": 2
+        },
+        "raw": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

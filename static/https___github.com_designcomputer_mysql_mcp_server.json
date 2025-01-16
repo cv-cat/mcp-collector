@@ -1,0 +1,61 @@
+{
+    "id": "mysql",
+    "name": "MySQL MCP Server",
+    "description": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
+    "tags": [
+        "mysql",
+        "database",
+        "mcp"
+    ],
+    "repo": "https://github.com/designcomputer/mysql_mcp_server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "path/to/mysql_mcp_server",
+        "run",
+        "mysql_mcp_server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "MYSQL_HOST": {
+                "type": "string",
+                "description": "MySQL host",
+                "required": true
+            },
+            "MYSQL_USER": {
+                "type": "string",
+                "description": "MySQL username",
+                "required": true
+            },
+            "MYSQL_PASSWORD": {
+                "type": "string",
+                "description": "MySQL password",
+                "required": true
+            },
+            "MYSQL_DATABASE": {
+                "type": "string",
+                "description": "MySQL database name",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "MYSQL_HOST": {
+            "type": "env",
+            "key": "MYSQL_HOST"
+        },
+        "MYSQL_USER": {
+            "type": "env",
+            "key": "MYSQL_USER"
+        },
+        "MYSQL_PASSWORD": {
+            "type": "env",
+            "key": "MYSQL_PASSWORD"
+        },
+        "MYSQL_DATABASE": {
+            "type": "env",
+            "key": "MYSQL_DATABASE"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "id": "aindreyway-mcp-neurolora",
+    "name": "MCP Neurolora",
+    "description": "An intelligent MCP server that provides tools for code analysis using OpenAI API, code collection, and documentation generation.",
+    "tags": [
+        "openai",
+        "code-analysis",
+        "documentation"
+    ],
+    "repo": "https://github.com/aindreyway/mcp-neurolora",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@aindreyway/mcp-neurolora@latest"
+    ],
+    "env": {
+        "NODE_OPTIONS": "--max-old-space-size=256",
+        "OPENAI_API_KEY": "your_api_key_here"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "codePath": {
+                "type": "string",
+                "description": "Path to the code file or directory to analyze",
+                "required": true
+            },
+            "directory": {
+                "type": "string",
+                "description": "Directory path to collect code from",
+                "required": true
+            },
+            "outputPath": {
+                "type": "string",
+                "description": "Path where to save the output markdown file",
+                "required": false
+            },
+            "ignorePatterns": {
+                "type": "array",
+                "description": "Array of patterns to ignore (similar to .gitignore)",
+                "required": false,
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "argsMapping": {
+        "codePath": {
+            "type": "single",
+            "position": 0
+        },
+        "directory": {
+            "type": "single",
+            "position": 1
+        },
+        "outputPath": {
+            "type": "single",
+            "position": 2
+        },
+        "ignorePatterns": {
+            "type": "spread",
+            "position": 3
+        }
+    }
+}

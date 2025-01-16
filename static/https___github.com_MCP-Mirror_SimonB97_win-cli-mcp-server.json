@@ -1,0 +1,27 @@
+{
+    "id": "windows-cli",
+    "name": "Windows CLI MCP Server",
+    "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, Git Bash shells, and remote systems via SSH.",
+    "tags": [
+        "windows",
+        "cli",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/SimonB97_win-cli-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@simonb97/server-win-cli"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "config": {
+                "type": "object",
+                "description": "Server configuration settings",
+                "required": true
+            }
+        }
+    }
+}

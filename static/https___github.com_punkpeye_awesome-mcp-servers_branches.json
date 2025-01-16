@@ -1,0 +1,18 @@
+{
+    "branches": [
+        {
+            "id": "main",
+            "name": "main",
+            "isDefault": true,
+            "description": "The primary branch for development.",
+            "updated": "2025-01-11T19:57:15.000+08:00"
+        },
+        {
+            "id": "revert-80-main",
+            "name": "revert-80-main",
+            "isDefault": false,
+            "description": "A branch for reverting changes to main.",
+            "updated": "2024-12-09T00:00:59.000+08:00"
+        }
+    ]
+}

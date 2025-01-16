@@ -1,0 +1,79 @@
+{
+    "id": "mcp-server-vikingdb",
+    "name": "VikingDB MCP server",
+    "description": "An MCP server for VikingDB store and search",
+    "tags": [
+        "vikingdb",
+        "database",
+        "search"
+    ],
+    "repo": "https://github.com/KashiwaByte/vikingdb-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "dir to mcp-server-vikingdb",
+        "run",
+        "mcp-server-vikingdb"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "vikingdb_host": {
+                "type": "string",
+                "description": "The host to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_region": {
+                "type": "string",
+                "description": "The region to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_ak": {
+                "type": "string",
+                "description": "The Access Key to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb_sk": {
+                "type": "string",
+                "description": "The Secret Key to use for the VikingDB server.",
+                "required": true
+            },
+            "collection_name": {
+                "type": "string",
+                "description": "The name of the collection to use.",
+                "required": true
+            },
+            "index_name": {
+                "type": "string",
+                "description": "The name of the index to use.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "vikingdb_host": {
+            "type": "single",
+            "position": 4
+        },
+        "vikingdb_region": {
+            "type": "single",
+            "position": 6
+        },
+        "vikingdb_ak": {
+            "type": "single",
+            "position": 8
+        },
+        "vikingdb_sk": {
+            "type": "single",
+            "position": 10
+        },
+        "collection_name": {
+            "type": "single",
+            "position": 12
+        },
+        "index_name": {
+            "type": "single",
+            "position": 14
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "id": "airtable",
+    "name": "Airtable",
+    "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
+    "tags": [
+        "airtable",
+        "database",
+        "mcp"
+    ],
+    "repo": "https://github.com/domdomegg/airtable-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "airtable-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "Airtable personal access token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

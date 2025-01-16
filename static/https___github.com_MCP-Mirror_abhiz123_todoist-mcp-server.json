@@ -1,0 +1,35 @@
+{
+    "id": "todoist",
+    "name": "Todoist",
+    "description": "An MCP (Model Context Protocol) server implementation that integrates Claude with Todoist, enabling natural language task management.",
+    "tags": [
+        "todoist",
+        "task-management",
+        "integration"
+    ],
+    "repo": "https://github.com/abhiz123/todoist-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@abhiz123/todoist-mcp-server"
+    ],
+    "env": {
+        "TODOIST_API_TOKEN": "your_api_token_here"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiToken": {
+                "type": "string",
+                "description": "Your Todoist API token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiToken": {
+            "type": "env",
+            "key": "TODOIST_API_TOKEN"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "id": "mcp-notes",
+    "name": "MCP Notes",
+    "description": "A simple note-taking application built on top of the MCP protocol.",
+    "tags": [
+        "notes",
+        "application",
+        "mcp"
+    ],
+    "repo": "https://github.com/9Ninety/MCPNotes",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "-p",
+        "mcp-notes",
+        "mcp-notes-server",
+        "--dynamodb",
+        "dynamodb://access_key:secret_key@region/table"
+    ],
+    "env": {},
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "connectionString": {
+                "type": "string",
+                "description": "DynamoDB connection string",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "id": "mcp-proxy",
+    "name": "MCP Proxy Server",
+    "description": "An MCP proxy server that aggregates and serves multiple MCP resource servers through a single interface.",
+    "tags": [
+        "mcp",
+        "proxy",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/adamwattis_mcp-proxy-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/mcp-proxy-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "servers": {
+                "type": "array",
+                "description": "List of MCP servers to connect to.",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "servers": {
+            "type": "spread",
+            "position": 0
+        }
+    }
+}

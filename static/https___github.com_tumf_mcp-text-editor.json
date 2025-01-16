@@ -1,0 +1,59 @@
+{
+    "id": "text-editor",
+    "name": "MCP Text Editor",
+    "description": "A Model Context Protocol (MCP) server that provides line-oriented text file editing capabilities through a standardized API. Optimized for LLM tools with efficient partial file access to minimize token usage.",
+    "repo": "https://github.com/tumf/mcp-text-editor",
+    "tags": [
+        "text-editor",
+        "api",
+        "llm",
+        "file-access"
+    ],
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-text-editor"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "file_path": {
+                "type": "string",
+                "description": "Path to the text file",
+                "required": true
+            },
+            "line_start": {
+                "type": "integer",
+                "description": "Line number to start from (1-based)",
+                "required": true
+            },
+            "line_end": {
+                "type": "integer",
+                "description": "Line number to end at (inclusive, null for end of file)",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "description": "File encoding (default: 'utf-8')",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "file_path": {
+            "type": "single",
+            "position": 0
+        },
+        "line_start": {
+            "type": "single",
+            "position": 1
+        },
+        "line_end": {
+            "type": "single",
+            "position": 2
+        },
+        "encoding": {
+            "type": "single",
+            "position": 3
+        }
+    }
+}

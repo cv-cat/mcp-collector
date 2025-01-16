@@ -1,0 +1,37 @@
+{
+    "id": "sqlite",
+    "name": "SQLite Explorer",
+    "description": "An MCP server that provides safe, read-only access to SQLite databases through Model Context Protocol (MCP).",
+    "tags": [
+        "sqlite",
+        "database",
+        "mcp"
+    ],
+    "repo": "https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server",
+    "command": "fastmcp",
+    "baseArgs": [
+        "install",
+        "sqlite_explorer.py",
+        "--name",
+        "SQLite Explorer",
+        "-e",
+        "SQLITE_DB_PATH=/path/to/db"
+    ],
+    "env": {},
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "SQLITE_DB_PATH": {
+                "type": "string",
+                "description": "Full path to the SQLite database file you want to explore",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "SQLITE_DB_PATH": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

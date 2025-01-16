@@ -1,0 +1,57 @@
+{
+    "id": "bigquery",
+    "name": "BigQuery",
+    "description": "A Model Context Protocol server that provides access to BigQuery. This server enables LLMs to inspect database schemas and execute queries.",
+    "tags": [
+        "bigquery",
+        "database",
+        "gcp"
+    ],
+    "repo": "https://github.com/MCP-Mirror/LucasHild_mcp-server-bigquery",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "{{PATH_TO_REPO}}",
+        "run",
+        "mcp-server-bigquery",
+        "--project",
+        "{{GCP_PROJECT_ID}}",
+        "--location",
+        "{{GCP_LOCATION}}"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "project": {
+                "type": "string",
+                "description": "The GCP project ID",
+                "required": true
+            },
+            "location": {
+                "type": "string",
+                "description": "The GCP location (e.g. europe-west9)",
+                "required": true
+            },
+            "dataset": {
+                "type": "array",
+                "description": "Specific BigQuery datasets to consider",
+                "required": false,
+                "minItems": 0
+            }
+        }
+    },
+    "argsMapping": {
+        "project": {
+            "type": "single",
+            "position": 4
+        },
+        "location": {
+            "type": "single",
+            "position": 6
+        },
+        "dataset": {
+            "type": "spread",
+            "position": 8
+        }
+    }
+}

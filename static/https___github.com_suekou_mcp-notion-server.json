@@ -1,0 +1,32 @@
+{
+    "id": "notion",
+    "name": "Notion MCP Server",
+    "description": "MCP Server for the Notion API, enabling Claude to interact with Notion workspaces.",
+    "tags": [
+        "notion",
+        "api"
+    ],
+    "repo": "https://github.com/suekou/mcp-notion-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@suekou/mcp-notion-server"
+    ],
+    "env": {},
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "NOTION_API_TOKEN": {
+                "type": "string",
+                "description": "Notion integration token for API access",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "NOTION_API_TOKEN": {
+            "type": "env",
+            "key": "NOTION_API_TOKEN"
+        }
+    }
+}

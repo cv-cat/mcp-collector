@@ -1,0 +1,31 @@
+{
+    "id": "mcp-server-chatsum",
+    "name": "MCP Server Chatsum",
+    "description": "This MCP Server is used to summarize your chat messages.",
+    "repo": "https://github.com/chatmcp/mcp-server-chatsum",
+    "tags": [
+        "mcp",
+        "chat",
+        "summarize"
+    ],
+    "command": "path-to/bin/node",
+    "baseArgs": [
+        "path-to/mcp-server-chatsum/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "CHAT_DB_PATH": {
+                "type": "string",
+                "description": "Path to the chat database file",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "CHAT_DB_PATH": {
+            "type": "env",
+            "key": "CHAT_DB_PATH"
+        }
+    }
+}

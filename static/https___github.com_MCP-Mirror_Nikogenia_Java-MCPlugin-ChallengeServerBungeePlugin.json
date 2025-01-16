@@ -1,0 +1,16 @@
+{
+    "id": "nikogenia-java-mcplugin-challengeserverbungeeplugin",
+    "name": "Nikogenia Java-MCPlugin Challenge Server Bungee Plugin",
+    "description": "The Java Minecraft Plugin (BungeeCord) for the Challenge Server.",
+    "tags": [
+        "minecraft",
+        "bungeecord",
+        "plugin"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Nikogenia_Java-MCPlugin-ChallengeServerBungeePlugin",
+    "command": "git",
+    "baseArgs": [
+        "clone"
+    ],
+    "configurable": false
+}

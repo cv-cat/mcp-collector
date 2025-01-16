@@ -1,0 +1,31 @@
+{
+    "id": "sentry",
+    "name": "Sentry",
+    "description": "A Model Context Protocol server for retrieving and analyzing issues from Sentry.io.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry",
+    "tags": [
+        "mcp",
+        "sentry",
+        "error-reporting"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "@modelcontextprotocol/server-sentry"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "authToken": {
+                "type": "string",
+                "description": "Sentry authentication token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "authToken": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

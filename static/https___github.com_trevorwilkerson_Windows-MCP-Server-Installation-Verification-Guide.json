@@ -1,0 +1,20 @@
+{
+    "id": "sequential-thinking",
+    "name": "Sequential Thinking",
+    "description": "Verify your MCP server installation on Windows with thorough steps.",
+    "tags": [
+        "mcp",
+        "server",
+        "windows",
+        "installation",
+        "verification"
+    ],
+    "repo": "https://github.com/trevorwilkerson/Windows-MCP-Server-Installation-Verification-Guide",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+    ],
+    "configurable": false,
+    "argsMapping": {}
+}

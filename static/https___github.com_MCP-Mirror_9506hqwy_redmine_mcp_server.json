@@ -1,0 +1,18 @@
+{
+    "id": "redmine",
+    "name": "Redmine MCP Server",
+    "description": "This plugin provides a Model Context Protocol server using Server Side Event.",
+    "tags": [
+        "redmine",
+        "mcp",
+        "server",
+        "protocol"
+    ],
+    "repo": "https://github.com/MCP-Mirror/9506hqwy_redmine_mcp_server",
+    "command": "git",
+    "baseArgs": [
+        "clone",
+        "https://github.com/9506hqwy/redmine_mcp_server.git"
+    ],
+    "configurable": false
+}

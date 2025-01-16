@@ -1,0 +1,40 @@
+{
+    "id": "webperfect",
+    "name": "WebPerfect MCP Server",
+    "description": "Transform your images into web-optimized masterpieces with AI-powered precision",
+    "tags": [
+        "image",
+        "optimization",
+        "web"
+    ],
+    "repo": "https://github.com/splendasucks/webperfect-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/webperfect-mcp-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "inputDir": {
+                "type": "string",
+                "description": "Directory containing input images",
+                "required": true
+            },
+            "outputDir": {
+                "type": "string",
+                "description": "Directory for optimized output",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "inputDir": {
+            "type": "single",
+            "position": 0
+        },
+        "outputDir": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "id": "perplexity",
+    "name": "Perplexity MCP Server",
+    "description": "MCP Server for the Perplexity API.",
+    "tags": [
+        "api",
+        "perplexity"
+    ],
+    "repo": "https://github.com/tanigami/mcp-server-perplexity",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-server-perplexity"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Your Perplexity API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "PERPLEXITY_API_KEY"
+        }
+    }
+}

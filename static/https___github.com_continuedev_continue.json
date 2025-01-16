@@ -1,0 +1,17 @@
+{
+    "id": "continue",
+    "name": "Continue",
+    "description": "Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains.",
+    "tags": [
+        "ai",
+        "code",
+        "assistant"
+    ],
+    "repo": "https://github.com/continuedev/continue",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-continue"
+    ],
+    "configurable": false
+}

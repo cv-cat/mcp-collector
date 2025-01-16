@@ -1,0 +1,68 @@
+{
+    "id": "mcp-function-app-tester",
+    "name": "MCP Function App Tester",
+    "description": "A TypeScript-based MCP server that enables testing of Azure Function Apps through Cline. This tool allows you to test and interact with Function App endpoints directly from your development environment.",
+    "repo": "https://github.com/dkmaker/mcp-function-app-tester",
+    "tags": [
+        "mcp",
+        "azure",
+        "function-app"
+    ],
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "dkmaker-mcp-function-app-tester"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AUTH_BASIC_USERNAME": {
+                "type": "string",
+                "description": "Your username for Basic Authentication",
+                "required": false
+            },
+            "AUTH_BASIC_PASSWORD": {
+                "type": "string",
+                "description": "Your password for Basic Authentication",
+                "required": false
+            },
+            "AUTH_BEARER": {
+                "type": "string",
+                "description": "Your token for Bearer Token authentication",
+                "required": false
+            },
+            "AUTH_APIKEY_HEADER_NAME": {
+                "type": "string",
+                "description": "The header name for API Key authentication",
+                "required": false
+            },
+            "AUTH_APIKEY_VALUE": {
+                "type": "string",
+                "description": "The actual API Key value",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "AUTH_BASIC_USERNAME": {
+            "type": "env",
+            "key": "AUTH_BASIC_USERNAME"
+        },
+        "AUTH_BASIC_PASSWORD": {
+            "type": "env",
+            "key": "AUTH_BASIC_PASSWORD"
+        },
+        "AUTH_BEARER": {
+            "type": "env",
+            "key": "AUTH_BEARER"
+        },
+        "AUTH_APIKEY_HEADER_NAME": {
+            "type": "env",
+            "key": "AUTH_APIKEY_HEADER_NAME"
+        },
+        "AUTH_APIKEY_VALUE": {
+            "type": "env",
+            "key": "AUTH_APIKEY_VALUE"
+        }
+    }
+}

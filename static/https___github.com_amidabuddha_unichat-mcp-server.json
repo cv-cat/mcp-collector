@@ -1,0 +1,51 @@
+{
+    "id": "unichat-mcp-server",
+    "name": "Unichat MCP Server",
+    "description": "Send requests to OpenAI, MistralAI, Anthropic, xAI, Google AI or DeepSeek using MCP protocol via tool or predefined prompts.",
+    "repo": "https://github.com/amidabuddha/unichat-mcp-server",
+    "tags": [
+        "mcp",
+        "api",
+        "unichat"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "{{your source code local directory}}/unichat-mcp-server",
+        "run",
+        "unichat-mcp-server"
+    ],
+    "env": {
+        "UNICHAT_MODEL": "SELECTED_UNICHAT_MODEL",
+        "UNICHAT_API_KEY": "YOUR_UNICHAT_API_KEY"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "UNICHAT_MODEL": {
+                "type": "string",
+                "description": "Model to be used",
+                "required": true
+            },
+            "UNICHAT_API_KEY": {
+                "type": "string",
+                "description": "API Key for Unichat",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "string",
+            "position": 1
+        },
+        "model": {
+            "type": "env",
+            "key": "UNICHAT_MODEL"
+        },
+        "apiKey": {
+            "type": "env",
+            "key": "UNICHAT_API_KEY"
+        }
+    }
+}

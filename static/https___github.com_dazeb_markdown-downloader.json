@@ -1,0 +1,30 @@
+{
+    "id": "markdown-downloader",
+    "name": "Markdown Downloader",
+    "description": "A powerful MCP (Model Context Protocol) server that allows you to download webpages as markdown files with ease.",
+    "tags": [
+        "downloader",
+        "markdown"
+    ],
+    "repo": "https://github.com/dazeb/markdown-downloader",
+    "command": "node",
+    "baseArgs": [
+        "/home/user/Documents/Cline/MCP/markdown-downloader/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "downloadDirectory": {
+                "type": "string",
+                "description": "Directory where downloaded markdown files will be stored",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "downloadDirectory": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

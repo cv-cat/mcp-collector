@@ -1,0 +1,53 @@
+{
+    "id": "mcp-gsuite",
+    "name": "MCP GSuite",
+    "description": "MCP server to interact with Google products.",
+    "repo": "https://github.com/MarkusPfundstein/mcp-gsuite",
+    "tags": [
+        "google",
+        "api",
+        "gmail",
+        "calendar"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "<dir_to>/mcp-gsuite",
+        "run",
+        "mcp-gsuite"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "gauthFile": {
+                "type": "string",
+                "description": "Path to the OAuth2 client configuration file.",
+                "required": false
+            },
+            "accountsFile": {
+                "type": "string",
+                "description": "Path to the accounts configuration file.",
+                "required": false
+            },
+            "credentialsDir": {
+                "type": "string",
+                "description": "Directory to store OAuth credentials.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "gauthFile": {
+            "type": "single",
+            "position": 2
+        },
+        "accountsFile": {
+            "type": "single",
+            "position": 3
+        },
+        "credentialsDir": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

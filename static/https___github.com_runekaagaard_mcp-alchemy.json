@@ -1,0 +1,34 @@
+{
+    "id": "my_database",
+    "name": "MCP Alchemy",
+    "description": "MCP Alchemy connects Claude Desktop directly to your databases, allowing it to explore database structure, assist in SQL queries, display table relationships, analyze large datasets and create reports.",
+    "repo": "https://github.com/runekaagaard/mcp-alchemy",
+    "tags": [
+        "database",
+        "sql",
+        "api"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/mcp-alchemy",
+        "run",
+        "server.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "DB_URL": {
+                "type": "string",
+                "description": "SQLAlchemy database URL",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "DB_URL": {
+            "type": "env",
+            "key": "DB_URL"
+        }
+    }
+}

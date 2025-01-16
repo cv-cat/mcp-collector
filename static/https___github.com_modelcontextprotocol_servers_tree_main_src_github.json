@@ -1,0 +1,33 @@
+{
+    "id": "github",
+    "name": "GitHub",
+    "description": "MCP Server for the GitHub API, enabling file operations, repository management, search functionality, and more.",
+    "tags": [
+        "github",
+        "api",
+        "repository",
+        "file-operations"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GITHUB_PERSONAL_ACCESS_TOKEN": {
+                "type": "string",
+                "description": "GitHub Personal Access Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": {
+            "type": "env",
+            "key": "GITHUB_PERSONAL_ACCESS_TOKEN"
+        }
+    }
+}

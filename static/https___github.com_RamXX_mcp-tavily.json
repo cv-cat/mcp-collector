@@ -1,0 +1,32 @@
+{
+    "id": "tavily",
+    "name": "Tavily MCP Server",
+    "description": "A Model Context Protocol server that provides AI-powered web search capabilities using Tavily's search API.",
+    "tags": [
+        "search",
+        "ai",
+        "tavily"
+    ],
+    "repo": "https://github.com/RamXX/mcp-tavily",
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "mcp_server_tavily"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Tavily API key for accessing the server.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "TAVILY_API_KEY"
+        }
+    }
+}

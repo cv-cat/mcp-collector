@@ -1,0 +1,31 @@
+{
+    "id": "smallcloud-mcp-server",
+    "name": "SmallCloud MCP Server",
+    "description": "SmallCloud MCP Server Demonstration of an Anthropic MCP server using the Model Context Protocol SDK by Anthropic. For use with Claude Desktop and other MCP Hosts.",
+    "repo": "https://github.com/MCP-Mirror/SmallCloudCo_smallcloud-mcp-server",
+    "tags": [
+        "mcp",
+        "server",
+        "demo"
+    ],
+    "command": "node",
+    "baseArgs": [
+        "index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "configPath": {
+                "type": "string",
+                "description": "Path to the configuration for Claude Desktop",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "configPath": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

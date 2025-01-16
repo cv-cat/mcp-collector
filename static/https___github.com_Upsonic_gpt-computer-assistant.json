@@ -1,0 +1,32 @@
+{
+    "id": "gpt-computer-assistant",
+    "name": "GPT Computer Assistant",
+    "description": "AI agent framework designed to automate repetitive tasks across multiple operating systems.",
+    "tags": [
+        "ai",
+        "automation",
+        "framework"
+    ],
+    "repo": "https://github.com/Upsonic/gpt-computer-assistant",
+    "command": "pip",
+    "baseArgs": [
+        "install",
+        "gpt-computer-assistant"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "API Key for access to external services.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "GCA_API_KEY"
+        }
+    }
+}

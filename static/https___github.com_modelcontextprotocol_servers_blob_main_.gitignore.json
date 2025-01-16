@@ -1,0 +1,14 @@
+{
+    "id": "gitignore",
+    "name": ".gitignore",
+    "description": "Specifies files and directories to be ignored by Git",
+    "repo": "https://github.com/modelcontextprotocol/servers/blob/main/.gitignore",
+    "tags": [
+        "git",
+        "ignore",
+        "configuration"
+    ],
+    "command": "npx",
+    "baseArgs": [],
+    "configurable": false
+}

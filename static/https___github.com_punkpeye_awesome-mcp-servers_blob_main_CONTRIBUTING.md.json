@@ -1,0 +1,57 @@
+{
+    "id": "contributing",
+    "name": "Contributing to Awesome MCP Servers",
+    "description": "Contributions are welcome and encouraged! Whether you're fixing a typo, adding a new server, or suggesting improvements, your help is appreciated.",
+    "repo": "https://github.com/punkpeye/awesome-mcp-servers",
+    "tags": [
+        "contributing",
+        "community"
+    ],
+    "sections": [
+        {
+            "id": "how-to-contribute",
+            "title": "How to Contribute",
+            "content": [
+                {
+                    "step": 1,
+                    "text": "Fork the repository: Click the 'Fork' button in the top right corner of the GitHub page."
+                },
+                {
+                    "step": 2,
+                    "text": "Create a new branch: Create a new branch for your changes. This keeps your changes separate from the main project until they're ready to be merged."
+                },
+                {
+                    "step": 3,
+                    "text": "Make your changes: Edit the README.md file with your additions or corrections."
+                },
+                {
+                    "step": 4,
+                    "text": "Commit your changes: Commit your changes with a clear and concise message explaining what you've done."
+                },
+                {
+                    "step": 5,
+                    "text": "Push your branch: Push your branch to your forked repository."
+                },
+                {
+                    "step": 6,
+                    "text": "Create a pull request: Go to the original repository and click the 'New pull request' button."
+                },
+                {
+                    "step": 7,
+                    "text": "Review and merge: Your pull request will be reviewed by the maintainers."
+                }
+            ]
+        },
+        {
+            "id": "guidelines",
+            "title": "Guidelines",
+            "content": [
+                "Keep it consistent: Follow the existing format and style of the README.md file.",
+                "Alphabetical order: Maintain alphabetical order within each category of servers.",
+                "Accurate information: Ensure that all information is accurate and up-to-date.",
+                "One server per line: List each server on a separate line for better readability.",
+                "Clear descriptions: Write concise and informative descriptions for each server."
+            ]
+        }
+    ]
+}

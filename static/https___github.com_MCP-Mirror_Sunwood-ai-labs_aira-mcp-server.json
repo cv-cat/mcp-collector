@@ -1,0 +1,16 @@
+{
+    "id": "aira",
+    "name": "Aira MCP Server",
+    "description": "A Model Context Protocol server for creating commit messages from git staged files",
+    "tags": [
+        "git",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Sunwood-ai-labs_aira-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "path/to/aira-mcp-server/build/index.js"
+    ],
+    "configurable": false
+}

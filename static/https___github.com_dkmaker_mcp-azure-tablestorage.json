@@ -1,0 +1,31 @@
+{
+    "id": "tablestore",
+    "name": "Azure TableStore",
+    "description": "A TypeScript-based MCP server that enables interaction with Azure Table Storage directly through Cline.",
+    "tags": [
+        "azure",
+        "storage",
+        "tables"
+    ],
+    "repo": "https://github.com/dkmaker/mcp-azure-tablestorage",
+    "command": "node",
+    "baseArgs": [
+        "C:/path/to/your/mcp-azure-tablestorage/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "connectionString": {
+                "type": "string",
+                "description": "Your Azure Storage account connection string",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "env",
+            "key": "AZURE_STORAGE_CONNECTION_STRING"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "id": "server",
+    "name": "Model Context Protocol Servers",
+    "description": "Collection of servers for the Model Context Protocol.",
+    "repo": "https://github.com/modelcontextprotocol/servers",
+    "version": "2025.1.14",
+    "updatedPackages": [
+        {
+            "name": "@modelcontextprotocol/server-aws-kb-retrieval",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "@modelcontextprotocol/server-puppeteer",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "@modelcontextprotocol/server-gdrive",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "@modelcontextprotocol/server-github",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "@modelcontextprotocol/server-filesystem",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "@modelcontextprotocol/server-everything",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "mcp-server-fetch",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "mcp-server-sentry",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "mcp-server-sqlite",
+            "version": "2025.1.14"
+        },
+        {
+            "name": "mcp-server-git",
+            "version": "2025.1.14"
+        }
+    ]
+}

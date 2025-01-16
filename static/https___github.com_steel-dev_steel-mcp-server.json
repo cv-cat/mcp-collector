@@ -1,0 +1,46 @@
+{
+    "id": "steel-puppeteer",
+    "name": "Steel MCP Server",
+    "description": "A Model Context Protocol (MCP) server that enables LLMs like Claude to navigate the web through Puppeteer-based tools and Steel.",
+    "tags": [
+        "mcp",
+        "puppeteer",
+        "steel"
+    ],
+    "repo": "https://github.com/steel-dev/steel-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "path/to/steel-voyager/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "STEEL_LOCAL": {
+                "type": "boolean",
+                "description": "Determines if Steel Voyager runs in local mode.",
+                "required": true
+            },
+            "STEEL_API_KEY": {
+                "type": "string",
+                "description": "API key for authenticating with Steel.",
+                "required": false
+            },
+            "STEEL_BASE_URL": {
+                "type": "string",
+                "description": "Base URL for Steel API.",
+                "required": false
+            },
+            "GLOBAL_WAIT_SECONDS": {
+                "type": "number",
+                "description": "Number of seconds to wait after each tool action.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "path": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

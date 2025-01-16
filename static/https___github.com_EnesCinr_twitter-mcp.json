@@ -1,0 +1,59 @@
+{
+    "id": "twitter-mcp",
+    "name": "Twitter MCP Server",
+    "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
+    "tags": [
+        "twitter",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/EnesCinr/twitter-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@enescinar/twitter-mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "API_KEY": {
+                "type": "string",
+                "description": "Twitter API key",
+                "required": true
+            },
+            "API_SECRET_KEY": {
+                "type": "string",
+                "description": "Twitter API secret key",
+                "required": true
+            },
+            "ACCESS_TOKEN": {
+                "type": "string",
+                "description": "Twitter access token",
+                "required": true
+            },
+            "ACCESS_TOKEN_SECRET": {
+                "type": "string",
+                "description": "Twitter access token secret",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "API_KEY": {
+            "type": "env",
+            "key": "TWITTER_API_KEY"
+        },
+        "API_SECRET_KEY": {
+            "type": "env",
+            "key": "TWITTER_API_SECRET_KEY"
+        },
+        "ACCESS_TOKEN": {
+            "type": "env",
+            "key": "TWITTER_ACCESS_TOKEN"
+        },
+        "ACCESS_TOKEN_SECRET": {
+            "type": "env",
+            "key": "TWITTER_ACCESS_TOKEN_SECRET"
+        }
+    }
+}

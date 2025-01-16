@@ -1,0 +1,32 @@
+{
+    "id": "mcp-apple-notes",
+    "name": "MCP Apple Notes",
+    "description": "A Model Context Protocol (MCP) server that enables semantic search and RAG (Retrieval Augmented Generation) over your Apple Notes.",
+    "tags": [
+        "mcp",
+        "apple",
+        "notes",
+        "semantic-search"
+    ],
+    "repo": "https://github.com/RafalWilinski/mcp-apple-notes",
+    "command": "bun",
+    "baseArgs": [
+        "/Users/<YOUR_USER_NAME>/apple-notes-mcp/index.ts"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "username": {
+                "type": "string",
+                "description": "Your system username for file paths.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "username": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

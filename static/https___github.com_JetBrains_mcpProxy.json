@@ -1,0 +1,55 @@
+{
+    "id": "jetbrains",
+    "name": "JetBrains MCP Proxy Server",
+    "description": "The server proxies requests from client to JetBrains IDE.",
+    "tags": [
+        "proxy",
+        "jetbrains",
+        "server"
+    ],
+    "repo": "https://github.com/JetBrains/mcp-jetbrains",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@jetbrains/mcp-proxy"
+    ],
+    "env": {
+        "IDE_PORT": "<port of IDE's built-in webserver>",
+        "HOST": "<host/address of IDE's built-in webserver>",
+        "LOG_ENABLED": "true"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "IDE_PORT": {
+                "type": "string",
+                "description": "Port of the IDE's built-in webserver",
+                "required": true
+            },
+            "HOST": {
+                "type": "string",
+                "description": "Host/address of IDE's built-in webserver",
+                "required": true
+            },
+            "LOG_ENABLED": {
+                "type": "string",
+                "description": "Enable logging",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "IDE_PORT": {
+            "type": "env",
+            "key": "IDE_PORT"
+        },
+        "HOST": {
+            "type": "env",
+            "key": "HOST"
+        },
+        "LOG_ENABLED": {
+            "type": "env",
+            "key": "LOG_ENABLED"
+        }
+    }
+}

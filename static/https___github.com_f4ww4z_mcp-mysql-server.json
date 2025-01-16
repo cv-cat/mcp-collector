@@ -1,0 +1,59 @@
+{
+    "id": "mysql",
+    "name": "MySQL",
+    "description": "A Model Context Protocol server that provides MySQL database operations. This server enables AI models to interact with MySQL databases through a standardized interface.",
+    "tags": [
+        "mysql",
+        "database",
+        "sql"
+    ],
+    "repo": "https://github.com/f4ww4z/mcp-mysql-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@f4ww4z/mcp-mysql-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "MYSQL_HOST": {
+                "type": "string",
+                "description": "MySQL host address",
+                "required": true
+            },
+            "MYSQL_USER": {
+                "type": "string",
+                "description": "MySQL username",
+                "required": true
+            },
+            "MYSQL_PASSWORD": {
+                "type": "string",
+                "description": "MySQL password",
+                "required": true
+            },
+            "MYSQL_DATABASE": {
+                "type": "string",
+                "description": "MySQL database name",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "MYSQL_HOST": {
+            "type": "env",
+            "key": "MYSQL_HOST"
+        },
+        "MYSQL_USER": {
+            "type": "env",
+            "key": "MYSQL_USER"
+        },
+        "MYSQL_PASSWORD": {
+            "type": "env",
+            "key": "MYSQL_PASSWORD"
+        },
+        "MYSQL_DATABASE": {
+            "type": "env",
+            "key": "MYSQL_DATABASE"
+        }
+    }
+}

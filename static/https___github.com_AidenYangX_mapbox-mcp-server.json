@@ -1,0 +1,33 @@
+{
+    "id": "mapbox-mcp-server",
+    "name": "Mapbox MCP Server",
+    "description": "MCP Server for the Mapbox API.",
+    "tags": [
+        "mapbox",
+        "api"
+    ],
+    "repo": "https://github.com/AidenYangX/mapbox-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/absolute/path/to/mapbox-mcp-server/build/index.js"
+    ],
+    "env": {
+        "MAPBOX_ACCESS_TOKEN": "your-api-key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "mapboxAccessToken": {
+                "type": "string",
+                "description": "Mapbox API access token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "mapboxAccessToken": {
+            "type": "env",
+            "key": "MAPBOX_ACCESS_TOKEN"
+        }
+    }
+}

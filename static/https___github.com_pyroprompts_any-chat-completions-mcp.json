@@ -1,0 +1,57 @@
+{
+    "id": "chat-openai",
+    "name": "OpenAI",
+    "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API.",
+    "tags": [
+        "chat",
+        "openai"
+    ],
+    "repo": "https://github.com/pyroprompts/any-chat-completions-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/any-chat-completions-mcp/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AI_CHAT_KEY": {
+                "type": "string",
+                "description": "OpenAI API Key",
+                "required": true
+            },
+            "AI_CHAT_NAME": {
+                "type": "string",
+                "description": "Name of the AI Chat Provider",
+                "required": true
+            },
+            "AI_CHAT_MODEL": {
+                "type": "string",
+                "description": "Model to use for the AI Chat",
+                "required": true
+            },
+            "AI_CHAT_BASE_URL": {
+                "type": "string",
+                "description": "Base URL for the OpenAI API",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "AI_CHAT_KEY": {
+            "type": "env",
+            "key": "OPENAI_KEY"
+        },
+        "AI_CHAT_NAME": {
+            "type": "single",
+            "position": 2
+        },
+        "AI_CHAT_MODEL": {
+            "type": "single",
+            "position": 3
+        },
+        "AI_CHAT_BASE_URL": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

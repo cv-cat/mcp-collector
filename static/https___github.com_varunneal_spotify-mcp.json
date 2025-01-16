@@ -1,0 +1,57 @@
+{
+    "id": "spotify",
+    "name": "Spotify MCP Server",
+    "description": "MCP project to connect Claude with Spotify. Built on top of spotipy-dev's API.",
+    "tags": [
+        "spotify",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/varunneal/spotify-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/spotify_mcp",
+        "run",
+        "spotify-mcp"
+    ],
+    "env": {
+        "SPOTIFY_CLIENT_ID": "YOUR_CLIENT_ID",
+        "SPOTIFY_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+        "SPOTIFY_REDIRECT_URI": "http://localhost:8888"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "clientId": {
+                "type": "string",
+                "description": "Spotify Client ID",
+                "required": true
+            },
+            "clientSecret": {
+                "type": "string",
+                "description": "Spotify Client Secret",
+                "required": true
+            },
+            "redirectUri": {
+                "type": "string",
+                "description": "Spotify Redirect URI",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "clientId": {
+            "type": "env",
+            "key": "SPOTIFY_CLIENT_ID"
+        },
+        "clientSecret": {
+            "type": "env",
+            "key": "SPOTIFY_CLIENT_SECRET"
+        },
+        "redirectUri": {
+            "type": "env",
+            "key": "SPOTIFY_REDIRECT_URI"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id": "bluesky",
+    "name": "Bluesky Context Server",
+    "description": "A simple MCP server that can enable MCP clients to query Bluesky instances.",
+    "tags": [],
+    "repo": "https://github.com/keturiosakys/bluesky-context-server",
+    "command": "/Users/laurynas-fp/.bun/bin/bun",
+    "baseArgs": [
+        "<path_to_this_directory>/bluesky-context-server/index.ts"
+    ],
+    "env": {
+        "BLUESKY_APP_KEY": "",
+        "BLUESKY_IDENTIFIER": ""
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "BLUESKY_APP_KEY": {
+                "type": "string",
+                "description": "Bluesky Application Key",
+                "required": false
+            },
+            "BLUESKY_IDENTIFIER": {
+                "type": "string",
+                "description": "Bluesky Identifier",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {}
+}

@@ -1,0 +1,19 @@
+{
+    "id": "simulator",
+    "name": "iOS Simulator MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides programmatic control over iOS simulators. This server implements the MCP specification to expose simulator functionality through a standardized interface.",
+    "tags": [
+        "ios",
+        "simulator",
+        "mcp"
+    ],
+    "repo": "https://github.com/JoshuaRileyDev/simulator-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "y",
+        "@joshuarileydev/simulator-mcp-server"
+    ],
+    "configurable": false,
+    "configSchema": {},
+    "argsMapping": {}
+}

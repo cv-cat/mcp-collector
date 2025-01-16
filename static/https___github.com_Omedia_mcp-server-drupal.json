@@ -1,0 +1,32 @@
+{
+    "id": "mcp-server-drupal",
+    "name": "MCP Server for Drupal",
+    "description": "This is a typescript based companion Model Context Protocol(MCP) server for the Drupal MCP module that works with the STDIO transport.",
+    "tags": [
+        "mcp",
+        "drupal",
+        "server"
+    ],
+    "repo": "https://github.com/Omedia/mcp-server-drupal",
+    "command": "__BINARY_PATH__",
+    "baseArgs": [
+        "--drupal-url",
+        "__DRUPAL_BASE_URL__"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "drupalUrl": {
+                "type": "string",
+                "description": "Base URL of your Drupal site",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "drupalUrl": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

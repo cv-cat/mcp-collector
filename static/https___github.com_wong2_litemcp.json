@@ -1,0 +1,18 @@
+{
+    "id": "litemcp",
+    "name": "LiteMCP",
+    "description": "A TypeScript framework for building MCP (Model Context Protocol) servers elegantly",
+    "repo": "https://github.com/wong2/litemcp",
+    "tags": [
+        "typescript",
+        "mcp",
+        "framework"
+    ],
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "litemcp",
+        "zod"
+    ],
+    "configurable": false
+}

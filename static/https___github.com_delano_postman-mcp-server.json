@@ -1,0 +1,33 @@
+{
+    "id": "postman",
+    "name": "Postman MCP Server",
+    "description": "An MCP server that provides access to the Postman API. Functionality is based on the official OpenAPI specification.",
+    "tags": [
+        "postman",
+        "api"
+    ],
+    "repo": "https://github.com/delano/postman-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/postman-api-server/build/index.js"
+    ],
+    "env": {
+        "POSTMAN_API_KEY": "CHANGEME"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Postman API Key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "POSTMAN_API_KEY"
+        }
+    }
+}

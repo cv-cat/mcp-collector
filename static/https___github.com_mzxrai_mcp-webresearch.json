@@ -1,0 +1,17 @@
+{
+    "id": "webresearch",
+    "name": "MCP Web Research Server",
+    "description": "A Model Context Protocol (MCP) server for web research.",
+    "tags": [
+        "web",
+        "research",
+        "MCP"
+    ],
+    "repo": "https://github.com/mzxrai/mcp-webresearch",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@mzxrai/mcp-webresearch@latest"
+    ],
+    "configurable": false
+}

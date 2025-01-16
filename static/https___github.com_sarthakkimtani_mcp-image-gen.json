@@ -1,0 +1,50 @@
+{
+    "id": "image-gen",
+    "name": "Image Generation MCP Server",
+    "description": "A Model Context Protocol (MCP) server that enables seamless generation of high-quality images using the Flux.1 Schnell model via Together AI. This server provides a standardized interface to specify image generation parameters.",
+    "tags": [
+        "image",
+        "generation",
+        "MCP"
+    ],
+    "repo": "https://github.com/sarthakkimtani/mcp-image-gen",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/image-gen/",
+        "run",
+        "image-gen"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "prompt": {
+                "type": "string",
+                "description": "A descriptive prompt for generating the image (e.g., 'a futuristic cityscape at sunset')",
+                "required": true
+            },
+            "width": {
+                "type": "integer",
+                "description": "Width of the generated image in pixels (optional)"
+            },
+            "height": {
+                "type": "integer",
+                "description": "Height of the generated image in pixels (optional)"
+            }
+        }
+    },
+    "argsMapping": {
+        "prompt": {
+            "type": "single",
+            "position": 2
+        },
+        "width": {
+            "type": "single",
+            "position": 3
+        },
+        "height": {
+            "type": "single",
+            "position": 4
+        }
+    }
+}

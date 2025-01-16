@@ -1,0 +1,50 @@
+{
+    "id": "salesforce",
+    "name": "Salesforce",
+    "description": "A Model Context Protocol (MCP) server implementation for Salesforce integration, allowing LLMs to interact with Salesforce data through SOQL queries and SOSL searches.",
+    "tags": [
+        "salesforce",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/smn2gnt/MCP-Salesforce",
+    "command": "uvx",
+    "baseArgs": [
+        "--from",
+        "mcp-salesforce-connector"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "SALESFORCE_USERNAME": {
+                "type": "string",
+                "description": "Your Salesforce username",
+                "required": true
+            },
+            "SALESFORCE_PASSWORD": {
+                "type": "string",
+                "description": "Your Salesforce password",
+                "required": true
+            },
+            "SALESFORCE_SECURITY_TOKEN": {
+                "type": "string",
+                "description": "Your Salesforce security token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "SALESFORCE_USERNAME": {
+            "type": "env",
+            "key": "SALESFORCE_USERNAME"
+        },
+        "SALESFORCE_PASSWORD": {
+            "type": "env",
+            "key": "SALESFORCE_PASSWORD"
+        },
+        "SALESFORCE_SECURITY_TOKEN": {
+            "type": "env",
+            "key": "SALESFORCE_SECURITY_TOKEN"
+        }
+    }
+}

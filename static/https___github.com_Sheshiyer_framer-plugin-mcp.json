@@ -1,0 +1,36 @@
+{
+    "id": "framer-plugin",
+    "name": "Framer Plugin MCP Server",
+    "description": "A Model Context Protocol (MCP) server that enables creation and management of Framer plugins with web3 capabilities.",
+    "tags": [
+        "framer",
+        "plugin",
+        "web3"
+    ],
+    "repo": "https://github.com/Sheshiyer/framer-plugin-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/framer-plugin-mcp/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "web3Features": {
+                "type": "array",
+                "description": "Array of features to include (wallet-connect, contract-interaction, nft-display)",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "pluginPath": {
+            "type": "single",
+            "position": 0
+        },
+        "web3Features": {
+            "type": "spread",
+            "position": 1
+        }
+    }
+}

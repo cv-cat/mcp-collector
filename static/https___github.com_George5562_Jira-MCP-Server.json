@@ -1,0 +1,47 @@
+{
+    "id": "jira-server",
+    "name": "Jira MCP Server",
+    "description": "Speak to Jira in natural language to get information on and modify your project. Use it with Claude Desktop in combination with a custom README that you will create with project information, so that you can delegate PM tasks.",
+    "tags": [
+        "jira",
+        "project-management",
+        "api"
+    ],
+    "repo": "https://github.com/George5562/Jira-MCP-Server",
+    "command": "npm start",
+    "baseArgs": [],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "JIRA_HOST": {
+                "type": "string",
+                "description": "Your Jira instance hostname",
+                "required": true
+            },
+            "JIRA_EMAIL": {
+                "type": "string",
+                "description": "Your Jira account email",
+                "required": true
+            },
+            "JIRA_API_TOKEN": {
+                "type": "string",
+                "description": "API token from Atlassian",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "JIRA_HOST": {
+            "type": "env",
+            "key": "JIRA_HOST"
+        },
+        "JIRA_EMAIL": {
+            "type": "env",
+            "key": "JIRA_EMAIL"
+        },
+        "JIRA_API_TOKEN": {
+            "type": "env",
+            "key": "JIRA_API_TOKEN"
+        }
+    }
+}

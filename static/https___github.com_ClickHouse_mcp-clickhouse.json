@@ -1,0 +1,50 @@
+{
+    "id": "clickhouse",
+    "name": "ClickHouse",
+    "description": "An MCP server for ClickHouse.",
+    "tags": [
+        "database",
+        "clickhouse"
+    ],
+    "repo": "https://github.com/ClickHouse/mcp-clickhouse",
+    "command": "uv",
+    "baseArgs": [
+        "sync"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "connectionString": {
+                "type": "string",
+                "description": "ClickHouse connection string",
+                "required": true
+            },
+            "host": {
+                "type": "string",
+                "description": "ClickHouse host",
+                "required": true
+            },
+            "port": {
+                "type": "number",
+                "description": "ClickHouse port",
+                "required": true
+            },
+            "user": {
+                "type": "string",
+                "description": "ClickHouse user",
+                "required": true
+            },
+            "password": {
+                "type": "string",
+                "description": "ClickHouse password",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

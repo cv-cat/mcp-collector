@@ -1,0 +1,32 @@
+{
+    "id": "devin-ai-integration",
+    "name": "Devin.ai Integration",
+    "description": "This Github App integration allows Devin (devin.ai) to have limited authenticated access to your organization's code repositories.",
+    "repo": "https://github.com/apps/devin-ai-integration",
+    "tags": [
+        "github",
+        "app",
+        "integration"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-devin"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "accessToken": {
+                "type": "string",
+                "description": "Access Token for authentication with Devin.ai",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "accessToken": {
+            "type": "env",
+            "key": "DEVIN_AI_ACCESS_TOKEN"
+        }
+    }
+}

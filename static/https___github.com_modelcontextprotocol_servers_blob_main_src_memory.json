@@ -1,0 +1,33 @@
+{
+    "id": "memory",
+    "name": "Memory",
+    "description": "A basic implementation of persistent memory using a local knowledge graph.",
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+    "tags": [
+        "memory",
+        "knowledge-graph"
+    ],
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/memory"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "someConfig": {
+                "type": "string",
+                "description": "Example config parameter",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "configParam": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

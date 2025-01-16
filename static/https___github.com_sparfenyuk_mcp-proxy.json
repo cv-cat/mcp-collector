@@ -1,0 +1,33 @@
+{
+    "id": "mcp-proxy",
+    "name": "MCP Proxy",
+    "description": "Tool that lets you switch between server transports.",
+    "repo": "https://github.com/sparfenyuk/mcp-proxy",
+    "command": "mcp-proxy",
+    "baseArgs": [],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "command_or_url": {
+                "type": "string",
+                "description": "Command or URL to connect to. When a URL, will run a SSE client, otherwise will run the given command and connect as a stdio client.",
+                "required": true
+            },
+            "api_access_token": {
+                "type": "string",
+                "description": "Access token Authorization header passed by the client to the SSE server. Can also be set as environment variable API_ACCESS_TOKEN.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "command_or_url": {
+            "type": "single",
+            "position": 0
+        },
+        "api_access_token": {
+            "type": "env",
+            "key": "API_ACCESS_TOKEN"
+        }
+    }
+}

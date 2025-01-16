@@ -1,0 +1,14 @@
+{
+    "id": "mcp-server-modal",
+    "name": "MCP Server Modal",
+    "description": "An MCP Server that allows users to deploy python scripts to modal.",
+    "repo": "https://github.com/MCP-Mirror/Flux159_mcp-server-modal",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/mcp-server-modal",
+        "run",
+        "modal-server"
+    ],
+    "configurable": false
+}

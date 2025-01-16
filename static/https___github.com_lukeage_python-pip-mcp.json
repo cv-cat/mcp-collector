@@ -1,0 +1,31 @@
+{
+    "id": "python-pip-mcp",
+    "name": "Python Pip MCP",
+    "description": "Minimal Example Implementation of an Anthropic MCP Client and Server in Python with Pip.",
+    "tags": [
+        "python",
+        "mcp",
+        "example"
+    ],
+    "repo": "https://github.com/lukeage/python-pip-mcp",
+    "command": "python",
+    "baseArgs": [
+        "mcp_client.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "Anthropic API key for accessing the MCP services",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "ANTHROPIC_API_KEY"
+        }
+    }
+}

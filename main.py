@@ -12,7 +12,6 @@ from utils.gpt_utils import question_to_gpt
 
 
 def extra_mcp_links_from_githubShareURL(url, cookie_str):
-    curr_username, curr_repo = url.split('/')[3:5]
     headers = get_github_common_headers()
     cookie = cookie_parser(cookie_str)
     response = requests.get(url, headers=headers, cookies=cookie)
@@ -22,21 +21,15 @@ def extra_mcp_links_from_githubShareURL(url, cookie_str):
     all_links = []
     for a_tag in a_tags:
         href = a_tag.attrs.get('href', '')
-        if href.startswith('https://github.com/'):
-            try:
-                username, repo = href.split('/')[3:5]
-                if not username == curr_username or not repo == curr_repo:
-                    # https://github.com/firebase/genkit/tree/main/js/plugins/mcp 转换为 https://github.com/firebase/genkit
-                    href = '/'.join(href.split('/')[:5])
-                    all_links.append(href)
-                    # if '/blob/main/README.md' in href:
-                    #     all_links.append(href)
-                    # else:
-                    #     href = href + '/blob/main/README.md'
-                    #     all_links.append(href)
-                    logger.info(f"Found link: {href}")
-            except:
-                logger.warning(f"Invalid link: {href}")
+        try:
+            if href.startswith('https://github.com/'):
+                all_links.append(href)
+                logger.info(f"Found link: {href}")
+            elif href.startswith('/'):
+                all_links.append(f'https://github.com{href}')
+                logger.info(f"Found link: {href}")
+        except:
+            logger.warning(f"Invalid link: {href}")
     logger.info(f"Found {len(all_links)} links")
     return list(set(all_links))
 
@@ -143,20 +136,64 @@ def extra_real_mcp_links(all_links, cookie_str):
         try:
             logger.info(f"Checking link {i + 1}/{len(all_links)}: {link}")
             username, repo = link.split('/')[3:5]
-            if os.path.exists(f'./static/{username}_{repo}.json'):
-                logger.info(f"File ./static/{username}_{repo}.json already exists")
+            rstr = r"[\/\\\:\*\?\"\<\>\|]"
+            file_name = re.sub(rstr, "_", link)
+            if os.path.exists(f'./static/{file_name}.json'):
+                logger.info(f"Skip {link}")
                 continue
+
             response = requests.get(link, headers=headers, cookies=cookie)
             res_text = response.text
             soup = BeautifulSoup(res_text, 'html.parser')
             # script = soup.find_all('script', attrs={'data-target': 'react-app.embeddedData'})
             # <react-partial partial-name="repos-overview" data-ssr="true" data-attempted-ssr="true">
-            react_partial = soup.find_all('react-partial', attrs={'partial-name': 'repos-overview', 'data-ssr': 'true', 'data-attempted-ssr': 'true'})
-            script = react_partial[0].find_all('script', attrs={'data-target': 'react-partial.embeddedData'})
-            res_text = script[0].string
+            # react_partial = soup.find_all('react-partial', attrs={'partial-name': 'repos-overview', 'data-ssr': 'true', 'data-attempted-ssr': 'true'})
+            # script = react_partial[0].find_all('script', attrs={'data-target': 'react-partial.embeddedData'})
+            scripts = soup.find_all('script', attrs={'data-target': 'react-partial.embeddedData'})
+            for script in scripts:
+                if '"displayName":"README.md"' in script.string:
+                    res_text = script.string
+                    break
             prompt = """
                     你是MCP分析提取大师！
                     下面我将给你github页面的json数据，你需要将复杂的json数据转化成我给你的参考例子的json格式，如果能够成功转换，你只需回复json数据，不要加上任何其他语句！如果无法转换，只需回复无法转换。
+                    {
+                      "mcpServers": {
+                        "postgres": {
+                          "command": "npx",
+                          "args": [
+                            "-y",
+                            "@modelcontextprotocol/server-postgres",
+                            "postgresql://localhost/mydb"
+                          ]
+                        }
+                      }
+                    }Replace /mydb with your database name.
+                    会被转化为
+                    id": "postgres",
+                    "name": "PostgreSQL",
+                    "description": "Read-only database access with schema inspection",
+                    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+                    "tags": ["database", "postgresql", "sql"],
+                    "command": "npx",
+                    "baseArgs": ["-y", "@modelcontextprotocol/server-postgres"],
+                    "configurable": true,
+                    "configSchema": {
+                      "properties": {
+                        "connectionString": {
+                          "type": "string",
+                          "description": "PostgreSQL connection string",
+                          "required": true
+                        }
+                      }
+                    },
+                    "argsMapping": { // 说明args中的第三个参数是变量，需要手动指定
+                      "connectionString": {
+                        "type": "single",
+                        "position": 2
+                      }
+                    }
+                  }, 
                     json数据格式如下：
                     参考例子
                     #1 {
@@ -165,7 +202,7 @@ def extra_real_mcp_links(all_links, cookie_str):
                         "description": "Secure file operations with configurable access controls", # 项目的描述
                         "tags":["filesystem","access-control"], # 项目的标签
                         "repo":"https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem", # 项目的仓库地址
-                        "command": "npx", # 项目的命令
+                        "command": "npx", # 项目的命令 如果有多个命令npm > Python > docker
                         "baseArgs": ["-y", "@modelcontextprotocol/server-filesystem"], # 项目的基础参数
                         "env": {}, # 项目的环境变量
                         "configurable": true, # 项目是否可配置
@@ -238,8 +275,8 @@ def extra_real_mcp_links(all_links, cookie_str):
                     ans = json.loads(ans)
                     # logger.info(json.dumps(ans, indent=4))
                     all_json_data.append({
-                        'repo': ans['repo'],
-                        'json': json.dumps(ans, indent=4)
+                        'json': json.dumps(ans, indent=4),
+                        'file_name': file_name
                     })
                     mcp_links.append(link)
                     logger.info(f"{link} is a real MCP link")
@@ -256,11 +293,10 @@ def download_json_data(all_json_data):
         os.makedirs('./static')
     for i, json_data in enumerate(all_json_data):
         try:
-            repo = json_data['repo']
-            username, repo_name = repo.split('/')[3:5]
-            with open(f'./static/{username}_{repo_name}.json', 'w') as f:
+            file_name = json_data['file_name']
+            with open(f'./static/{file_name}.json', 'w') as f:
                 f.write(json_data['json'])
-                logger.info(f"Write json data to ./static/{username}_{repo_name}.json")
+                logger.info(f"Write json data to ./static/{file_name}.json")
         except Exception as e:
             logger.error(f"Error 3: {e}")
 
@@ -282,20 +318,20 @@ def combine_json_data():
 
 if __name__ == '__main__':
     cookie_str = r'_octo=GH1.1.67071983.1728714395; _device_id=03a2257b297d9b100259ac23fb364a7e; user_session=O-OBEyjUj6m2nHv9cMTsFYOof2aN5dygTjeSgRHOKLPeGRCF; __Host-user_session_same_site=O-OBEyjUj6m2nHv9cMTsFYOof2aN5dygTjeSgRHOKLPeGRCF; logged_in=yes; dotcom_user=cv-cat; GHCC=Required:1-Analytics:1-SocialMedia:1-Advertising:1; MicrosoftApplicationsTelemetryDeviceId=03179cb2-5f23-46f0-a939-a712c2d5468f; MSFPC=GUID=be967db050704355b04e081b78bf073b&HASH=be96&LV=202410&V=4&LU=1728720058810; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FShanghai; _gh_sess=f3aqT7Jo9u%2F3QSxH1eki7Z36pP22yvfx1bERjUyyHBNeGU8JezuqRLUmCpmh0%2B%2FE6tNZE6uu%2FKweqCs0agRnhzzJwtnYB04b4Ai4Nxe6v62cTGYUoKFe644qZGMt6T2t5A1usvkSN5GkBjJ91tIzyBaZl1wbcik9yKMXsdgtFx4AF%2BHMK24RX9D7N6Jp3zYB%2FVaNjJxKDBHTY2Mzh3otiGPJvsn5S3enwm1sPRCLCPzHLRCzZQ8XFaUCAwwHwsebIgwS8Qe3iannI75xNPjP6aVIa%2F%2FoZ0wrbDyW%2F3S8uvNbeciDkhes5mvX6HEdUgcK71gDjR01%2BWZX08JuyvZF4fU6VRwSTBIPjWiY4w%3D%3D--yMOXlFfgU94a02C9--6WSO4%2B0wpB7DeC5q%2FB%2Bj3A%3D%3D'
-    github_share_urls = [
-        'https://github.com/punkpeye/awesome-mcp-servers',
-        'https://github.com/modelcontextprotocol/servers',
-        'https://github.com/wong2/awesome-mcp-servers'
-    ]
-    for url in github_share_urls:
-        mcp_links = extra_mcp_links_from_githubShareURL(url, cookie_str)
-        real_mcp_links = extra_real_mcp_links(mcp_links, cookie_str)
-        download_json_data(real_mcp_links)
-
-    # https://mcpservers.org/
-    mcpserversOrg_mcp_links = extra_mcp_links_from_mcpserversOrg()
-    mcpserversOrg_real_mcp_links = extra_real_mcp_links(mcpserversOrg_mcp_links, cookie_str)
-    download_json_data(mcpserversOrg_real_mcp_links)
+    # github_share_urls = [
+    #     'https://github.com/punkpeye/awesome-mcp-servers',
+    #     'https://github.com/modelcontextprotocol/servers',
+    #     'https://github.com/wong2/awesome-mcp-servers'
+    # ]
+    # for url in github_share_urls:
+    #     mcp_links = extra_mcp_links_from_githubShareURL(url, cookie_str)
+    #     real_mcp_links = extra_real_mcp_links(mcp_links, cookie_str)
+    #     download_json_data(real_mcp_links)
+    #
+    # # https://mcpservers.org/
+    # mcpserversOrg_mcp_links = extra_mcp_links_from_mcpserversOrg()
+    # mcpserversOrg_real_mcp_links = extra_real_mcp_links(mcpserversOrg_mcp_links, cookie_str)
+    # download_json_data(mcpserversOrg_real_mcp_links)
 
     # https://mcp.so
     mcpSo_cookie_str = r'_ga=GA1.1.20734558.1736835531; _ga_9ZWF7FKDR8=GS1.1.1736916926.3.1.1736917639.0.0.0'

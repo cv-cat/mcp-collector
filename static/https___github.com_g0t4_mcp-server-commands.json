@@ -1,0 +1,16 @@
+{
+    "id": "mcp-server-commands",
+    "name": "MCP Server Commands",
+    "description": "Commands for interacting with the Model Context Protocol (MCP) servers",
+    "repo": "https://github.com/g0t4/mcp-server-commands",
+    "tags": [
+        "mcp",
+        "server",
+        "commands"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "mcp-server-commands"
+    ],
+    "configurable": false
+}

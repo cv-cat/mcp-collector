@@ -1,0 +1,13 @@
+{
+    "id": "golang-mcp-server",
+    "name": "MCP Golang",
+    "description": "An unofficial implementation of the Model Context Protocol in Go.",
+    "tags": [
+        "golang",
+        "mcp"
+    ],
+    "repo": "https://github.com/metoro-io/mcp-golang",
+    "command": "<your path to golang MCP server go executable>",
+    "baseArgs": [],
+    "configurable": false
+}

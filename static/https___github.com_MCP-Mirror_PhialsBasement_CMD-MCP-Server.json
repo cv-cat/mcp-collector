@@ -1,0 +1,23 @@
+{
+    "id": "cmd",
+    "name": "CMD MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation for executing CMD commands on both Windows and Linux, as well as allowing SSH connections. This server allows you to integrate command-line operations with MCP-compatible applications.",
+    "tags": [
+        "mcp",
+        "cmd",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/PhialsBasement_CMD-MCP-Server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli",
+        "install",
+        "server-cmd"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

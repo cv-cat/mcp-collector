@@ -1,0 +1,94 @@
+{
+    "id": "unomi-server",
+    "name": "Inoyu Apache Unomi MCP Server",
+    "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
+    "repo": "https://github.com/sergehuber/inoyu-mcp-unomi-server",
+    "tags": [
+        "unomi",
+        "apache",
+        "mcp"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "@inoyu/mcp-unomi-server"
+    ],
+    "env": {
+        "UNOMI_BASE_URL": "http://your-unomi-server:8181",
+        "UNOMI_USERNAME": "your-username",
+        "UNOMI_PASSWORD": "your-password",
+        "UNOMI_PROFILE_ID": "your-profile-id",
+        "UNOMI_KEY": "your-unomi-key",
+        "UNOMI_EMAIL": "your-email@example.com",
+        "UNOMI_SOURCE_ID": "claude-desktop"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "UNOMI_BASE_URL": {
+                "type": "string",
+                "description": "Base URL of the Unomi server",
+                "required": true
+            },
+            "UNOMI_USERNAME": {
+                "type": "string",
+                "description": "Username for Unomi authentication",
+                "required": true
+            },
+            "UNOMI_PASSWORD": {
+                "type": "string",
+                "description": "Password for Unomi authentication",
+                "required": true
+            },
+            "UNOMI_PROFILE_ID": {
+                "type": "string",
+                "description": "Profile ID in Unomi",
+                "required": true
+            },
+            "UNOMI_KEY": {
+                "type": "string",
+                "description": "Key for protected events in Unomi",
+                "required": true
+            },
+            "UNOMI_EMAIL": {
+                "type": "string",
+                "description": "Email for user identification",
+                "required": true
+            },
+            "UNOMI_SOURCE_ID": {
+                "type": "string",
+                "description": "Source ID for identifying the source of data",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "UNOMI_BASE_URL": {
+            "type": "env",
+            "key": "UNOMI_BASE_URL"
+        },
+        "UNOMI_USERNAME": {
+            "type": "env",
+            "key": "UNOMI_USERNAME"
+        },
+        "UNOMI_PASSWORD": {
+            "type": "env",
+            "key": "UNOMI_PASSWORD"
+        },
+        "UNOMI_PROFILE_ID": {
+            "type": "env",
+            "key": "UNOMI_PROFILE_ID"
+        },
+        "UNOMI_KEY": {
+            "type": "env",
+            "key": "UNOMI_KEY"
+        },
+        "UNOMI_EMAIL": {
+            "type": "env",
+            "key": "UNOMI_EMAIL"
+        },
+        "UNOMI_SOURCE_ID": {
+            "type": "env",
+            "key": "UNOMI_SOURCE_ID"
+        }
+    }
+}

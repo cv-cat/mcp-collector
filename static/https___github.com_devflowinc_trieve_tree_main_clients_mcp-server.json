@@ -1,0 +1,49 @@
+{
+    "id": "mcp-server",
+    "name": "MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides agentic tools for interacting with the Trieve API.",
+    "repo": "https://github.com/devflowinc/trieve/tree/main/clients/mcp-server",
+    "tags": [
+        "mcp",
+        "API",
+        "Trieve"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "trieve-mcp-server@latest"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "TRIEVE_API_KEY": {
+                "type": "string",
+                "description": "Your Trieve API key from dashboard.trieve.ai",
+                "required": true
+            },
+            "TRIEVE_ORGANIZATION_ID": {
+                "type": "string",
+                "description": "Your Trieve organization ID from dashboard.trieve.ai",
+                "required": true
+            },
+            "TRIEVE_DATASET_ID": {
+                "type": "string",
+                "description": "Specific dataset ID to use (if not provided via CLI)",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "TRIEVE_API_KEY": {
+            "type": "env",
+            "key": "TRIEVE_API_KEY"
+        },
+        "TRIEVE_ORGANIZATION_ID": {
+            "type": "env",
+            "key": "TRIEVE_ORGANIZATION_ID"
+        },
+        "TRIEVE_DATASET_ID": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

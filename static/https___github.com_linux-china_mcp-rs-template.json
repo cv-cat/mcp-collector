@@ -1,0 +1,30 @@
+{
+    "id": "current-time",
+    "name": "Current Time",
+    "description": "Retrieve the current time from the server",
+    "tags": [
+        "time",
+        "server"
+    ],
+    "repo": "https://github.com/linux-china/mcp-rs-template",
+    "command": "mcp-rs-template",
+    "baseArgs": [
+        "--mcp"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "apiKey": {
+                "type": "string",
+                "description": "API Key for accessing the service",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "apiKey": {
+            "type": "env",
+            "key": "API_KEY"
+        }
+    }
+}

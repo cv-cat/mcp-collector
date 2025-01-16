@@ -1,0 +1,19 @@
+{
+    "id": "myMcp",
+    "name": "My MCP Server",
+    "description": "Custom MCP server example for integration with Claude",
+    "tags": [
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/Alesion30/my-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "xxx/my-mcp-server/build/main.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

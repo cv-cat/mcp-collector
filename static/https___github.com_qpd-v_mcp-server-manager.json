@@ -1,0 +1,38 @@
+{
+    "id": "mcp-server-manager",
+    "name": "MCP Server Manager",
+    "description": "Install and manage Model Context Protocol (MCP) servers for Claude and other LLM clients.",
+    "tags": [
+        "mcp",
+        "server",
+        "management"
+    ],
+    "repo": "https://github.com/qpd-v/mcp-server-manager",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-manager"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "configPaths": {
+                "type": "array",
+                "description": "List of MCP configuration file paths to monitor",
+                "required": true,
+                "minItems": 1
+            },
+            "autoRefresh": {
+                "type": "boolean",
+                "description": "Enable/disable automatic refresh of server status",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "configPaths": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

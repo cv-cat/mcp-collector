@@ -1,0 +1,38 @@
+{
+    "id": "json-mcp",
+    "name": "JSON MCP Server",
+    "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
+    "repo": "https://github.com/GongRzhe/JSON-MCP-Server",
+    "tags": [
+        "json",
+        "mcp",
+        "server"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "@gongrzhe/server-json-mcp@1.0.3"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "json": {
+                "type": "object",
+                "description": "Configuration for the JSON server",
+                "required": true,
+                "properties": {
+                    "command": {
+                        "type": "string",
+                        "description": "Prime command to run the server",
+                        "required": true
+                    },
+                    "args": {
+                        "type": "array",
+                        "description": "Command line arguments for the server",
+                        "required": true,
+                        "minItems": 1
+                    }
+                }
+            }
+        }
+    }
+}

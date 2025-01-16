@@ -1,0 +1,10 @@
+{
+    "id": "strongapps_mcpe_servers",
+    "name": "StrongApps MCPE Servers",
+    "description": "Open Source Website where you can view MCPE Server.",
+    "tags": [],
+    "repo": "https://github.com/MCP-Mirror/StrongApps_MCPE_servers",
+    "command": "",
+    "baseArgs": [],
+    "configurable": false
+}

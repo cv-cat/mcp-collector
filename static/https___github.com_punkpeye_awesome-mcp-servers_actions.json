@@ -1,0 +1,32 @@
+{
+    "id": "github-actions",
+    "name": "GitHub Actions",
+    "description": "Automate your workflow from idea to production",
+    "tags": [
+        "automation",
+        "ci/cd",
+        "github"
+    ],
+    "repo": "https://github.com/punkpeye/awesome-mcp-servers",
+    "command": "npm",
+    "baseArgs": [
+        "run",
+        "build"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "workflowName": {
+                "type": "string",
+                "description": "Name of the workflow",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "workflowName": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

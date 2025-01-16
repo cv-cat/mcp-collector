@@ -1,0 +1,33 @@
+{
+    "id": "fastmcp",
+    "name": "FastMCP",
+    "description": "The fast, Pythonic way to build MCP servers.",
+    "tags": [
+        "mcp",
+        "python",
+        "server"
+    ],
+    "repo": "https://github.com/jlowin/fastmcp",
+    "command": "fastmcp",
+    "baseArgs": [
+        "run",
+        "server.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "dependencies": {
+                "type": "array",
+                "description": "Optional dependencies for your MCP server",
+                "required": false,
+                "minItems": 0
+            }
+        }
+    },
+    "argsMapping": {
+        "dependencies": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

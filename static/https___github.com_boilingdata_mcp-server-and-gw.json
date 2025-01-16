@@ -1,0 +1,28 @@
+{
+    "id": "mcp-server-and-gw",
+    "name": "MCP Server and GW",
+    "description": "A Model Context Protocol gateway handling various transports.",
+    "tags": [
+        "mcp",
+        "gateway",
+        "server",
+        "client"
+    ],
+    "repo": "https://github.com/boilingdata/mcp-server-and-gw",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server"
+    ],
+    "configurable": false,
+    "overviewFiles": [
+        {
+            "displayName": "README.md",
+            "preferredFileType": "readme"
+        },
+        {
+            "displayName": "LICENSE",
+            "preferredFileType": "license"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": "firecrawl",
+    "name": "FireCrawl MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation that integrates with FireCrawl for advanced web scraping capabilities.",
+    "tags": [
+        "scraping",
+        "web",
+        "mcp"
+    ],
+    "repo": "https://github.com/vrknetha/mcp-server-firecrawl",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@smithery/cli install mcp-server-firecrawl"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "FIRE_CRAWL_API_KEY": {
+                "type": "string",
+                "description": "Your FireCrawl API key",
+                "required": true
+            },
+            "FIRE_CRAWL_API_URL": {
+                "type": "string",
+                "description": "Custom API endpoint for self-hosted instances",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "FIRE_CRAWL_API_KEY": {
+            "type": "env",
+            "key": "FIRE_CRAWL_API_KEY"
+        },
+        "FIRE_CRAWL_API_URL": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

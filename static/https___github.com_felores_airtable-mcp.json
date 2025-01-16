@@ -1,0 +1,31 @@
+{
+    "id": "airtable",
+    "name": "Airtable MCP Server",
+    "description": "A Model Context Protocol server that provides tools for interacting with Airtable's API. This server enables programmatic management of Airtable bases, tables, fields, and records through Claude Desktop.",
+    "tags": [
+        "airtable",
+        "mcp",
+        "api"
+    ],
+    "repo": "https://github.com/felores/airtable-mcp",
+    "command": "npx",
+    "baseArgs": [
+        "airtable-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AIRTABLE_API_KEY": {
+                "type": "string",
+                "description": "Airtable API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "AIRTABLE_API_KEY": {
+            "type": "env",
+            "key": "AIRTABLE_API_KEY"
+        }
+    }
+}

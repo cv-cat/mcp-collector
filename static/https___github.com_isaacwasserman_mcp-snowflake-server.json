@@ -1,0 +1,86 @@
+{
+    "id": "snowflake",
+    "name": "Snowflake MCP Server",
+    "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake.",
+    "tags": [
+        "database",
+        "snowflake",
+        "mcp"
+    ],
+    "repo": "https://github.com/isaacwasserman/mcp-snowflake-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-snowflake"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "account": {
+                "type": "string",
+                "description": "Snowflake account name",
+                "required": true
+            },
+            "warehouse": {
+                "type": "string",
+                "description": "Snowflake warehouse name",
+                "required": true
+            },
+            "user": {
+                "type": "string",
+                "description": "Snowflake username",
+                "required": true
+            },
+            "password": {
+                "type": "string",
+                "description": "Snowflake password",
+                "required": true
+            },
+            "role": {
+                "type": "string",
+                "description": "Snowflake role",
+                "required": true
+            },
+            "database": {
+                "type": "string",
+                "description": "Snowflake database name",
+                "required": true
+            },
+            "schema": {
+                "type": "string",
+                "description": "Snowflake schema name",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "account": {
+            "type": "single",
+            "position": 0
+        },
+        "warehouse": {
+            "type": "single",
+            "position": 1
+        },
+        "user": {
+            "type": "single",
+            "position": 2
+        },
+        "password": {
+            "type": "single",
+            "position": 3
+        },
+        "role": {
+            "type": "single",
+            "position": 4
+        },
+        "database": {
+            "type": "single",
+            "position": 5
+        },
+        "schema": {
+            "type": "single",
+            "position": 6
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "id": "home-assistant",
+    "name": "Home Assistant",
+    "description": "A Model Context Protocol Server for Home Assistant.",
+    "repo": "https://github.com/allenporter/mcp-server-home-assistant",
+    "tags": [
+        "home-assistant",
+        "model-context-protocol"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/allen/Development/mcp-server-home-assistant",
+        "run",
+        "mcp-server-home-assistant",
+        "-v",
+        "-v"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "HOME_ASSISTANT_WEB_SOCKET_URL": {
+                "type": "string",
+                "description": "WebSocket URL for Home Assistant API",
+                "required": true
+            },
+            "HOME_ASSISTANT_API_TOKEN": {
+                "type": "string",
+                "description": "Long Lived Access Token for Home Assistant API",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "single",
+            "position": 1
+        },
+        "webSocketUrl": {
+            "type": "env",
+            "key": "HOME_ASSISTANT_WEB_SOCKET_URL"
+        },
+        "apiToken": {
+            "type": "env",
+            "key": "HOME_ASSISTANT_API_TOKEN"
+        }
+    }
+}

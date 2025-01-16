@@ -1,0 +1,50 @@
+{
+    "id": "tsconfig",
+    "name": "TypeScript Configuration",
+    "description": "Configuration file for TypeScript compiler options",
+    "tags": [
+        "typescript",
+        "config"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/tsconfig",
+    "command": "npx",
+    "baseArgs": [
+        "typescript"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "compilerOptions": {
+                "type": "object",
+                "description": "Compiler options for TypeScript",
+                "required": true
+            },
+            "include": {
+                "type": "array",
+                "description": "Files to include in compilation",
+                "required": true,
+                "minItems": 1
+            },
+            "exclude": {
+                "type": "array",
+                "description": "Files to exclude from compilation",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "compilerOptions": {
+            "type": "single",
+            "position": 0
+        },
+        "include": {
+            "type": "spread",
+            "position": 1
+        },
+        "exclude": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}

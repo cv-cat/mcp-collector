@@ -1,0 +1,105 @@
+{
+    "id": "everything-search",
+    "name": "Everything Search MCP Server",
+    "description": "An MCP server that provides integration with Everything Search Engine, allowing powerful file search capabilities through the Model Context Protocol.",
+    "tags": [
+        "search",
+        "mcp",
+        "everything"
+    ],
+    "repo": "https://github.com/Alihkhawaher/everything-search-server",
+    "command": "npm",
+    "baseArgs": [
+        "install",
+        "run",
+        "build"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Text to search for",
+                "required": true
+            },
+            "scope": {
+                "type": "string",
+                "description": "Search scope",
+                "required": false
+            },
+            "caseSensitive": {
+                "type": "boolean",
+                "description": "Match case",
+                "required": false
+            },
+            "wholeWord": {
+                "type": "boolean",
+                "description": "Match whole words only",
+                "required": false
+            },
+            "regex": {
+                "type": "boolean",
+                "description": "Use regular expressions",
+                "required": false
+            },
+            "path": {
+                "type": "boolean",
+                "description": "Search in paths",
+                "required": false
+            },
+            "maxResults": {
+                "type": "integer",
+                "description": "Max results (1-1000)",
+                "required": false
+            },
+            "sortBy": {
+                "type": "string",
+                "description": "Sort by name/path/size/date_modified",
+                "required": false
+            },
+            "ascending": {
+                "type": "boolean",
+                "description": "Sort direction",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "query": {
+            "type": "single",
+            "position": 0
+        },
+        "scope": {
+            "type": "single",
+            "position": 1
+        },
+        "caseSensitive": {
+            "type": "single",
+            "position": 2
+        },
+        "wholeWord": {
+            "type": "single",
+            "position": 3
+        },
+        "regex": {
+            "type": "single",
+            "position": 4
+        },
+        "path": {
+            "type": "single",
+            "position": 5
+        },
+        "maxResults": {
+            "type": "single",
+            "position": 6
+        },
+        "sortBy": {
+            "type": "single",
+            "position": 7
+        },
+        "ascending": {
+            "type": "single",
+            "position": 8
+        }
+    }
+}

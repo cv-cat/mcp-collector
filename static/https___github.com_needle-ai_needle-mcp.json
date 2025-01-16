@@ -1,0 +1,42 @@
+{
+    "id": "needle_mcp",
+    "name": "Needle MCP Server",
+    "description": "Manage documents and perform searches using Needle through Claude's Desktop Application.",
+    "tags": [
+        "document-management",
+        "search",
+        "needle"
+    ],
+    "repo": "https://github.com/needle-ai/needle-mcp",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/path/to/needle-mcp",
+        "run",
+        "needle-mcp"
+    ],
+    "env": {
+        "NEEDLE_API_KEY": "your_needle_api_key"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "directory": {
+                "type": "string",
+                "description": "The directory containing your Needle MCP server.",
+                "required": true
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "Your Needle API key.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "directory": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

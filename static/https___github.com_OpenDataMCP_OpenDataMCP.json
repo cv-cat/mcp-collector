@@ -1,0 +1,16 @@
+{
+    "id": "odmcp",
+    "name": "Open Data Model Context Protocol",
+    "description": "Connect Open Data to LLMs in minutes!",
+    "tags": [
+        "open-data",
+        "llm",
+        "data-access"
+    ],
+    "repo": "https://github.com/OpenDataMCP/OpenDataMCP",
+    "command": "uvx",
+    "baseArgs": [
+        "odmcp"
+    ],
+    "configurable": false
+}

@@ -1,0 +1,20 @@
+{
+    "id": "maven-deps-server",
+    "name": "Maven Dependencies MCP Server",
+    "description": "An MCP server that provides tools for checking Maven dependency versions.",
+    "tags": [
+        "maven",
+        "dependencies",
+        "server"
+    ],
+    "repo": "https://github.com/MCP-Mirror/Bigsy_maven-mcp-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/maven-deps-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {}
+    },
+    "argsMapping": {}
+}

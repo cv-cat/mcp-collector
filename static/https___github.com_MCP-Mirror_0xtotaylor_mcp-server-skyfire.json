@@ -1,0 +1,31 @@
+{
+    "id": "skyfire",
+    "name": "Skyfire",
+    "description": "A Model Context Protocol (MCP) server implementation that interfaces with the Skyfire payment system.",
+    "tags": [
+        "payment",
+        "api"
+    ],
+    "repo": "https://github.com/MCP-Mirror/0xtotaylor_mcp-server-skyfire",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-skyfire"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "skyfireApiKey": {
+                "type": "string",
+                "description": "Skyfire API key",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "skyfireApiKey": {
+            "type": "env",
+            "key": "SKYFIRE_API_KEY"
+        }
+    }
+}

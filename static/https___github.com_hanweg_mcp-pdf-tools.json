@@ -1,0 +1,32 @@
+{
+    "id": "pdf-tools",
+    "name": "MCP PDF Tools Server",
+    "description": "An MCP (Model Context Protocol) server that provides PDF manipulation tools. This server allows LLMs to perform operations like merging PDFs and extracting pages.",
+    "tags": [
+        "pdf",
+        "mcp",
+        "tools"
+    ],
+    "repo": "https://github.com/hanweg/mcp-pdf-tools",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "PATH_TO\\mcp-pdf-tools"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "filepath": {
+                "type": "string",
+                "description": "Path to the MCP PDF Tools directory",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "filepath": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "mcp_k8s_go",
+    "name": "MCP K8S Go",
+    "description": "Golang-based MCP server connecting to Kubernetes",
+    "tags": [
+        "kubernetes",
+        "golang",
+        "mcp"
+    ],
+    "repo": "https://github.com/strowk/mcp-k8s-go",
+    "command": "mcp-k8s-go",
+    "baseArgs": [],
+    "configurable": false,
+    "argsMapping": {}
+}

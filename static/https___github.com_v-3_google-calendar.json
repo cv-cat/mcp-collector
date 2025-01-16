@@ -1,0 +1,58 @@
+{
+    "id": "google-calendar",
+    "name": "Google Calendar",
+    "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
+    "tags": [
+        "google",
+        "calendar",
+        "api"
+    ],
+    "repo": "https://github.com/v-3/google-calendar",
+    "command": "node",
+    "baseArgs": [
+        "/ABSOLUTE/PATH/TO/YOUR/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "clientId": {
+                "type": "string",
+                "description": "Google Client ID",
+                "required": true
+            },
+            "clientSecret": {
+                "type": "string",
+                "description": "Google Client Secret",
+                "required": true
+            },
+            "redirectUri": {
+                "type": "string",
+                "description": "Redirect URI for OAuth 2.0",
+                "required": true
+            },
+            "refreshToken": {
+                "type": "string",
+                "description": "OAuth 2.0 Refresh Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "clientId": {
+            "type": "env",
+            "key": "GOOGLE_CLIENT_ID"
+        },
+        "clientSecret": {
+            "type": "env",
+            "key": "GOOGLE_CLIENT_SECRET"
+        },
+        "redirectUri": {
+            "type": "env",
+            "key": "GOOGLE_REDIRECT_URI"
+        },
+        "refreshToken": {
+            "type": "env",
+            "key": "GOOGLE_REFRESH_TOKEN"
+        }
+    }
+}

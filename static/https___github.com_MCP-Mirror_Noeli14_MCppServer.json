@@ -1,0 +1,33 @@
+{
+    "id": "mc_server",
+    "name": "MCpp Server",
+    "description": "High-performance Minecraft server developed entirely in C++.",
+    "tags": [
+        "minecraft",
+        "server",
+        "cpp"
+    ],
+    "repo": "https://github.com/Noeli14/MCppServer",
+    "command": "./MCppServer",
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "onlineMode": {
+                "type": "boolean",
+                "description": "Whether to enable online mode for player authentication",
+                "required": true
+            },
+            "worldFolder": {
+                "type": "string",
+                "description": "Directory for the world folder",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "worldFolder": {
+            "type": "single",
+            "position": 0
+        }
+    }
+}

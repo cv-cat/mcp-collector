@@ -1,0 +1,16 @@
+{
+    "id": "eagle",
+    "name": "MCP Eagle Server",
+    "description": "This is a Model Context Protocol (MCP) server for interfacing with the Eagle app.",
+    "tags": [
+        "eagle",
+        "mcp",
+        "server"
+    ],
+    "repo": "https://github.com/olegshilin/mcp-eagle",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/mcp-eagle/build/index.js"
+    ],
+    "configurable": false
+}

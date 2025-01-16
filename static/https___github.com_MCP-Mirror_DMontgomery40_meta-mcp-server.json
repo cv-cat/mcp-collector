@@ -1,0 +1,18 @@
+{
+    "id": "meta-mcp-server",
+    "name": "Meta MCP Server",
+    "description": "MCP Server that Creates MCP Servers. Automated and dynamic server generation with error handling and debugging support.",
+    "tags": [
+        "mcp",
+        "server",
+        "automated",
+        "dynamic"
+    ],
+    "repo": "https://github.com/MCP-Mirror/DMontgomery40_meta-mcp-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "meta-mcp-server"
+    ],
+    "configurable": false
+}

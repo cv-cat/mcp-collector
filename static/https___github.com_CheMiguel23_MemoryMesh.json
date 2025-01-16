@@ -1,0 +1,30 @@
+{
+    "id": "memorymesh",
+    "name": "MemoryMesh",
+    "description": "A local knowledge graph server designed for AI models, useful for text-based RPGs and interactive storytelling.",
+    "tags": [
+        "knowledge-graph",
+        "ai",
+        "rpg"
+    ],
+    "repo": "https://github.com/CheMiguel23/MemoryMesh",
+    "command": "node",
+    "baseArgs": [
+        "/ABSOLUTE/PATH/TO/YOUR/PROJECT/memorymesh/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "memoryFile": {
+                "type": "string",
+                "description": "Path to the JSON file used for storing the knowledge graph data.",
+                "required": true
+            },
+            "schemasDir": {
+                "type": "string",
+                "description": "Path to the directory containing schema files.",
+                "required": true
+            }
+        }
+    }
+}

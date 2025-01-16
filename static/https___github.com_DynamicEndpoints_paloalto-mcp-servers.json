@@ -1,0 +1,10 @@
+{
+    "id": "paloalto",
+    "name": "Palo Alto MCP Servers",
+    "description": "A collection of Model Context Protocol (MCP) servers for managing Palo Alto Networks firewalls and services",
+    "repo": "https://github.com/DynamicEndpoints/paloalto-mcp-servers",
+    "tags": [],
+    "command": "",
+    "baseArgs": [],
+    "configurable": false
+}

@@ -1,0 +1,41 @@
+{
+    "id": "godoc",
+    "name": "GoDoc MCP Server",
+    "description": "Efficient access to Go documentation for improved LLM performance",
+    "repo": "https://github.com/mrjoshuak/godoc-mcp",
+    "tags": [
+        "go",
+        "mcp",
+        "documentation"
+    ],
+    "command": "go",
+    "baseArgs": [
+        "install",
+        "github.com/mrjoshuak/godoc-mcp@latest"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "GOPATH": {
+                "type": "string",
+                "description": "Path to the Go workspace",
+                "required": true
+            },
+            "GOMODCACHE": {
+                "type": "string",
+                "description": "Path to the Go module cache",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "GOPATH": {
+            "type": "env",
+            "key": "GOPATH"
+        },
+        "GOMODCACHE": {
+            "type": "env",
+            "key": "GOMODCACHE"
+        }
+    }
+}

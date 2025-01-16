@@ -1,0 +1,31 @@
+{
+    "id": "raygun",
+    "name": "Raygun MCP Server",
+    "description": "MCP Server for Raygun's API V3 endpoints for interacting with your Crash Reporting and Real User Monitoring applications. This server provides comprehensive access to Raygun's API features through the Model Context Protocol.",
+    "tags": [
+        "raygun",
+        "api"
+    ],
+    "repo": "https://github.com/MCP-Mirror/MindscapeHQ_mcp-server-raygun",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@raygun.io/mcp-server-raygun"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "Raygun PAT token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "env",
+            "key": "RAYGUN_PAT_TOKEN"
+        }
+    }
+}

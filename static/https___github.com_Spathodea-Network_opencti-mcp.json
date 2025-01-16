@@ -1,0 +1,40 @@
+{
+    "id": "opencti",
+    "name": "OpenCTI MCP Server",
+    "description": "OpenCTI MCP Server is a Model Context Protocol (MCP) server that provides seamless integration with OpenCTI (Open Cyber Threat Intelligence) platform. It enables querying and retrieving threat intelligence data through a standardized interface.",
+    "repo": "https://github.com/Spathodea-Network/opencti-mcp",
+    "tags": [
+        "mcp",
+        "opencti",
+        "threat-intelligence"
+    ],
+    "command": "node",
+    "baseArgs": [
+        "path/to/opencti-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "OPENCTI_URL": {
+                "type": "string",
+                "description": "Your OpenCTI instance URL",
+                "required": true
+            },
+            "OPENCTI_TOKEN": {
+                "type": "string",
+                "description": "Your OpenCTI API token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "OPENCTI_URL": {
+            "type": "env",
+            "key": "OPENCTI_URL"
+        },
+        "OPENCTI_TOKEN": {
+            "type": "env",
+            "key": "OPENCTI_TOKEN"
+        }
+    }
+}

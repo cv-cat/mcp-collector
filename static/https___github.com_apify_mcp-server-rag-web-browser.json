@@ -1,0 +1,31 @@
+{
+    "id": "mcp-server-rag-web-browser",
+    "name": "Model Context Protocol (MCP) Server for the RAG Web Browser Actor",
+    "description": "Implementation of an MCP server for the RAG Web Browser Actor. This Actor serves as a web browser for large language models (LLMs) and RAG pipelines, similar to a web search in ChatGPT.",
+    "tags": [
+        "mcp",
+        "web-browser",
+        "actor"
+    ],
+    "repo": "https://github.com/apify/mcp-server-rag-web-browser",
+    "command": "npx",
+    "baseArgs": [
+        "/path/to/mcp-server-rag-web-browser/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "APIFY_API_TOKEN": {
+                "type": "string",
+                "description": "Apify API Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "APIFY_API_TOKEN": {
+            "type": "env",
+            "key": "APIFY_API_TOKEN"
+        }
+    }
+}

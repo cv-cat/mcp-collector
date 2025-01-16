@@ -1,0 +1,44 @@
+{
+    "id": "mcp-logseq",
+    "name": "MCP LogSeq Server",
+    "description": "MCP server to interact with LogSeq via its API.",
+    "tags": [
+        "logseq",
+        "api",
+        "server"
+    ],
+    "repo": "https://github.com/ergut/mcp-logseq-server",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-logseq"
+    ],
+    "env": {
+        "LOGSEQ_API_TOKEN": "<your_api_token_here>",
+        "LOGSEQ_API_URL": "http://localhost:12315"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "LOGSEQ_API_TOKEN": {
+                "type": "string",
+                "description": "Token for authenticating with the LogSeq API",
+                "required": true
+            },
+            "LOGSEQ_API_URL": {
+                "type": "string",
+                "description": "URL for the LogSeq API",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "LOGSEQ_API_TOKEN": {
+            "type": "env",
+            "key": "LOGSEQ_API_TOKEN"
+        },
+        "LOGSEQ_API_URL": {
+            "type": "env",
+            "key": "LOGSEQ_API_URL"
+        }
+    }
+}

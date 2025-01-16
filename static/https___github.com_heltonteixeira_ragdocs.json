@@ -1,0 +1,59 @@
+{
+    "id": "ragdocs",
+    "name": "RagDocs MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides RAG (Retrieval-Augmented Generation) capabilities using Qdrant vector database and Ollama/OpenAI embeddings. This server enables semantic search and management of documentation through vector similarity.",
+    "tags": [
+        "mcp",
+        "rag",
+        "qdrant",
+        "embedding"
+    ],
+    "repo": "https://github.com/heltonteixeira/ragdocs",
+    "command": "node",
+    "baseArgs": [
+        "@mcpservers/ragdocs"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "QDRANT_URL": {
+                "type": "string",
+                "description": "URL of your Qdrant instance",
+                "required": true
+            },
+            "QDRANT_API_KEY": {
+                "type": "string",
+                "description": "API key for Qdrant Cloud",
+                "required": false
+            },
+            "EMBEDDING_PROVIDER": {
+                "type": "string",
+                "description": "Choice of embedding provider (\"ollama\" or \"openai\")",
+                "required": false
+            },
+            "OPENAI_API_KEY": {
+                "type": "string",
+                "description": "OpenAI API key (required if using OpenAI)",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "QDRANT_URL": {
+            "type": "env",
+            "key": "QDRANT_URL"
+        },
+        "QDRANT_API_KEY": {
+            "type": "env",
+            "key": "QDRANT_API_KEY"
+        },
+        "EMBEDDING_PROVIDER": {
+            "type": "env",
+            "key": "EMBEDDING_PROVIDER"
+        },
+        "OPENAI_API_KEY": {
+            "type": "env",
+            "key": "OPENAI_API_KEY"
+        }
+    }
+}

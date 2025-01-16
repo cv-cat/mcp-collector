@@ -1,0 +1,31 @@
+{
+    "id": "markdown2pdf",
+    "name": "Markdown2PDF MCP Server",
+    "description": "An MCP server for converting Markdown documents to PDF files.",
+    "tags": [
+        "markdown",
+        "pdf",
+        "conversion"
+    ],
+    "repo": "https://github.com/2b3pro/markdown2pdf-mcp",
+    "command": "node",
+    "baseArgs": [
+        "path/to/markdown2pdf-mcp/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "outputDir": {
+                "type": "string",
+                "description": "Path to the output directory.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "outputDir": {
+            "type": "env",
+            "key": "M2P_OUTPUT_DIR"
+        }
+    }
+}

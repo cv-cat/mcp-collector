@@ -1,0 +1,32 @@
+{
+    "id": "mcp",
+    "name": "Genkit MCP",
+    "description": "Integration between Genkit and the Model Context Protocol (MCP).",
+    "repo": "https://github.com/firebase/genkit/tree/main/js/plugins/mcp",
+    "tags": [
+        "genkit",
+        "mcp",
+        "plugin"
+    ],
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "connectionString": {
+                "type": "string",
+                "description": "PostgreSQL connection string",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "connectionString": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

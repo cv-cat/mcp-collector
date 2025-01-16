@@ -1,0 +1,39 @@
+{
+    "id": "hacker-news",
+    "name": "Hacker News MCP Server",
+    "description": "A Model Context Protocol (MCP) server that provides tools for fetching stories from Hacker News. This server parses the HTML content from news.ycombinator.com and provides structured data for different types of stories (top, new, ask, show, jobs).",
+    "tags": [
+        "mcp",
+        "hacker-news"
+    ],
+    "repo": "https://github.com/pskill9/hn-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/hn-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "type": {
+                "type": "string",
+                "description": "Type of stories to fetch",
+                "required": true
+            },
+            "limit": {
+                "type": "number",
+                "description": "Number of stories to return",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "type": {
+            "type": "single",
+            "position": 0
+        },
+        "limit": {
+            "type": "single",
+            "position": 1
+        }
+    }
+}

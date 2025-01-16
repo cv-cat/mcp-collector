@@ -1,0 +1,102 @@
+{
+    "id": "amazon-bedrock",
+    "name": "Amazon Bedrock",
+    "description": "A Model Control Protocol (MCP) server that integrates with Amazon Bedrock's Nova Canvas model for AI image generation.",
+    "tags": [
+        "amazon",
+        "bedrock",
+        "ai",
+        "image-generation"
+    ],
+    "repo": "https://github.com/zxkane/mcp-server-amazon-bedrock",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@zxkane/mcp-server-amazon-bedrock"
+    ],
+    "env": {
+        "AWS_PROFILE": "your_profile_name",
+        "AWS_ACCESS_KEY_ID": "your_access_key",
+        "AWS_SECRET_ACCESS_KEY": "your_secret_key",
+        "AWS_REGION": "us-east-1"
+    },
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "prompt": {
+                "type": "string",
+                "description": "Descriptive text for the desired image (1-1024 characters)",
+                "required": true
+            },
+            "negativePrompt": {
+                "type": "string",
+                "description": "Elements to exclude from the image (1-1024 characters)",
+                "required": false
+            },
+            "width": {
+                "type": "number",
+                "description": "Image width in pixels (default: 1024)",
+                "required": false
+            },
+            "height": {
+                "type": "number",
+                "description": "Image height in pixels (default: 1024)",
+                "required": false
+            },
+            "quality": {
+                "type": "string",
+                "description": "Image quality level - \"standard\" or \"premium\" (default: \"standard\")",
+                "required": false
+            },
+            "cfg_scale": {
+                "type": "number",
+                "description": "Prompt adherence strength (1.1-10, default: 6.5)",
+                "required": false
+            },
+            "seed": {
+                "type": "number",
+                "description": "Generation seed for reproducibility (0-858993459, default: 12)",
+                "required": false
+            },
+            "numberOfImages": {
+                "type": "number",
+                "description": "Batch size for generation (1-5, default: 1)",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "prompt": {
+            "type": "single",
+            "position": 1
+        },
+        "negativePrompt": {
+            "type": "single",
+            "position": 2
+        },
+        "width": {
+            "type": "single",
+            "position": 3
+        },
+        "height": {
+            "type": "single",
+            "position": 4
+        },
+        "quality": {
+            "type": "single",
+            "position": 5
+        },
+        "cfg_scale": {
+            "type": "single",
+            "position": 6
+        },
+        "seed": {
+            "type": "single",
+            "position": 7
+        },
+        "numberOfImages": {
+            "type": "single",
+            "position": 8
+        }
+    }
+}

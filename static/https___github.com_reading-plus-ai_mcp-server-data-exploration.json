@@ -1,0 +1,20 @@
+{
+    "id": "mcp-server-ds",
+    "name": "MCP Server for Data Exploration",
+    "description": "A versatile tool designed for interactive data exploration.",
+    "tags": [
+        "data",
+        "exploration",
+        "mcp"
+    ],
+    "repo": "https://github.com/reading-plus-ai/mcp-server-data-exploration",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "/Users/username/src/mcp-server-ds",
+        "run",
+        "mcp-server-ds"
+    ],
+    "configurable": false,
+    "env": {}
+}

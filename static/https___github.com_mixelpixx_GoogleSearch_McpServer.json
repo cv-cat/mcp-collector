@@ -1,0 +1,41 @@
+{
+    "id": "google-search",
+    "name": "Google Search MCP Server",
+    "description": "An MCP (Model Context Protocol) server that provides Google search capabilities and webpage content analysis tools.",
+    "tags": [
+        "google",
+        "search",
+        "api"
+    ],
+    "repo": "https://github.com/mixelpixx/GoogleSearch_McpServer",
+    "command": "npm",
+    "baseArgs": [
+        "run",
+        "start:all"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "api_key": {
+                "type": "string",
+                "description": "Google API Key",
+                "required": true
+            },
+            "search_engine_id": {
+                "type": "string",
+                "description": "Google Custom Search Engine ID",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "api_key": {
+            "type": "env",
+            "key": "GOOGLE_API_KEY"
+        },
+        "search_engine_id": {
+            "type": "env",
+            "key": "SEARCH_ENGINE_ID"
+        }
+    }
+}

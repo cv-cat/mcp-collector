@@ -1,0 +1,51 @@
+{
+    "id": "bigquery",
+    "name": "BigQuery MCP Server",
+    "description": "A server that lets your LLMs (like Claude) talk directly to your BigQuery data, making sure they can chat securely and efficiently.",
+    "tags": [
+        "bigquery",
+        "mcp",
+        "database",
+        "api"
+    ],
+    "repo": "https://github.com/ergut/mcp-bigquery-server",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@ergut/mcp-bigquery-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "projectId": {
+                "type": "string",
+                "description": "Google Cloud project ID",
+                "required": true
+            },
+            "location": {
+                "type": "string",
+                "description": "BigQuery location",
+                "required": false
+            },
+            "keyFile": {
+                "type": "string",
+                "description": "Path to service account key file",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "projectId": {
+            "type": "single",
+            "position": 2
+        },
+        "location": {
+            "type": "single",
+            "position": 4
+        },
+        "keyFile": {
+            "type": "single",
+            "position": 6
+        }
+    }
+}

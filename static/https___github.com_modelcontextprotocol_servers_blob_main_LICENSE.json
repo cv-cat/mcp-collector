@@ -1,0 +1,14 @@
+{
+    "id": "license",
+    "name": "License",
+    "description": "MIT License",
+    "tags": [
+        "license",
+        "MIT"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers",
+    "command": "npx",
+    "baseArgs": [],
+    "configurable": false,
+    "argsMapping": {}
+}

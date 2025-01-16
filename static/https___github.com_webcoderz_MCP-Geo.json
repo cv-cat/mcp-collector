@@ -1,0 +1,35 @@
+{
+    "id": "geo",
+    "name": "MCP Geo",
+    "description": "Geocoding MCP server with GeoPY",
+    "tags": [
+        "geocoding",
+        "python"
+    ],
+    "repo": "https://github.com/webcoderz/MCP-Geo",
+    "command": "uv",
+    "baseArgs": [
+        "run",
+        "--with",
+        "fastmcp",
+        "fastmcp",
+        "run",
+        "MCP-Geo/geo.py"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "NOMINATIM_URL": {
+                "type": "string",
+                "description": "Domain for Nominatim",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "NOMINATIM_URL": {
+            "type": "single",
+            "position": 2
+        }
+    }
+}

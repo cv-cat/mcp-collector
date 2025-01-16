@@ -1,0 +1,51 @@
+{
+    "id": "mcp-hfspace",
+    "name": "mcp-hfspace",
+    "description": "Connect to Hugging Face Spaces with minimal setup needed - simply add your spaces and go!",
+    "tags": [
+        "huggingface",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/evalstate/mcp-hfspace",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@llmindset/mcp-hfspace"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "workDir": {
+                "type": "string",
+                "description": "Working directory for file handling",
+                "required": true
+            },
+            "hfToken": {
+                "type": "string",
+                "description": "Hugging Face Token for accessing private spaces",
+                "required": false
+            },
+            "spaces": {
+                "type": "array",
+                "description": "List of Hugging Face spaces",
+                "required": true,
+                "minItems": 1
+            }
+        }
+    },
+    "argsMapping": {
+        "workDir": {
+            "type": "single",
+            "position": 2
+        },
+        "hfToken": {
+            "type": "env",
+            "key": "HF_TOKEN"
+        },
+        "spaces": {
+            "type": "spread",
+            "position": 3
+        }
+    }
+}

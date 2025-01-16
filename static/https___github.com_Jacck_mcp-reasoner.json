@@ -1,0 +1,16 @@
+{
+    "id": "mcp-reasoner",
+    "name": "MCP Reasoner",
+    "description": "A reasoning implementation for Claude Desktop that lets you use both Beam Search and Monte Carlo Tree Search (MCTS).",
+    "repo": "https://github.com/Jacck/mcp-reasoner",
+    "tags": [
+        "reasoning",
+        "mcts",
+        "beam-search"
+    ],
+    "command": "node",
+    "baseArgs": [
+        "path/to/mcp-reasoner/dist/index.js"
+    ],
+    "configurable": false
+}

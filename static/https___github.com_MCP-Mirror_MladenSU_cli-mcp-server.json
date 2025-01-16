@@ -1,0 +1,74 @@
+{
+    "id": "cli-mcp-server",
+    "name": "CLI MCP Server",
+    "description": "A secure Model Context Protocol (MCP) server implementation for executing controlled command-line operations with comprehensive security features.",
+    "repo": "https://github.com/MCP-Mirror/MladenSU_cli-mcp-server",
+    "tags": [
+        "mcp",
+        "cli",
+        "security"
+    ],
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "<path/to/the/repo>/cli-mcp-server",
+        "run",
+        "cli-mcp-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "ALLOWED_DIR": {
+                "type": "string",
+                "description": "Base directory for command execution",
+                "required": true
+            },
+            "ALLOWED_COMMANDS": {
+                "type": "string",
+                "description": "Comma-separated list of allowed commands",
+                "required": true,
+                "default": "ls,cat,pwd,echo"
+            },
+            "ALLOWED_FLAGS": {
+                "type": "string",
+                "description": "Comma-separated list of allowed flags",
+                "required": true,
+                "default": "-l,-a,--help,--version"
+            },
+            "MAX_COMMAND_LENGTH": {
+                "type": "integer",
+                "description": "Maximum command string length",
+                "required": true,
+                "default": 1024
+            },
+            "COMMAND_TIMEOUT": {
+                "type": "integer",
+                "description": "Command execution timeout in seconds",
+                "required": true,
+                "default": 30
+            }
+        }
+    },
+    "argsMapping": {
+        "ALLOWED_DIR": {
+            "type": "single",
+            "position": 1
+        },
+        "ALLOWED_COMMANDS": {
+            "type": "single",
+            "position": 2
+        },
+        "ALLOWED_FLAGS": {
+            "type": "single",
+            "position": 3
+        },
+        "MAX_COMMAND_LENGTH": {
+            "type": "single",
+            "position": 4
+        },
+        "COMMAND_TIMEOUT": {
+            "type": "single",
+            "position": 5
+        }
+    }
+}

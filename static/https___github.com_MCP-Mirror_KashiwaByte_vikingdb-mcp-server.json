@@ -1,0 +1,79 @@
+{
+    "id": "mcp-server-vikingdb",
+    "name": "VikingDB MCP Server",
+    "description": "An MCP server for VikingDB store and search.",
+    "tags": [
+        "vikingdb",
+        "mcp",
+        "database"
+    ],
+    "repo": "https://github.com/MCP-Mirror/KashiwaByte_vikingdb-mcp-server",
+    "command": "uv",
+    "baseArgs": [
+        "--directory",
+        "dir to mcp-server-vikingdb",
+        "run",
+        "mcp-server-vikingdb"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "vikingdb-host": {
+                "type": "string",
+                "description": "The host to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb-region": {
+                "type": "string",
+                "description": "The region to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb-ak": {
+                "type": "string",
+                "description": "The Access Key to use for the VikingDB server.",
+                "required": true
+            },
+            "vikingdb-sk": {
+                "type": "string",
+                "description": "The Secret Key to use for the VikingDB server.",
+                "required": true
+            },
+            "collection-name": {
+                "type": "string",
+                "description": "The name of the collection to use.",
+                "required": true
+            },
+            "index-name": {
+                "type": "string",
+                "description": "The name of the index to use.",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "vikingdb-host": {
+            "type": "single",
+            "position": 4
+        },
+        "vikingdb-region": {
+            "type": "single",
+            "position": 6
+        },
+        "vikingdb-ak": {
+            "type": "single",
+            "position": 8
+        },
+        "vikingdb-sk": {
+            "type": "single",
+            "position": 10
+        },
+        "collection-name": {
+            "type": "single",
+            "position": 12
+        },
+        "index-name": {
+            "type": "single",
+            "position": 14
+        }
+    }
+}

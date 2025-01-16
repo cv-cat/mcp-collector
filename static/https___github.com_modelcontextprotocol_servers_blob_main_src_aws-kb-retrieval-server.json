@@ -1,0 +1,58 @@
+{
+    "id": "aws-kb-retrieval",
+    "name": "AWS Knowledge Base Retrieval",
+    "description": "An MCP server implementation for retrieving information from the AWS Knowledge Base using the Bedrock Agent Runtime.",
+    "tags": [
+        "aws",
+        "knowledge-base",
+        "retrieval"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval-server",
+    "command": "docker",
+    "baseArgs": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "AWS_ACCESS_KEY_ID",
+        "-e",
+        "AWS_SECRET_ACCESS_KEY",
+        "-e",
+        "AWS_REGION",
+        "mcp/aws-kb-retrieval-server"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "AWS_ACCESS_KEY_ID": {
+                "type": "string",
+                "description": "Your AWS access key ID",
+                "required": true
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "type": "string",
+                "description": "Your AWS secret access key",
+                "required": true
+            },
+            "AWS_REGION": {
+                "type": "string",
+                "description": "Your AWS region",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "AWS_ACCESS_KEY_ID": {
+            "type": "env",
+            "key": "AWS_ACCESS_KEY_ID"
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "type": "env",
+            "key": "AWS_SECRET_ACCESS_KEY"
+        },
+        "AWS_REGION": {
+            "type": "env",
+            "key": "AWS_REGION"
+        }
+    }
+}

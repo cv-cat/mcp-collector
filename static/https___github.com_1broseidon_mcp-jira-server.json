@@ -1,0 +1,49 @@
+{
+    "id": "jira",
+    "name": "Jira MCP Server",
+    "description": "A Model Context Protocol server that provides integration with Jira's REST API, allowing AI assistants to manage Jira issues programmatically.",
+    "tags": [
+        "jira",
+        "api",
+        "integration"
+    ],
+    "repo": "https://github.com/1broseidon/mcp-jira-server",
+    "command": "node",
+    "baseArgs": [
+        "/path/to/jira-server/build/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "JIRA_EMAIL": {
+                "type": "string",
+                "description": "Your Jira account email with API access",
+                "required": true
+            },
+            "JIRA_API_TOKEN": {
+                "type": "string",
+                "description": "Your Jira API token, can be generated from Atlassian Account Settings",
+                "required": true
+            },
+            "JIRA_DOMAIN": {
+                "type": "string",
+                "description": "Your Jira domain",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "JIRA_EMAIL": {
+            "type": "env",
+            "key": "JIRA_EMAIL"
+        },
+        "JIRA_API_TOKEN": {
+            "type": "env",
+            "key": "JIRA_API_TOKEN"
+        },
+        "JIRA_DOMAIN": {
+            "type": "env",
+            "key": "JIRA_DOMAIN"
+        }
+    }
+}

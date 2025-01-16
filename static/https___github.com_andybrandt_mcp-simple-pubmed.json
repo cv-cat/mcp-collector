@@ -1,0 +1,41 @@
+{
+    "id": "simple-pubmed",
+    "name": "MCP Simple PubMed",
+    "description": "An MCP server that provides access to PubMed articles through the Entrez API.",
+    "tags": [
+        "pubmed",
+        "api",
+        "mcp"
+    ],
+    "repo": "https://github.com/andybrandt/mcp-simple-pubmed",
+    "command": "python",
+    "baseArgs": [
+        "-m",
+        "mcp_simple_pubmed"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "PUBMED_EMAIL": {
+                "type": "string",
+                "description": "Your email address (required by NCBI)",
+                "required": true
+            },
+            "PUBMED_API_KEY": {
+                "type": "string",
+                "description": "Optional API key for higher rate limits",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "PUBMED_EMAIL": {
+            "type": "env",
+            "key": "PUBMED_EMAIL"
+        },
+        "PUBMED_API_KEY": {
+            "type": "env",
+            "key": "PUBMED_API_KEY"
+        }
+    }
+}

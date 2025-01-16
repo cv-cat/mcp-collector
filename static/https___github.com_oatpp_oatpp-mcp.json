@@ -1,0 +1,14 @@
+{
+    "id": "oatpp-mcp",
+    "name": "Oat++ MCP",
+    "description": "Anthropic\u2019s Model Context Protocol implementation for Oat++",
+    "repo": "https://github.com/oatpp/oatpp-mcp",
+    "tags": [
+        "oatpp",
+        "mcp",
+        "api"
+    ],
+    "command": "npx",
+    "baseArgs": [],
+    "configurable": false
+}

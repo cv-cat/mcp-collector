@@ -1,0 +1,32 @@
+{
+    "id": "github",
+    "name": "GitHub",
+    "description": "Repository management, file operations, and GitHub API integration",
+    "tags": [
+        "github",
+        "repository",
+        "api"
+    ],
+    "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "GitHub Personal Access Token",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "env",
+            "key": "GITHUB_PERSONAL_ACCESS_TOKEN"
+        }
+    }
+}

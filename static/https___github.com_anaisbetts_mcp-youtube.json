@@ -1,0 +1,17 @@
+{
+    "id": "youtube",
+    "name": "YouTube MCP Server",
+    "description": "Uses yt-dlp to download subtitles from YouTube and connects it to claude.ai via Model Context Protocol. Try it by asking Claude, \"Summarize the YouTube video <>.\" Requires yt-dlp to be installed locally e.g. via Homebrew.",
+    "tags": [
+        "youtube",
+        "subtitles",
+        "api"
+    ],
+    "repo": "https://github.com/anaisbetts/mcp-youtube",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@anaisbetts/mcp-youtube"
+    ],
+    "configurable": false
+}

@@ -1,0 +1,39 @@
+{
+    "id": "homeassistant",
+    "name": "Home Assistant",
+    "description": "A Model Context Protocol Server for Home Assistant",
+    "tags": [
+        "home-assistant",
+        "mcp"
+    ],
+    "repo": "https://github.com/tevonsb/homeassistant-mcp",
+    "command": "node",
+    "baseArgs": [
+        "/Users/tevonsb/Desktop/mcp/dist/index.js"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "token": {
+                "type": "string",
+                "description": "Home Assistant access token",
+                "required": true
+            },
+            "baseUrl": {
+                "type": "string",
+                "description": "Base URL for Home Assistant",
+                "required": true
+            }
+        }
+    },
+    "argsMapping": {
+        "token": {
+            "type": "env",
+            "key": "TOKEN"
+        },
+        "baseUrl": {
+            "type": "env",
+            "key": "BASE_URL"
+        }
+    }
+}

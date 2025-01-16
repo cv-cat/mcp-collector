@@ -1,0 +1,67 @@
+{
+    "id": "mcp-pandoc",
+    "name": "mcp-pandoc",
+    "description": "A Model Context Protocol server for document format conversion using pandoc.",
+    "tags": [
+        "conversion",
+        "document",
+        "pandoc"
+    ],
+    "repo": "https://github.com/vivekVells/mcp-pandoc",
+    "command": "uvx",
+    "baseArgs": [
+        "mcp-pandoc"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "input_file": {
+                "type": "string",
+                "description": "The complete path to the input file.",
+                "required": false
+            },
+            "output_file": {
+                "type": "string",
+                "description": "The complete path for the output file.",
+                "required": true
+            },
+            "input_format": {
+                "type": "string",
+                "description": "Source format of the content.",
+                "default": "markdown"
+            },
+            "output_format": {
+                "type": "string",
+                "description": "Target format.",
+                "default": "markdown"
+            },
+            "contents": {
+                "type": "string",
+                "description": "Source content to convert.",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "input_file": {
+            "type": "single",
+            "position": 1
+        },
+        "output_file": {
+            "type": "single",
+            "position": 2
+        },
+        "input_format": {
+            "type": "single",
+            "position": 3
+        },
+        "output_format": {
+            "type": "single",
+            "position": 4
+        },
+        "contents": {
+            "type": "single",
+            "position": 5
+        }
+    }
+}

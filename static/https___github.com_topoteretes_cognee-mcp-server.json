@@ -1,0 +1,47 @@
+{
+    "mcpServers": {
+        "cognee": {
+            "id": "cognee",
+            "name": "Cognee MCP Server",
+            "description": "A MCP server project",
+            "repo": "https://github.com/topoteretes/cognee-mcp-server",
+            "command": "/Users/{user}/cognee/.venv/bin/uv",
+            "baseArgs": [
+                "--directory",
+                "/Users/{user}/cognee/cognee-mcp",
+                "run",
+                "cognee"
+            ],
+            "env": {
+                "ENV": "local",
+                "TOKENIZERS_PARALLELISM": "false",
+                "LLM_API_KEY": "sk-"
+            },
+            "configurable": true,
+            "argsMapping": {
+                "directory": {
+                    "type": "single",
+                    "position": 1
+                }
+            }
+        },
+        "filesystem": {
+            "id": "filesystem",
+            "name": "Filesystem",
+            "description": "Secure file operations with configurable access controls",
+            "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+            "command": "npx",
+            "baseArgs": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem"
+            ],
+            "configurable": true,
+            "argsMapping": {
+                "paths": {
+                    "type": "spread",
+                    "position": 2
+                }
+            }
+        }
+    }
+}

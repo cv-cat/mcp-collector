@@ -1,0 +1,20 @@
+{
+    "id": "mcp-langchain-ts-client",
+    "name": "MCP LangChain TS Client",
+    "description": "A LangChain.js client for Model Context Protocol.",
+    "tags": [
+        "langchain",
+        "mcp",
+        "typescript",
+        "javascript"
+    ],
+    "repo": "https://github.com/isaacwasserman/mcp-langchain-ts-client",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+    ],
+    "configurable": false,
+    "configSchema": {},
+    "argsMapping": {}
+}

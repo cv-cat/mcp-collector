@@ -1,0 +1,36 @@
+{
+    "mcpServers": {
+        "postgres": {
+            "id": "postgres",
+            "name": "PostgreSQL",
+            "description": "Read-only database access with schema inspection",
+            "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+            "tags": [
+                "database",
+                "postgresql",
+                "sql"
+            ],
+            "command": "npx",
+            "baseArgs": [
+                "-y",
+                "@modelcontextprotocol/server-postgres"
+            ],
+            "configurable": true,
+            "configSchema": {
+                "properties": {
+                    "connectionString": {
+                        "type": "string",
+                        "description": "PostgreSQL connection string",
+                        "required": true
+                    }
+                }
+            },
+            "argsMapping": {
+                "connectionString": {
+                    "type": "single",
+                    "position": 2
+                }
+            }
+        }
+    }
+}

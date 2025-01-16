@@ -1,0 +1,17 @@
+{
+    "id": "fetch",
+    "name": "Fetch MCP Server",
+    "description": "This MCP server provides functionality to fetch web content in various formats, including HTML, JSON, plain text, and Markdown.",
+    "tags": [
+        "fetch",
+        "web",
+        "API"
+    ],
+    "repo": "https://github.com/zcaceres/fetch-mcp",
+    "command": "node",
+    "baseArgs": [
+        "{ABSOLUTE PATH TO FILE HERE}/dist/index.js"
+    ],
+    "configurable": false,
+    "argsMapping": {}
+}

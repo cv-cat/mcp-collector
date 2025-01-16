@@ -1,0 +1,40 @@
+{
+    "id": "raygun",
+    "name": "Raygun",
+    "description": "MCP Server for Raygun's API V3 endpoints for interacting with your Crash Reporting and Real User Monitoring applications.",
+    "tags": [
+        "raygun",
+        "api"
+    ],
+    "repo": "https://github.com/MindscapeHQ/mcp-server-raygun",
+    "command": "npx",
+    "baseArgs": [
+        "-y",
+        "@raygun.io/mcp-server-raygun"
+    ],
+    "configurable": true,
+    "configSchema": {
+        "properties": {
+            "RAYGUN_PAT_TOKEN": {
+                "type": "string",
+                "description": "Your Raygun PAT token",
+                "required": true
+            },
+            "SOURCEMAP_ALLOWED_DIRS": {
+                "type": "array",
+                "description": "Comma-separated list of directories allowed for source map operations",
+                "required": false
+            }
+        }
+    },
+    "argsMapping": {
+        "RAYGUN_PAT_TOKEN": {
+            "type": "env",
+            "key": "RAYGUN_PAT_TOKEN"
+        },
+        "SOURCEMAP_ALLOWED_DIRS": {
+            "type": "spread",
+            "position": 2
+        }
+    }
+}
